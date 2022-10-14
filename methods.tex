@@ -1,23 +1,33 @@
 \section{Methodology}
-This is the methodology section.
+We selected two advanced reactors for this work: the X-energy Xe-100 and 
+the \gls{USNC} \gls{MMR}. These two reactors provide comparison across 
+some notable reactor design spaces, such as power output and fuel form. 
+Additionally, there is enough information about each design publicly 
+available to model each design with a reasonable degree of accuracy. 
+we created models of each core and performed neutronics analysis using 
+Serpent \cite{leppanen_serpent_2014}. 
 
-\pagebreak
-\subsection{Subsection}
+We used the Xe-100-like model from \cite{richter_phlox_2021}, which can 
+be found at \cite{richter_zoerichterphlox_2022}. 
 
-\begin{figure}[h]
-        \centering
-\begin{tikzpicture}[node distance=1.5cm]
-\node (start) [object] {Start};
-\node (step1) [process, below of=start] {Step 1};
-\node (intermediate) [object, below of=step1] {Intermediate};
-\node (step2) [process, below of=intermediate] {Step 2};
-\node (end) [object, below of=step2]{End};
+We created a model for the \gls{MMR} primarily based on information in 
+\cite{hawari_development_2018}, and supplemented or modified based on 
+information published by \gls{USNC} \cite{noauthor_usnc_2021}. Figure 
+\ref{fig:mmr_core} shows the radial and axial geometry of the \gls{MMR} 
+model. 
 
-\draw [arrow] (start) -- (step1); 
-\draw [arrow] (step1) -- (intermediate);
-\draw [arrow] (intermediate) -- (step2); 
-\draw [arrow] (step2) -- (end);
-\end{tikzpicture}
-\caption{A caption for the flowchart.}
-\label{fig:comp}
+\begin{figure}
+        \begin{subfigure}{0.45\textwidth}
+                \includegraphics[scale=0.07]{bachmann-mmr_geom1.png}
+                \caption{Radial view of the USNC MMR model.}
+                \label{fig:mmr_radial}
+        \end{subfigure}
+        \hfill 
+        \begin{subfigure}{0.45\textwidth}
+                \includegraphics[scale=0.1]{bachmann-mmr_geom3.png}
+                \caption{Radial view of the USNC MMR model.}
+                \label{fig:mmr_axial}
+        \end{subfigure}
+        \caption{Geometry of USNC MMR core model in Serpent.}
+        \label{fig:mmr_core}
 \end{figure}

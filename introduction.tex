@@ -1,10 +1,35 @@
 \section{Introduction}
+The US nuclear industry is looking to deploy a suite of advanced reactors. 
+These reactors will have notable benefits of improved safety, longer cycle 
+times, and greater flexibility compared with the current fleet of \glspl{LWR}. 
+However, to support the deployment of these reactors the US needs to 
+develop new supply chains for fresh fuel. Many advanced reactors will 
+require \gls{HALEU}, or uranium enriched between 5-20\% $^{235}$U, while 
+the current \gls{LWR} fleet requires fuel enriched to less than 5\% 
+$^{235}$U. 
 
-This is the introduction section. For consistency, use the
-\texttt{glossaries} package for acronyms such as ``\gls{SFR}".
-This automatically populates the glossaries list and abbreviates future
-mentions of ``\gls{SFR}".
+To develop the supply chain of \gls{HALEU}, the US \gls{DOE} has proposed 
+the enrichment of natural uranium and the downblending of \gls{DOE}-owned 
+\gls{HEU} stockpiles \cite{griffith_overview_2020}. Based on published 
+isotopic compositions \cite{vaden_isotopic_2018,nelson_foreign_2010}, 
+\gls{HALEU} created from downblending these stockpiles will have impurities 
+of other uranium isotopes. Notably, $^{234}$U and $^{236}$U are present, 
+which are known neutron poisons and can affect the neutronics of a 
+reactor. 
 
-All tables and figures must be referenced to in the text.
-Use the BibTeX package to manage your paper references and bibliography
-\cite{huff_extensions_2014}.
+Previous analysis of downblended \gls{HEU} in a NIST research reactor 
+\cite{celikten_effects_2021} shows a 0.43\% drop in reactivity and 
+an 8\% reduction in the cycle length when using fuel downblended from 
+stockpiles at the Y-12 National Security Complex. Even when the \gls{HALEU} 
+is fabricated by enriching natural uranium the range of possible impurity 
+concentrations has been shown to affect the $k_{eff}$ value of the MIT 
+Reactor by about 280 pcm \cite{mascolino_impact_2022}. The results of these 
+previous analyses are relatively small changes to the reactor performance, 
+but they are only performed on research reactors. Research reactors are 
+typically a smaller power output and core size than a commercial power 
+reactor. Therefore, the effects of impurities in \gls{HALEU} may be more 
+pronounced in a commercial reactor.
+
+The purpose of this work is to investigate how the impurities in \gls{HALEU} 
+produced from downblending \gls{HEU} can affect the neutronics and operation 
+of select advanced reactors intended for commercial operation. 
