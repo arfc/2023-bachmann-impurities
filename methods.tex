@@ -7,8 +7,27 @@ available to model each design with a reasonable degree of accuracy.
 we created models of each core and performed neutronics analysis using 
 Serpent \cite{leppanen_serpent_2014}. 
 
-We used the Xe-100-like model from \cite{richter_phlox_2021}, which can 
-be found at \cite{richter_zoerichterphlox_2022}. 
+We used the Xe-100-like model from \cite{richter_isotopic_2022}, which can 
+be found at \cite{richter_zoerichterphlox_2022}, shown in Figure 
+\ref{fig:xe100_core}.
+
+\begin{figure}
+        \begin{subfigure}{0.45\textwidth}
+                \centering
+                \includegraphics[scale=0.03]{htgr-mr-full-core.inp_geom1.png}
+                \caption{Radial view of the Xe-100 model.}
+                \label{fig:xe100_radial}
+        \end{subfigure}
+        \hfill 
+        \begin{subfigure}{0.45\textwidth}
+                \centering
+                \includegraphics[scale=0.12]{htgr-mr-full-core.inp_geom3.png}
+                \caption{Axial view of the Xe-100 model.}
+                \label{fig:xe100_axial}
+        \end{subfigure}
+        \caption{Geometry of USNC MMR core model in Serpent.}
+        \label{fig:xe100_core}
+\end{figure}
 
 We created a model for the \gls{MMR} primarily based on information in 
 \cite{hawari_development_2018}, and supplemented or modified based on 
@@ -18,16 +37,33 @@ model.
 
 \begin{figure}
         \begin{subfigure}{0.45\textwidth}
+                \centering
                 \includegraphics[scale=0.07]{bachmann-mmr_geom1.png}
                 \caption{Radial view of the USNC MMR model.}
                 \label{fig:mmr_radial}
         \end{subfigure}
         \hfill 
         \begin{subfigure}{0.45\textwidth}
+                \centering
                 \includegraphics[scale=0.1]{bachmann-mmr_geom3.png}
-                \caption{Radial view of the USNC MMR model.}
+                \caption{Axial view of the USNC MMR model.}
                 \label{fig:mmr_axial}
         \end{subfigure}
         \caption{Geometry of USNC MMR core model in Serpent.}
         \label{fig:mmr_core}
 \end{figure}
+
+The points of comparison for this work include:
+\begin{itemize}
+        \item Neutron flux at \gls{BOL}, mid-cycle, and \gls{EOL}
+        \item k-eff as a function of burnup
+        \item $\beta_{eff}$
+        \item Temperature feedback coefficients
+\end{itemize}
+
+For the \gls{MMR} model, the temperature feedback coefficients was determined 
+by varying the fuel, moderator, and coolant temperatures between 
+850 K and 900 K.
+
+Neither model includes any control rods or burnable poisons. Currently haven't 
+found any info about burnable poisons. 
