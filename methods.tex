@@ -1,12 +1,24 @@
 \section{Methodology}
+
 We selected two advanced reactors for this work: the X-energy Xe-100 and 
 the \gls{USNC} \gls{MMR}. These two reactors provide comparison across 
 some notable reactor design spaces, such as power output and fuel form. 
 Additionally, there is enough information about each design publicly 
 available to model each design with a reasonable degree of accuracy. 
 we created models of each core and performed neutronics analysis using 
-Serpent \cite{leppanen_serpent_2014}. 
+Serpent \cite{leppanen_serpent_2014}. All simulations were run using the 
+ENDF/B VII.1 cross section library \cite{chadwick_endfb-vii1_2011}.
 
+Each reactor model was simulated three times, with different 
+\gls{HALEU} fuel compositions: pure \gls{HALEU}, downblended \gls{EBR}  
+fuel, and downblended Y-12 fuel. For this work, pure fuel is comprised 
+of uranium with only $^{235}$U and $^{238}$U. The downblended \gls{EBR}
+fuel is comprised of the isotopic composition defined in 
+\cite{vaden_isotopic_2018}, with small adjustments to reflect the needed 
+enrichment of fuel needed by each reactor. The downblended Y-12 
+fuel has the isotopic composition defined in \cite{nelson_foreign_2010}. 
+
+%Xe-100
 We used the Xe-100-like model from \cite{richter_isotopic_2022}, which can 
 be found at \cite{richter_zoerichterphlox_2022}, shown in Figure 
 \ref{fig:xe100_core}.
@@ -25,20 +37,53 @@ be found at \cite{richter_zoerichterphlox_2022}, shown in Figure
                 \caption{Axial view of the Xe-100 model.}
                 \label{fig:xe100_axial}
         \end{subfigure}
-        \caption{Geometry of USNC MMR core model in Serpent.}
+        \caption{Geometry of X-energy Xe-100-like model in Serpent.}
         \label{fig:xe100_core}
 \end{figure}
 
-We created a model for the \gls{MMR} primarily based on information in 
+This model was run with 70,000 particles per cycle, 50 inactive cycles, 
+and 150 active cycles. 
+
+
+% MMR
+We created an \gls{MMR}-like model primarily based on information in 
 \cite{hawari_development_2018}, and supplemented or modified based on 
-information published by \gls{USNC} \cite{noauthor_usnc_2021}. Figure 
-\ref{fig:mmr_core} shows the radial and axial geometry of the \gls{MMR} 
-model. 
+information published by \gls{USNC}. Information about the \gls{TRISO} 
+particle and \gls{FCM} pellets was found in \cite{noauthor_usnc_2021}
+and information about the graphite block dimensions and configuration 
+was found in \cite{venneri_micro_2019}. The final core configuration 
+is different than what is modeled in \cite{hawari_development_2018} 
+because the model by Hawari and Venneri is only meant to operate 
+for 10 years, while the \gls{MMR} is meant to operate for 20 years. 
+
+Figure \ref{fig:mmr_core} shows the radial and axial geometry of the 
+\gls{MMR} model. The fuel channels have a radius of 1.15 cm, the same
+size as the \gls{FCM} pellets, the coolant channels have a radius of 
+3 cm, arbitrarily chosen because no specific information was found, 
+and the control rod channels have a radius of 6 cm, obtained from 
+\cite{hawari_development_2018}. The \gls{TRISO} particles are modeled 
+with a 40\% packing fraction in the \gls{FCM} particles
+Control rods and burnable poisons are not included in this model, or 
+the Xe-100-like model, so the control rod locations are modeled as 
+filled with helium. There are five layers of the graphite compacts 
+stacked to form the entire core, to approximate the number of 
+fuel blocks described in \cite{noauthor_usnc_2021}. The entire core 
+is assumed to be in an isothermal state at 800 K. There is a 20 cm 
+thick graphite reflector above and below the stacks of graphite, 
+and a 10 cm beryllium-oxide reflector on the outside of the 
+graphite blocks of the core. Both of these reflectors are specified 
+in \cite{hawari_development_2018}, with the thickness of the 
+beryllium-oxide reflector given. However, the thickness of the graphite 
+reflectors above and below the core was not specified, so we selected 
+20 cm to prove 3-5 mean free paths of material. 
+
+The input files for this model can be found at \textbf{create zenodo 
+object}.
 
 \begin{figure}
         \begin{subfigure}{0.45\textwidth}
                 \centering
-                \includegraphics[scale=0.07]{bachmann-mmr_geom1.png}
+                \includegraphics[scale=0.1]{bachmann-mmr_geom1.png}
                 \caption{Radial view of the USNC MMR model.}
                 \label{fig:mmr_radial}
         \end{subfigure}
@@ -49,21 +94,36 @@ model.
                 \caption{Axial view of the USNC MMR model.}
                 \label{fig:mmr_axial}
         \end{subfigure}
-        \caption{Geometry of USNC MMR core model in Serpent.}
+        \caption{Geometry of USNC MMR-like core model in Serpent. The 
+        light blue is helium, dark blue are fuel channels with TRISO particles, 
+        and the bright pink is graphite in the core.}
         \label{fig:mmr_core}
 \end{figure}
 
 The points of comparison for this work include:
 \begin{itemize}
         \item Neutron flux at \gls{BOL}, mid-cycle, and \gls{EOL}
-        \item k-eff as a function of burnup
-        \item $\beta_{eff}$
+        \item \keff as a function of burnup
+        \item \betaEff
         \item Temperature feedback coefficients
 \end{itemize}
 
-For the \gls{MMR} model, the temperature feedback coefficients was determined 
-by varying the fuel, moderator, and coolant temperatures between 
-850 K and 900 K.
+For the Xe-100-like model, we varied the temperature between \textbf{temps}
+to determine the reactivity coefficients. In the \gls{MMR}-like model 
+we varied the temperature between 750-850 K in 50 K increments to determine 
+the the reactivity coefficients, assuming a linear change in \keff as 
+a function of temperature over this range. 
 
-Neither model includes any control rods or burnable poisons. Currently haven't 
-found any info about burnable poisons. 
+We did not perform depletion on the Xe-100-like model because our model 
+does not capture the continuous refueling scheme used by the Xe-100 or 
+any pebble movement. Performing depletion without modeling pebble movement 
+would create non-physical differences from the equilibrium condition of 
+this reactor model. Therefore, the results of this model will be comparisons
+for a single burnup step, the initial core, instead of across a range of 
+burnup steps. 
+
+For the \gls{MMR}-like model we used depletion steps 
+of two years between 0-20 years, to investigate the neutronics of the model 
+across the full 20 years that the \gls{MMR} is expected to operate. 
+
+
