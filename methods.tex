@@ -7,25 +7,45 @@ available to model each design with a reasonable degree of accuracy.
 we created models of each core and performed neutronics analysis using 
 Serpent \cite{leppanen_serpent_2014}. 
 
-We used the Xe-100-like model from \cite{richter_isotopic_2022}, which can 
-be found at \cite{richter_zoerichterphlox_2022}, shown in Figure 
-\ref{fig:xe100_core}.
+We used the Sanagmon200 model from \cite{richter_isotopic_2022}, shown in 
+Figure \ref{fig:xe100_core}, to serve as an Xe-100-like 
+core model. The model itself can be found at \cite{richter_zoerichterphlox_2022}. 
+
+
+TRISO particles are modeled as a blended mix of the TRISO 
+materials, not the explicit layers. Using a homogenized TRISO particle 
+decreases the $k_{eff}$ of the core by 4.45\%, but it does 
+reduce the total CPU time required to run the simulation 
+\cite{richter_isotopic_2022}. Additionally, the difference in flux between 
+the homogenized TRISO particle model and the heterogeneous TRISO 
+particle model is within error across the span of the reactor 
+\cite{richter_isotopic_2022}. 
+
+This model includes pebble compositions for each pass the pebbles go through. 
+This is a stagnant composition for each pass number, but the variations in 
+compositions within a single pass would likely not cause significant 
+changes in the isotopic composition of the fuel. Any non-uranium parts of 
+the fuel composition were left constant. 
+
+Burnup steps are \textbf{6 month increments???}, for 
+the end of each pass. Model does not include cone-like region at the bottom of the 
+Xe-100. Average core temp of 800 K \cite{richter_isotopic_2022}.
 
 \begin{figure}
-        \begin{subfigure}{0.45\textwidth}
+        \begin{subfigure}{0.48\textwidth}
                 \centering
                 \includegraphics[scale=0.03]{htgr-mr-full-core.inp_geom1.png}
                 \caption{Radial view of the Xe-100 model.}
                 \label{fig:xe100_radial}
         \end{subfigure}
         \hfill 
-        \begin{subfigure}{0.45\textwidth}
+        \begin{subfigure}{0.48\textwidth}
                 \centering
                 \includegraphics[scale=0.12]{htgr-mr-full-core.inp_geom3.png}
                 \caption{Axial view of the Xe-100 model.}
                 \label{fig:xe100_axial}
         \end{subfigure}
-        \caption{Geometry of USNC MMR core model in Serpent.}
+        \caption{Geometry of X-energy Xe-100 core model in Serpent.}
         \label{fig:xe100_core}
 \end{figure}
 
@@ -33,17 +53,18 @@ We created a model for the \gls{MMR} primarily based on information in
 \cite{hawari_development_2018}, and supplemented or modified based on 
 information published by \gls{USNC} \cite{noauthor_usnc_2021}. Figure 
 \ref{fig:mmr_core} shows the radial and axial geometry of the \gls{MMR} 
-model. 
+model. TRISO particles are modeled with explicit layers, based on 
+information from USNC \cite{noauthor_usnc_2021}
 
 \begin{figure}
-        \begin{subfigure}{0.45\textwidth}
+        \begin{subfigure}{0.48\textwidth}
                 \centering
-                \includegraphics[scale=0.07]{bachmann-mmr_geom1.png}
+                \includegraphics[scale=0.08]{bachmann-mmr_geom1.png}
                 \caption{Radial view of the USNC MMR model.}
                 \label{fig:mmr_radial}
         \end{subfigure}
         \hfill 
-        \begin{subfigure}{0.45\textwidth}
+        \begin{subfigure}{0.48\textwidth}
                 \centering
                 \includegraphics[scale=0.1]{bachmann-mmr_geom3.png}
                 \caption{Axial view of the USNC MMR model.}
