@@ -13,37 +13,49 @@ Each reactor model was simulated three times, with different
 \gls{HALEU} fuel compositions: pure \gls{HALEU}, downblended \gls{EBR}  
 fuel, and downblended Y-12 fuel. For this work, pure fuel is comprised 
 of uranium with only $^{235}$U and $^{238}$U. The downblended \gls{EBR}
-fuel is comprised of the isotopic composition defined in 
-\cite{vaden_isotopic_2018}, with small adjustments to reflect the needed 
-enrichment of fuel needed by each reactor. The downblended Y-12 
+fuel is comprised of the average isotopic composition defined in 
+Table B.1 of 
+\cite{vaden_isotopic_2018}. The downblended Y-12 
 fuel has the isotopic composition defined in \cite{nelson_foreign_2010}. 
-Any non-uranium parts of the fuel composition have a constant composition 
-and weight fraction within the fuel as the uranium isotopics are 
-varied. 
+Small adjustments were made to each composition to match the 
+fuel enrichment of each reactor. These adjustments were between the 
+$^{235}$U and $^{238}$U, the other uranium isotopes have the 
+weight fraction defined by each source.  
+Any non-uranium parts of the fuel composition (such as oxygen) 
+have a constant composition and weight fraction within the fuel. 
+
+\subsection{Xe-100-like model}
+The X-energy Xe-100 is a 200 MWth \gls{HTGR} that uses UCO \gls{TRISO}
+pebbles. This reactor is designed to operate for 60 years and use online 
+refueling \cite{mulder_overview_2021}.
+
 
 We used the Sanagmon200 model from \cite{richter_isotopic_2022}, shown in 
 Figure \ref{fig:xe100_core}, to serve as an Xe-100-like 
-core model. The model itself can be found at \cite{richter_zoerichterphlox_2022}.
+core model. The model inputs can be found at \cite{richter_zoerichterphlox_2022}.
 The Sangamon200 model is a pebble-bed, \gls{HTGR}-style reactor core model 
 initially created to characterize the isotopic compositions and 
 reactor physics of a pebble-bed, \gls{HTGR}. While this reactor model 
 is very similar to current published data for the Xe-energy Xe-100
 \cite{mulder_overview_2021}, there are some notable differences that affect 
 the reactor physics. The first difference is that the \gls{TRISO} particles 
-in the Sangamon200 are modeled as a blended mix of the TRISO 
-materials, not the explicit layers. Using a homogenized TRISO particle 
+in the Sangamon200 are modeled as a blended mix of the \gls{TRISO} 
+materials, not the explicit layers. Using a homogenized \gls{TRISO} particle 
 decreases the \keff of the core by 4.45\%, but it does reduce the 
 neutron flux outside of error \cite{richter_isotopic_2022}. Despite 
 the effect on \keff of this modeling decision, we continued to use the 
 homogenized model of the \gls{TRISO} pebbles to be consistent with the 
 published results of the Sanagamon200 \cite{richter_isotopic_2022}. 
+Additionally, each of the fuel compositions used in this work will 
+use the homogenized pebble and therefore we do not expect this modeling 
+to affect the final results of this work. 
 
 The second 
 notable difference is the reactor vessel shape. The Sanagmon200 is a simple 
 cylinder, while the Xe-100 is a cylinder with a cone at the bottom to funnel 
 the pebbles to a single point as they come out of the core. We do not account 
-for any pebble movement within the core, so the geometry difference between 
-the two cores should produce a negligible effect on the performance of the 
+for any pebble movement within the core, so we do not expect that the geometry 
+difference will produce a significant effect on the performance of the 
 core as a whole.
 
 \begin{figure}
@@ -71,14 +83,28 @@ varied to reflect the composition of a pebble after it has gone through
 each number of passes. Each composition is stagnant, 
 but the variations in 
 compositions within a single pass would likely not cause significant 
-changes in the isotopic composition of the fuel. 
+changes in the isotopic composition of the fuel. When varying the 
+uranium composition, we performed depletion of a single pebble to obtain 
+the pebble composition after each pass, similar to what is described in 
+\cite{richter_isotopic_2022}.
 
-The Sangamon200 is modeled an an isothermal state at 800 K \cite{richter_isotopic_2022}.
-This model was run with 70,000 particles per cycle, 50 inactive cycles, 
-and 150 active cycles. 
+The Sangamon200 is modeled an an isothermal state at 800 K 
+\cite{richter_isotopic_2022}. This model was run with 70,000 particles 
+per cycle, 50 inactive cycles, and 150 active cycles. We did not perform 
+depletion on the Sangamon200 model because we  
+does not capture the continuous refueling scheme used by the Xe-100 or 
+any pebble movement. Performing depletion without modeling pebble movement 
+would create non-physical differences from the equilibrium condition of 
+this reactor model. Therefore, the results of this model will be comparisons
+of the different uranium compositions for a single burnup step.
 
 
-% MMR
+\subsection{MMR-like model}
+The \gls{USNC} \gls{MMR} is an \gls{HTGR}-style microreactor with 
+a thermal output of 15 MWth \cite{noauthor_usnc_2021}. This design 
+uses UO$_2$ \gls{TRISO} pebbles in a SiC matrix, and is intended 
+to operate for 20 years without refueling \cite{noauthor_usnc_2021}. 
+
 We created an \gls{MMR}-like model primarily based on information in 
 \cite{hawari_development_2018}, and supplemented or modified based on 
 information published by \gls{USNC}. Information about the \gls{TRISO} 
@@ -112,7 +138,8 @@ graphite blocks of the core. Both of these reflectors are specified
 in \cite{hawari_development_2018}, with the thickness of the 
 beryllium-oxide reflector given. However, the thickness of the graphite 
 reflectors above and below the core was not specified, so we selected 
-20 cm to prove 3-5 mean free paths of material. 
+20 cm to prove 3-5 mean free paths of material. We used the thermal 
+scattering cross section library for the graphite material. 
 The input files for this model can be found at \textbf{create zenodo 
 object}.
 
@@ -136,39 +163,37 @@ object}.
         \label{fig:mmr_core}
 \end{figure}
 
+We modeled depletion of the core across the 
+expected 20 year lifetime of the \gls{MMR}, because the core is not 
+meant to undergo refueling during those 20 years. These multiple depletion 
+steps provide results at the \gls{BOL}, mid-cycle, and \gls{EOL} for 
+the \gls{MMR}-like model. 
+
+\subsection{Comparisons}
 The points of comparison for this work include:
 \begin{itemize}
-        \item Neutron flux 
         \item \keff 
+        \item Neutron flux 
         \item \betaEff
         \item Temperature feedback coefficients
 \end{itemize}
 
 For both reactor models, we varied the fuel, coolant, and moderator temperatures 
-between 750 K, 800 K, and 850 K to calculate the fuel, coolant, moderator, and 
+between 700, 750, 800, 850, and 900 K to calculate the fuel, coolant, moderator, and 
 total temperature feedback coefficients. We assumed a linear relationship between 
-\keff and temperature to calculate the feedback coefficients. When varying the 
+reactivity and temperature to perform linear regression on the data and 
+calculate the temperature feedback coefficients.
+
+When varying the 
 temperatures, we also varied the density of the materials. We calculated the 
 density of the UO$_2$ by using the empirical relationship between density and 
-temperature defined in \cite{fink_thermophysical_2000}. We calculated the 
+temperature defined in \cite{fink_thermophysical_2000}. These calculated 
+densities were applied to both the MMR-like model and the Sangamon200, 
+because of the similarity of UO$_2$ and UCO. We calculated the 
 graphite density by linearly extrapolating from the data available in 
 \cite{mceligot_thermal_nodate}. We calculated the density of the helium 
 by interpolating on the data available in \cite{petersen_properties_nodate}, 
 assuming the 3 MPa coolant pressure in the \gls{MMR}-like model as defined 
-by \cite{noauthor_usnc_2021}. 
-
-We did not perform depletion on the Sangamon200 model because our model 
-does not capture the continuous refueling scheme used by the Xe-100 or 
-any pebble movement. Performing depletion without modeling pebble movement 
-would create non-physical differences from the equilibrium condition of 
-this reactor model. Therefore, the results of this model will be comparisons
-of the different uranium compositions for a single burnup step
-
-For the \gls{MMR}-like model we modeled depletion of the core across the 
-expected 20 year lifetime of the \gls{MMR}, because the core is not 
-meant to undergo refueling during those 20 years. Because we modeled 
-depletion for this model, the flux, \keff, and temperature feedback coefficients
-are compared at the \gls{BOL}, mid-cycle, and \gls{EOL} for the \gls{MMR}-like 
-model. 
-
-
+by \cite{noauthor_usnc_2021}. The density of helium for the Sangamon200
+was obtained from \cite{petersen_properties_nodate}, but for 6 MPa of 
+pressure, as defined by \cite{mulder_overview_2021}.
