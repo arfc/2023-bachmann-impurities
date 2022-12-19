@@ -1,15 +1,20 @@
 \section{Results}
 
 The output files from Serpent were parsed and analyzed using the 
-``serpentTools'' python package \cite{johnson_serpenttools_2020}.
+``serpentTools'' python package \cite{johnson_serpenttools_2020}. The 
+\keff, neutron flux, and \betaEff were output by Serpent. The reactivity 
+feedback coefficients were calculated by fitting a linear function to the 
+data (material temperature vs reactivity) and propagating error through 
+the fit. The neutron flux was divided into two energy groups for 
+fast and thermal fluxes. We applied the default two-group structure in Serpent, 
+in which the cutoff between the energy groups is 0.625 eV.
 
 \subsection{Xe-100-like reactor}
-
 \subsubsection{k-eff}
 
 \begin{table}
     \centering  
-    \caption{\keff value from each fuel composition in the Sanagamon200.}
+    \caption{\keff value from each fuel composition in the Sangamon200.}
     \label{tab:xe100_keff}
     \begin{tabular}{c c}
         \hline
@@ -27,7 +32,7 @@ The output files from Serpent were parsed and analyzed using the
 \subsubsection{Beta-eff}
 \begin{table}
     \centering  
-    \caption{\betaEff value from each fuel composition in the Sanagamon200.}
+    \caption{\betaEff value from each fuel composition in the Sangamon200.}
     \label{tab:xe100_betaEff}
     \begin{tabular}{c c}
         \hline
@@ -43,7 +48,7 @@ The output files from Serpent were parsed and analyzed using the
 \subsubsection{Reactivity coefficients}
 \begin{table}
     \centering  
-    \caption{Reactivity feedback coefficients from each fuel composition in the Sanagamon200.}
+    \caption{Reactivity feedback coefficients from each fuel composition in the Sangamon200.}
     \label{tab:xe100_feedback}
     \begin{tabular}{c c c c c}
         \hline
@@ -100,3 +105,69 @@ The output files from Serpent were parsed and analyzed using the
 
 
 \subsubsection{Reactivity coefficients}
+
+\begin{table}
+    \centering  
+    \caption{Fuel temperature reactivity feedback coefficients from each fuel 
+    composition in the MMR.}
+    \label{tab:mmr_fuel_feedback}
+    \begin{tabular}{c c c c}
+        \hline
+        & \multicolumn{3}{c}{Burnup step} \\
+        \hline
+        Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
+        Pure & \\
+        EBR-II & \\
+        Y12 & \\
+        \hline        
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering  
+    \caption{Moderator temperature reactivity feedback coefficients from each 
+    fuel composition in the MMR.}
+    \label{tab:mmr_moderator_feedback}
+    \begin{tabular}{c c c c}
+        \hline
+        & \multicolumn{3}{c}{Burnup step} \\
+        \hline
+        Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
+        Pure & \\
+        EBR-II & \\
+        Y12 & \\
+        \hline        
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering  
+    \caption{Coolant temperature reactivity feedback coefficients from each fuel composition in the MMR.}
+    \label{tab:mmr_coolant_feedback}
+    \begin{tabular}{c c c c}
+        \hline
+        & \multicolumn{3}{c}{Burnup step} \\
+        \hline
+        Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
+        Pure & \\
+        EBR-II & \\
+        Y12 & \\
+        \hline        
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering  
+    \caption{Total temperature reactivity feedback coefficients from each fuel composition in the MMR.}
+    \label{tab:mmr_total_feedback}
+    \begin{tabular}{c c c c}
+        \hline
+        & \multicolumn{3}{c}{Burnup step} \\
+        \hline
+        Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
+        Pure & \\
+        EBR-II & \\
+        Y12 & \\
+        \hline        
+    \end{tabular}
+\end{table}
