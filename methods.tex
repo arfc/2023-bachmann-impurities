@@ -1,7 +1,7 @@
 \section{Methodology}
 
 We selected two advanced reactors for this work: the X-energy Xe-100 and 
-the \gls{USNC} \gls{MMR}. These two reactors provide comparison across 
+the \gls{USNC} \gls{MMR}. These two reactors provide comparisons across 
 some notable reactor design spaces, such as power output and fuel form. 
 Additionally, there is enough information about each design publicly 
 available to model each design with a reasonable degree of accuracy. 
@@ -15,7 +15,8 @@ fuel, and downblended Y-12 fuel. For this work, pure fuel is comprised
 of uranium with only $^{235}$U and $^{238}$U. The downblended \gls{EBR}
 fuel is comprised of the average isotopic composition, defined in 
 Table B.1 of \cite{vaden_isotopic_2018}. The downblended Y-12 
-fuel has the isotopic composition defined in \cite{nelson_foreign_2010}. 
+fuel has the isotopic composition defined in \cite{nelson_foreign_2010},
+with only the defined uranium isotopes. 
 Small adjustments were made to each composition to match the 
 fuel enrichment of each reactor. These adjustments were between the 
 $^{235}$U and $^{238}$U, the other uranium isotopes have the 
@@ -36,7 +37,7 @@ refueling \cite{mulder_overview_2021}.
 
 We used the Sanagmon200 model from \cite{richter_isotopic_2022}, shown in 
 Figure \ref{fig:xe100_core}, to serve as an Xe-100-like 
-core model. The model inputs can be found at \cite{richter_zoerichterphlox_2022}.
+core model. 
 The Sangamon200 model is a pebble-bed, \gls{HTGR}-style reactor core model 
 initially created to characterize the isotopic compositions and 
 reactor physics of a pebble-bed, \gls{HTGR}. While this reactor model 
@@ -60,7 +61,8 @@ cylinder, while the Xe-100 is a cylinder with a cone at the bottom to funnel
 the pebbles to a single point as they come out of the core. We do not account 
 for any pebble movement within the core, so we do not expect that the geometry 
 difference will produce a significant effect on the performance of the 
-core as a whole.
+core as a whole. The model inputs can be found at 
+\cite{richter_zoerichterphlox_2022}.
 
 \begin{figure}
         \begin{subfigure}{0.48\textwidth}
@@ -131,7 +133,7 @@ size as the \gls{FCM} pellets, the coolant channels have a radius of
 3 cm, arbitrarily chosen because no specific information was found, 
 and the control rod channels have a radius of 6 cm, obtained from 
 \cite{hawari_development_2018}. The \gls{TRISO} particles are modeled 
-with a 40\% packing fraction in the \gls{FCM} particles
+with a 40\% packing fraction in the \gls{FCM} particles. 
 Control rods and burnable poisons are not included in this model, or 
 the Sangamon200 model, so the control rod locations are modeled as 
 filled with helium. There are five layers of the graphite compacts 
@@ -172,7 +174,8 @@ object}.
 We modeled depletion of the core across the 
 expected 20 year lifetime of the \gls{MMR}, because the core is not 
 meant to undergo refueling during those 20 years. These multiple depletion 
-steps provide results at the \gls{BOL}, mid-cycle, and \gls{EOL} for 
+steps provide results at the \gls{BOL}, mid-cycle, and \gls{EOL} based 
+on operation time for 
 the \gls{MMR}-like model. 
 
 \subsection{Comparisons}
@@ -199,7 +202,6 @@ because of the similarity of UO$_2$ and UCO. We calculated the
 graphite density by linearly extrapolating from the data available in 
 \cite{mceligot_thermal_nodate}. We calculated the density of the helium 
 by interpolating on the data available in \cite{petersen_properties_nodate}, 
-assuming the 3 MPa coolant pressure in the \gls{MMR}-like model as defined 
-by \cite{noauthor_usnc_2021}. The density of helium for the Sangamon200
-was obtained from \cite{petersen_properties_nodate}, but for 6 MPa of 
-pressure, as defined by \cite{mulder_overview_2021}.
+assuming a 3 MPa coolant pressure in the \gls{MMR}-like model 
+\cite{noauthor_usnc_2021} and a 6 MPa coolant pressure in the Sanagamon200 
+model \cite{mulder_overview_2021}.
