@@ -65,13 +65,28 @@ in which the cutoff between the energy groups is 0.625 eV.
 \subsection{MMR-like reactor}
 The results of the MMR-like reactor are presented below. The \keff 
 values are presented first, followed by the neutron fluxes, the 
-\betaEff, and the reactivity coefficients. 
+\betaEff, and the reactivity coefficients. The burnup steps for 
+the results, \gls{BOL}, mid-cycle, and \gls{EOL}, correspond 
+to burnup values of 0, 40.52, and 81.04 MWd/kgU. The discharge 
+burnup is within 2\% of the stated average discharge burnup for this 
+reactor design \cite{noauthor_usnc_2021}.
 
 \subsubsection{k-eff}
-The fuel composition has a significant effect on the \keff at each 
-burnup step, based on the values presented in Table \ref{tab:mmr_keff}.
-Using downblended \gls{EBR} or Y12 fuel results in a higher \keff 
-at each burnup step, compared with the pure fuel composition.  
+The fuel composition has an effect on the \keff value of the 
+\gls{MMR}-like model, as shown by the values in Table \ref{tab:mmr_keff}.
+The \keff value using all three fuel compositions decreases as a function 
+of burnup, as expected. Using the \gls{EBR} or Y-12 fuel compositions
+results in a lower \keff value than the pure fuel at each burnup step. 
+The \gls{EBR} and Y-12 fuel compositions result in \keff values 
+774-1220 and 778-1339 pcm lower than using the pure fuel, respectively. 
+The largest difference is at the beginning of life, and 
+the smallest difference is at the end of life. The difference between 
+the \keff from downblended stockpiles and the pure fuel 
+fuel is outside the error on the \keff values, which means that that 
+the impurities present in the fuel decrease the neutron multiplication 
+in the core. However, the \keff remains supercritical throughout the 
+entire operation, and it unlikely to prevent expected operation and lifetime 
+of the reactor. 
 
 \begin{table}
     \centering  
@@ -83,8 +98,8 @@ at each burnup step, compared with the pure fuel composition.
         Fuel Composition & Beginning of cycle & Mid-cycle & End of cycle \\
         \hline
         Pure & 1.33803 $\pm$ 0.00022 & 1.18042 $\pm$ 0.00024 & 1.05550 $\pm$ 0.00024\\
-        EBR-II & 1.49698 $\pm$ 0.00016 & 1.43844 $\pm$ 0.00018 & 1.39386 $\pm$ 0.00016\\
-        Y12 & 1.49666 $\pm$ 0.00017 & 1.43894 $\pm$ 0.00016 & 1.39392 $\pm$ 0.00015\\
+        EBR-II & 1.32583 $\pm$ 0.00021 & 1.17158 $\pm$ 0.00022 & 1.04776 $\pm$ 0.00021\\
+        Y12 & 1.32464 $\pm$ 0.00019 & 1.17064 $\pm$ 0.00022 & 1.04772 $\pm$ 0.00026\\
         \hline        
     \end{tabular}
 \end{table}
@@ -92,13 +107,6 @@ at each burnup step, compared with the pure fuel composition.
 
 
 \subsubsection{Neutron flux}
-
-Using the downblended fuel compositions results in depressions in the 
-thermal (Figure \ref{fig:mmr_thermal_axial}) and fast (Figure 
-\ref{fig:mmr_fast_axial}) neutron fluxes through the center of the core. 
-We observed a similar depression in the axial flux at the other 
-burnup steps. 
-
 
 \begin{figure}
     \centering 
@@ -116,11 +124,7 @@ burnup steps.
     \label{fig:mmr_fast_axial}
 \end{figure}
 
-Additionally, using the downblended fuel compositions resulted in a 
-depressed neutron flux (Figures \ref{fig:mmr_thermal_radial} and 
-\ref{fig:mmr_fast_radial}) in the radial direction. However, the 
-depression in the radial flux is a smaller magnitude than the depression 
-in the axial flux. 
+
 
 \begin{figure}
     \centering 
@@ -150,14 +154,17 @@ in the axial flux.
         Fuel Composition & Beginning of cycle & Mid-cycle & End of cycle \\
         \hline
         Pure & 0.00549 $\pm$ 0.00610\\
-        EBR-II & 0.00649 $\pm$ 0.00533\\
-        Y12 & 0.00644 $\pm$ 0.00475\\
+        EBR-II & 0.00546 $\pm$ 0.00689\\
+        Y12 & 0.00543 $\pm$ 0.00620\\
         \hline        
     \end{tabular}
 \end{table}
 
 
-\subsubsection{Reactivity coefficients}
+\subsubsection{Reactivity coefficients} 
+The fuel reactivity feedback coefficients (Table \ref{tab:mmr_fuel_feedback})
+are negative at each burnup step for each fuel composition. The coefficients
+also get more negative throughout the cycle. 
 
 \begin{table}
     \centering  
@@ -170,16 +177,20 @@ in the axial flux.
         \hline
         Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
         Pure & -2.968 $\pm$ 0.053 & -3.955 $\pm$ 0.144 & -4.613 $\pm$ 0.285\\
-        EBR-II & -1.183 $\pm$ 0.041 & -1.191 $\pm$ 0.164 & -1.327 $\pm$ 0.071\\
-        Y12 & -1.266 $\pm$ 0.034 & -1.334 $\pm$ 0.026 & -0.989 $\pm$ 0.075\\
+        EBR-II & -3.377 $\pm$ 0.134 & -4.060 $\pm$ 0.104 & -4.594 $\pm$ 0.175\\
+        Y12 & -3.148 $\pm$ 0.087 & -3.848 $\pm$ 0.082 & -4.479 $\pm$ 0.134\\
         \hline        
     \end{tabular}
 \end{table}
 
+Similar to the fuel feedback coefficients, the moderator temperature 
+feedback coefficients (Table \ref{tab:mmr_moderator_feedback}) 
+become more negative with increasing burnup. 
+
 \begin{table}
     \centering  
-    \caption{Moderator temperature reactivity feedback coefficients from each 
-    fuel composition in the MMR.}
+    \caption{Moderator temperature reactivity feedback coefficients (pcm/K)
+    from each fuel composition in the MMR.}
     \label{tab:mmr_moderator_feedback}
     \begin{tabular}{c c c c}
         \hline
@@ -187,15 +198,23 @@ in the axial flux.
         \hline
         Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
         Pure & -0.871 $\pm$ 0.062 & -1.426 $\pm$ 0.227 & -2.215 $\pm$ 0.258\\
-        EBR-II & -0.426 $\pm$ 0.035 & -0.376 $\pm$ 0.173 & -0.336 $\pm$ 0.063\\
-        Y12 & -0.354 $\pm$ 0.063 & -0.139 $\pm$ 0.069 & -0.155 $\pm$ 0.100\\
+        EBR-II & -0.713 $\pm$ 0.165 & -1.605 $\pm$ 0.134 & -2.126 $\pm$ 0.292\\
+        Y12 & -0.873 $\pm$ 0.038 & -1.524 $\pm$ 0.206 & -1.923 $\pm$ 0.152\\
         \hline        
     \end{tabular}
 \end{table}
 
+The coolant reactivity feedback coefficients (Table \ref{tab:mmr_coolant_feedback})
+are much smaller in magnitude than the fuel and moderator temperature 
+reactivity feedback coefficients. These values are the greatest 
+at the \gls{EOL}, but the errors indicate 
+that for the first two burnup steps that we can't rule out the 
+possibility that there is no change in the coefficient. 
+
 \begin{table}
     \centering  
-    \caption{Coolant temperature reactivity feedback coefficients from each fuel composition in the MMR.}
+    \caption{Coolant temperature reactivity feedback coefficients (pcm/K)
+    from each fuel composition in the MMR.}
     \label{tab:mmr_coolant_feedback}
     \begin{tabular}{c c c c}
         \hline
@@ -203,15 +222,24 @@ in the axial flux.
         \hline
         Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
         Pure & 0.001 $\pm$ 0.067 & -0.085 $\pm$ 0.086 & 0.280 $\pm$ 0.152\\
-        EBR-II & 0.083 $\pm$ 0.089 & -0.139 $\pm$ 0.149 & 0.046 $\pm$ 0.076\\
-        Y12 & 0.000 $\pm$ 0.048 & 0.001 $\pm$ 0.077 & -0.029 $\pm$ 0.067\\
+        EBR-II & 0.001 $\pm$ 0.050 & -0.057 $\pm$ 0.187 & 0.162 $\pm$ 0.085\\
+        Y12 & -0.041 $\pm$ 0.107 & -0.039 $\pm$ 0.064 & 0.104 $\pm$ 0.230\\
         \hline        
     \end{tabular}
 \end{table}
 
+Finally, the total temperature reactivity feedback coefficients 
+(Table \ref{tab:mmr_total_feedback}) are all negative for each 
+fuel composition, and become more negative with increasing burnup. 
+Each of the values are within error of each other and therefore 
+we have confidence that the impurities present in the downblended 
+fuel will not incur a positive total temperature reactivity feedback 
+coefficient. 
+
 \begin{table}
     \centering  
-    \caption{Total temperature reactivity feedback coefficients from each fuel composition in the MMR.}
+    \caption{Total temperature reactivity feedback coefficients (pcm/K) 
+    from each fuel composition in the MMR.}
     \label{tab:mmr_total_feedback}
     \begin{tabular}{c c c c}
         \hline
@@ -219,8 +247,8 @@ in the axial flux.
         \hline
         Fuel composition & Beginning of cycle & Mid-cycle & End of cycle \\\hline
         Pure & -3.956 $\pm$ 0.106 & -5.473 $\pm$ 0.272 & -6.687 $\pm$ 0.337\\
-        EBR-II & -1.554 $\pm$ 0.051 & -1.321 $\pm$ 0.1887 & -1.446 $\pm$ 0.159\\
-        Y12 & -1.436 $\pm$ 0.116 & -1.450 $\pm$ 0.204 & -1.521 $\pm$ 0.074\\
+        EBR-II & -4.193 $\pm$ 0.210 & -5.417 $\pm$ 0.245 & -6.814 $\pm$ 0.256\\
+        Y12 & -4.011 $\pm$ 0.197 & -5.287 $\pm$ 0.288 & -6.462 $\pm$ 0.248\\
         \hline        
     \end{tabular}
 \end{table}
