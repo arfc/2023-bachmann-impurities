@@ -5,27 +5,81 @@ fuel for reactors. However, the presence of other uranium isotopes
 in the fuel can introduce affects on the reactor performance that are 
 not typically seen in fuel produced from enriching natural 
 uranium. To investigate if these effects can significantly impact 
-reactor performance, we simulated two different advanced reactor designs 
-with three different fuel compositions and compared each of the 
-models based on the \keff, neutron flux, \betaEff, and reactivity 
+reactor performance, we simulated the reactor physics of 
+an Xe-100-like reactor and an \gls{MMR}-like reactor using 
+three different \gls{HALEU} compositions. The \gls{HALEU} 
+compositions were based on pure \gls{HALEU} (only $^{235}$U and 
+$^{238}$U), downblended \gls{HEU} from \gls{EBR} stockpiles, 
+and downblended \gls{HEU} from the Y-12 National Security Complex. 
+We compared the performance of the different fuel compositions
+based on the \keff, \betaEff, energy- and spatially-dependent 
+neutron flux, and the fuel, moderator, coolant, and total reactivity 
 temperature feedback coefficients. 
+
+In the Xe-100-like model, the impure fuel compositions resulted 
+in higher \keff values, which suggests that additional neutron 
+poisons may be needed during operation to control the reactivity 
+in the core. The \betaEff values when using the impure fuel are 
+lower than the \betaEff from the pure fuel, which suggests that 
+reactivity control mechanisms may not be as effective when using 
+the impure fuels. The impure fuels resulted in a depression in the 
+thermal neutron flux across the active region of the core. There is 
+is also an asymmetry in the axial fluxes that is partially because 
+of the different fuel compositions and partially because of 
+pebble placement in the core. Finally, the impure fuels 
+lead to reactivity feedback coefficients that are more negative 
+or within error of the values from the pure fuel. This result 
+suggests that these fuel compositions does not significanty effect 
+these metrics or would place the reactor in a safer operating state. 
+
+In the \gls{MMR}-like model, the impure fuels result in smaller 
+\keff values at each burnup step, but do not prevent the reactor 
+from still being critical at \gls{EOL}. While this result may effect 
+how neutron poisons are used during operation, it shows that 
+the 20 year cycle time of the reactor is still possible with 
+any of these \gls{HALEU} compositions. The \betaEff values from 
+the different \gls{HALEU} compositions are all within error 
+of each other at each burnup step, suggesting that the fuel 
+composition does not significantly impact this metric for this 
+reactor design. The impure fuels lead to larger fluxes in the 
+fast energy range,, compared with the pure fuel, and the 
+radially-dependent flux is dependent on proximity to fuel pin 
+and coolant channels in the core. Most of the reactivity feedback 
+coefficients from the different fuel compositions are within 
+error of each other. The one exception is the coolant feedback 
+coefficient, but the smaller absolute value of this coefficient 
+compared with the others means that it has a smaller effect on 
+the temperature-dependent reactivity changes in the core. These
+results suggest that these different \gls{HALEU} compositions 
+do not have a significant effect on the performance of this 
+reactor design, and would not prevent it from operating in 
+a safe state. 
 
 
 
 \subsection{Future Work}
-THe work presented here is an initial start to understanding the impacts 
+The work presented here is an initial start to understanding the impacts 
 of using downblended \gls{HEU} in reactors. To more completely understand 
 the effects of using these fuel compositions, one would need to 
 update the models to more accurately capture each reactor design. This 
 includes the reactor geometries, using non-homogeneous fuel materials, 
-and varying the material temperatures. Each of these model components 
+and nonhomogeneous material temperatures. Each of these model components 
 limit the accuracy of the work completed here, and accurate depictions 
 of them will provide more detail on the effects of using each fuel composition. 
 
-Additionally, neither of the companies designing these reactors have 
+Additionally, the Xe-100-like model assumes an equilibrium state. 
+However, downblended \gls{HEU} may be used to create fuel for start up 
+cores. Therefore, analysis of these compositions in the the Xe-100 
+design in a start up core configuration would be more beneficial to 
+understanding potential limitations of these fuel composisions 
+to initially fuel reactors while developing infrastructure to 
+enrich natural uranium to produce \gls{HALEU}.
+
+Finally, neither of the companies designing these reactors have 
 announced intentions to use downblended \gls{HEU}, but Oklo has announced 
 intentions of using the downblended \gls{EBR} fuel for their Aurora reactor 
-design \textbf{Find citation}. Therefore, a more practical investigation would 
+design \textbf{Find citation}. Therefore, a more practical investigation 
+would 
 be to apply this methodology to that reactor design, especially 
 since it has some notable design differences to the reactors considered 
 here, namely that it is a fast spectrum reactor. 

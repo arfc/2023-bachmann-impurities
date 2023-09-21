@@ -1,0 +1,213 @@
+\section{Background}
+\gls{HALEU} is uranium that is enriched between 5-20\% by mass in 
+$^{235}$U, and is considered a subset of \gls{LEU}. Fuel for \glspl{LWR} 
+is enriched to no more than 5\% $^{235}$U, per \gls{NRC} regulations 
+\cite{noauthor_10_2006}. Table \ref{tab:enrichemnt} provides definitions 
+of some of the main classifications of uranium enrichment. 
+
+\begin{table}[ht]
+    \centering
+    \caption{Categories of uranium enrichment by weight fraction of 
+    uranium-235.}
+    \label{tab:enrichemnt}
+    \begin{tabular}{l c c}
+        \hline
+        Category & Weight fraction (\%)\\\hline
+        Depleted & <0.711 \\
+        Natural & 0.711 \\
+        \gls{LEU} & 0.711-20 \\
+        \gls{HALEU} & 5-20 \\
+        \gls{HEU} & $\ge$20 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Production Methods}
+There are two primary methods for producing \gls{HALEU}. The first 
+option is to enrich uranium to the required level. There is only one 
+facility in the US currently 
+licensed to enrich uranium, the Urenco LES facility in Eunice, 
+New Mexico \cite{nuclear_energy_institute_establishing_2022}. This facility is only 
+licensed to enrich uranium up to 5.5\% $^{235}$U 
+\cite{nuclear_energy_institute_establishing_2022},
+which is less than many of the \gls{HALEU}-fueled reactor designs 
+require. Another enrichment facility is currently under development in 
+Piketon, Ohio which is licensed to enrich uranium up to 20\% 
+$^{235}$U \cite{nuclear_energy_institute_establishing_2022}, however this is only 
+designed to be a demonstration facility producing maximally 600 kg of 
+\gls{HALEU} in total \cite{us_nuclear_regulatory_commission_centrus_2021}.
+There is the possibility of developing more facilities that could produce up 
+to 12 MTU/year of \gls{HALEU} \cite{nuclear_energy_institute_establishing_2022}.
+
+The other \gls{HALEU} production option is to downblend \gls{HEU} to 
+the required \gls{HALEU}
+level. The \gls{DOE} is considering multiple sources of \gls{HEU} 
+to create \gls{HALEU} \cite{nuclear_energy_institute_establishing_2022}. The 
+first is spent fuel from \gls{EBR}, which can produce a total of 10 MTU 
+of \gls{HALEU} at 19.75\% enrichment \cite{nuclear_energy_institute_establishing_2022}. 
+The next source is the stored \gls{HEU} solution at \gls{SRS} from 
+spent research reactor fuel. Estimates of the amount of \gls{HALEU}
+that can be produced from this stockpile vary from 4 MTU 
+\cite{nuclear_energy_institute_establishing_2022} to 20 MTU \cite{regalbuto_addressing_2020}.
+These sources of 
+\gls{HALEU} would certainly be beneficial to fueling reactors, but they 
+are a very limited supply of \gls{HALEU} that cannot be counted on 
+for long-term support of \gls{HALEU} reactors.
+
+Before \gls{HEU} can be downblended, it must first undergo a recovery step. 
+The recovery step helps to purify the fuel before downblending. There 
+are two methods to perform recovery: electrochemical processing or 
+the ZIRCEX process \cite{herczeg_high-assay_2019}. The electrochemical 
+processing method is better suited for spent \gls{EBR} fuel, because it is 
+already in a metallic form, and is expected to produce about 5 MTU of 
+19.75\% \gls{HALEU} by 2023 \cite{herczeg_high-assay_2019}. The ZIRCEX 
+process is a solvent extraction system, with an uncertain timeline 
+for a full-scale facility \cite{herczeg_high-assay_2019}. In order for
+the downblending of \gls{HEU} to be a viable \gls{HALEU} production 
+methods, facilities must be available to perform one of these two methods. 
+
+\subsection{Fuel forms}
+The \gls{HALEU} produced, using natural uranium or \gls{HEU}, must be 
+fabricated into the appropriate fuel form for the reactor.
+The advanced reactors being designed require \gls{HALEU} in a 
+variety of fuel forms, as shown in Table \ref{tab:fuel_forms}.  
+
+\begin{table}[ht]
+    \centering
+    \caption{Fuel form required by select advanced reactors that will 
+    require \gls{HALEU}. Reactor designs listed here are all of US origin, 
+    and information was obtained from 
+    \protect\cite{hussain_advances_2018} unless 
+    otherwise specified.}
+    \label{tab:fuel_forms}
+    \begin{tabular}{c c c}
+        \hline
+        Reactor Name & Company & Fuel form \\\hline 
+        SC-HTGR & Framatome & UCO TRISO compacts \\
+        Xe-100 \cite{harlan_x-energy_2018} & X-energy & UCO TRISO pebbles \\
+        Mk 1 PB-FHR & UC Berkeley & UCO TRISO pebbles\\
+        EM$^2$ & General Atomics & UC pellet \\
+        eVinci & Westinghouse & UO$_2$ or UN \\
+        \gls{MMR} \cite{mitchell_usnc_2020} & \gls{USNC} & UCO FCM compact\\
+        Natrium & Terrapower & Metallic \\
+        Superstar  & \gls{ANL} & U/Pu metallic fuel \\
+        Westinghouse Lead Fast Reactor  & Westinghouse & UO$_2$, potentially UN \\
+        \hline        
+        
+    \end{tabular}
+\end{table}
+
+\gls{TRISO} fuel particles contain 
+a small fuel kernel surrounded by four layers of material: a porous carbon 
+buffer layer, and inner pyrolytic carbon layer, a silicon carbide layer, 
+and an outer pyrolytic carbon layer \cite{demkowicz_coated_2019}. The fuel 
+kernel in the center contains the uranium fuel, typically in an oxide 
+or oxycarbide form. The porous carbon buffer acts an attenuator for any 
+recoil fission products and accommodates pressure changes from gas 
+accumulation.
+The pyrolytic carbon layers protect the silicon carbide layer from 
+any chemical degradation, while the silicon carbide layer maintains the 
+structural integrity of the particle from any stresses and is the primary 
+barrier against fission product gas release. The actual dimensions 
+of each layer depends on the exact manufacturing and design purpose, but 
+the \gls{TRISO} kernels are typically between 350-600 $\mu$m in diameter 
+\cite{demkowicz_coated_2019}. \gls{TRISO} particles have 
+favorable performance at the high temperatures 
+at which many advanced reactors operate \cite{demkowicz_coated_2019}. 
+
+Multiple \gls{TRISO} kernels are combined into a pebble or 
+cylindrical compact for placement in a graphite block, based on the 
+design of the reactor \cite{demkowicz_coated_2019}. Each form of 
+\gls{TRISO} particles has been used previously in reactors; the \gls{HTTR}
+uses 
+\gls{TRISO} particles in cylindrical compacts embedded in a graphite block 
+\cite{shiozawa_overview_2004} and the AVR Reactor in Germany used 
+\gls{TRISO} pebbles as fuel \cite{gottaut_results_1990}.
+\gls{TRISO} particles can also be placed in a silicon-carbide matrix 
+to form \gls{FCM} fuel. This fuel form performs better in high-burnup 
+applications because of improved stability under neutron irradiation and 
+greater thermal conductivity \cite{snead_fully_2011}. The use of 
+\gls{FCM} fuel in \glspl{LWR} to burn \gls{TRU} material from waste 
+has been investigated \cite{snead_fully_2011,venneri_fully_2011} as 
+an additional application of this fuel form. 
+
+X-energy is currently developing a fuel fabrication facility to 
+produce the \gls{TRISO} fuel required by some of the advanced 
+reactor designs \cite{x-energy_triso-x_2022}. X-energy expects the 
+facility to be operational around 2025. The facility will 
+produce 8 MTU/year, and will expand to 16 MTU/year 
+by the early 2030s. \gls{INL} is investigating 
+how they can use their Materials and Fuels Complex for 
+fabrication of metallic, ceramic, and intermetallic fuels with 
+\gls{HALEU} \cite{crawford_fuel_2019}. These projects 
+are examples of development 
+of a fuel fabrication facility to accompany the enrichment 
+capabilities to produce \gls{HALEU} fuel for reactors, however
+it is unclear if these planned capacities will be sufficient to 
+meet the future demand of \gls{HALEU} fuel. 
+
+\subsection{HALEU in reactors}
+A lot of work has been done to evaluate the performance of reactors 
+using \gls{HALEU} fuel. Burns et al. investigated the reactor and fuel cycle 
+performance of an \gls{LWR} fueled by an enrichment above 5\% \cite{burns_reactor_2020}.
+Their work showed that increasing the fuel enrichment up to 7\% does not 
+largely affect the fuel temperature or the moderator temperature coefficients,
+but it does decrease the soluble boron coefficient and increase the maximum 
+burnup at the edges of the fuel pellets. The impacts on the fuel cycle include 
+an increase in the amount of natural uranium required, a decrease in the 
+amount of high-level waste disposed of per unit energy, and the 
+radioactivity of the \gls{SNF} and \gls{HLW} reduces slightly, 100 years 
+after discharge \cite{burns_reactor_2020}.
+
+Increasing the fuel enrichment of the NuScale \gls{SMR} has also been 
+investigated \cite{carlson_implications_2022}. Increasing the fuel 
+enrichment to 8.34\% (compared with the current <5\% design) doubled 
+the fuel discharge burnup and the cycle time. 
+Fission product poisons, specifically $^{149}$Sm and $^{135}$Xe, increased 
+in concentration when using \gls{HALEU} fuel compared with using the base 
+design. This increase impacts the 
+neutron poisons needed during operation and the radioactivity of 
+the fuel after discharge. Using \gls{HALEU} in the core also led to a 
+reduction in the \gls{LCOE} of the reactor for certain combinations of 
+enrichment and cycle length \cite{carlson_economic_2020,carlson_implications_2022}.
+
+The fabrication of the \gls{HALEU} fuel can also affect the fuel's 
+performance in the reactor. Analysis of fuel for the \gls{MIT} 
+Reactor showed that manufactured fuel had a slightly higher $^{235}$U 
+concentration (19.8\% instead of 19.75\%) and a slightly higher 
+density than original models accounted for \cite{mascolino_impact_2022}. 
+These changes in the fuel caused a greater $^{235}$U loading in the core, 
+increasing the \keff by 431 pcm \cite{mascolino_impact_2022}. The 
+differences in modeled and manufactured fuel meant that the modelers 
+had to account for more statistical uncertainty in the reactor performance, 
+which can be computationally intensive. To alleviate potential 
+computational costs, the modelers developed "high reactivity" and 
+"low reactivity" fuel compositions based on uncertainty in the manufactured 
+fuel compositions. This additional analysis of the extra fuel compositions 
+was sufficient to show that the reactor could still meet safety margins 
+with the fuel composition variations \cite{mascolino_impact_2022}.
+
+If \gls{HALEU} fuel is produced by downblending \gls{HEU}, it is possible 
+the \gls{HALEU} will contain impurities of minor uranium 
+isotopes \cite{nuclear_energy_institute_establishing_2022}. Bounding studies on the 
+uranium 
+isotopic composition of \gls{HALEU} produced from spent fuel from \gls{EBR} 
+shows the presence of $^{232}$U, $^{233}$U, $^{234}$U, and $^{236}$U
+\cite{vaden_isotopic_2018}. 
+\gls{HALEU} created from downbleneded \gls{HEU} at the Y-12 Nuclear Security 
+Complex also has $^{232}$U, $^{234}$U, and $^{236}$U impurities
+\cite{nelson_foreign_2010}. $^{233}$U is a fissile 
+isotope and is expected to affect the neutron population inside a reactor.
+$^{232}$U, $^{234}$U, and $^{236}$U are parasitic neutron absorbers, so 
+their presence is also expected to affect the neutron population. The 
+reactor neutronics performance of using \gls{HALEU} containing $^{235}$U 
+and $^{238}$U was compared 
+with the performance using \gls{HALEU} from Y-12 with the known impurities 
+\cite{celikten_effects_2021}. By performing burnup dependent \gls{MCNP} 
+simulations of the potential Replacement Reactor Concept at \gls{NIST}, 
+the authors showed that using the \gls{HALEU} with the \gls{HEU} 
+impurities showed a 0.43\% decrease in reactivity, leading to an 8\% reduction 
+in the cycle length. This analysis suggests that these impurities may 
+impact the performance of commercially deployed reactors as well, which 
+warrants further investigation of the reactor performance when using 
+downblended \gls{HEU} as fuel. 
