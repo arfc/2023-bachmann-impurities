@@ -9,7 +9,8 @@ We created models of each core and performed neutronics analysis using
 Serpent \cite{leppanen_serpent_2014} with the 
 ENDF/B VII.1 cross section library \cite{chadwick_endfb-vii1_2011}.
 The core geometries used are not 
-the exact geometries designed by X-energy and \gls{USNC}, respectively, but 
+the exact geometries designed by X-energy and \gls{USNC} for the 
+Xe-100 and \gls{MMR}, respectively, but 
 are replications based on publicly-available information 
 \cite{mulder_overview_2021,nuscale_chapter_2020,reyes_nuscale_2021,reyes_correction_2022}. 
 We used the serpentTools python package \cite{johnson_serpenttools_2020} to 
@@ -119,10 +120,10 @@ of 81.04 MWd/kg, compared to the 82.6 MWd/kg reported by
 
 Figure \ref{fig:mmr_core} shows radial and axial slices of the 
 \gls{MMR} model. The fuel channels have a radius of 1.15 cm, the same
-size as the \gls{FCM} pellets based on no other available information, 
-the coolant channels have a radius of 
-3 cm, arbitrarily chosen because no specific information was found, 
-and the control rod channels have a radius of 6 cm, obtained from 
+size as the \gls{FCM} pellets based on no other available information. 
+The coolant channels have a radius of 
+3 cm, arbitrarily chosen because no specific information was found.
+The control rod channels have a radius of 6 cm, obtained from 
 \cite{hawari_development_2018}. These dimensions affect the graphite volume 
 of the core, and thus affect the fuel to moderator ratio of the core. 
 The \gls{TRISO} particles are modeled with a 40\% packing fraction in 
