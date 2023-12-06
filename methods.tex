@@ -19,7 +19,7 @@ analyze the results from the models.
 \subsection{Xe-100-like model} \label{sec:xe100_serpent_model}
 The Xe-100 is a 200 MWth, 80 MWe, \acrfull{TRISO}-fueled pebble-bed 
 \gls{HTGR} \cite{mulder_overview_2021}. To model this reactor
-we used the Sanagmon200 model from \cite{richter_isotopic_2022}, shown in 
+we used the Sangmon200 model from \cite{richter_isotopic_2022}, shown in 
 Figure \ref{fig:xe100_core}, to serve as an Xe-100-like 
 core model. The model itself can be found on GitHub \cite{richter_zoerichterphlox_2022}.
 The Sangamon200 model is a \gls{TRISO}-fueled, pebble-bed, \gls{HTGR}-style 
@@ -55,10 +55,10 @@ thermal and fast neutron fluxes across the reactor outside of error
 \cite{richter_isotopic_2022}. Despite 
 the effect on \keff of this modeling decision, we used the 
 homogenized model of the \gls{TRISO} pebbles to be consistent with the 
-published results of the Sanagamon200 \cite{richter_isotopic_2022} and 
+published results of the Sangamon200 \cite{richter_isotopic_2022} and 
 to be conscious of computational expense. 
 The second 
-notable difference is the reactor vessel shape. The Sanagmon200 is a simple 
+notable difference is the reactor vessel shape. The Sangmon200 is a simple 
 cylinder, while the Xe-100 is a cylinder with a cone at the bottom to funnel 
 the pebbles to a single point as they come out of the core. However, 
 this is a less neutronically important region of the core, and we kept the 
@@ -194,8 +194,9 @@ Xe-100-like model as defined in \cite{mulder_overview_2021}.
 
 \subsection{Fuel compositions}
 We used three different \gls{HALEU} compositions for this work: pure 
-\gls{HALEU}, and \gls{HALEU} derived from \gls{EBR} and Y-12 \gls{HEU} 
-stockpiles. The pure fuel composition assumes that all uranium present is 
+\gls{HALEU}, \gls{HALEU} derived from the spent \gls{EBR} fuel inventory, 
+and \gls{HALEU} derived from the Y-12 \gls{HEU} 
+inventory. The pure fuel composition assumes that all uranium present is 
 either $^{235}$U or $^{238}$U, and at the correct enrichment level for each 
 reactor. The \gls{EBR} 
 composition is based on the average uranium isotopic composition from 
