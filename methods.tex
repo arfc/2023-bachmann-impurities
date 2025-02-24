@@ -2,29 +2,56 @@
 
 We selected two advanced reactors for this work: the X-energy Xe-100 and 
 the \gls{USNC} \gls{MMR}. These two reactors provide comparisons across 
-some notable reactor design spaces, such as power output and fuel form. 
+some notable reactor design spaces, such as power output
+and fuel residence time. Each of these design factors are expected to 
+be impact by a changing fuel composition. 
 Additionally, there is enough publicly available information about 
 each design to model them with a reasonable degree of accuracy. 
 We created models of each core and performed neutronics analysis using 
-Serpent \cite{leppanen_serpent_2014} with the 
+Serpent 2\cite{leppanen_serpent_2014} with the 
 ENDF/B VII.1 cross section library \cite{chadwick_endfb-vii1_2011}.
 The core geometries used are not 
 the exact geometries designed by X-energy and \gls{USNC} for the 
 Xe-100 and \gls{MMR}, respectively, but 
-are replications based on publicly-available information 
-\cite{mulder_overview_2021,nuscale_chapter_2020,reyes_nuscale_2021,reyes_correction_2022}. 
+are representative designs based on publicly-available information 
+\cite{mulder_overview_2021,noauthor_usnc_2021,hawari_development_2018,venneri_micro_2019}. 
 We used the serpentTools python package \cite{johnson_serpenttools_2020} to 
 analyze the results from the models.
 
 \subsection{Xe-100-like model} \label{sec:xe100_serpent_model}
 The Xe-100 is a 200 MWth, 80 MWe, \acrfull{TRISO}-fueled pebble-bed 
-\gls{HTGR} \cite{mulder_overview_2021}. To model this reactor
+\gls{HTGR} \cite{mulder_overview_2021}. Some important design parameters 
+of the Xe-100 are listed in Table \ref{tab:xe-100}. 
+To model this reactor
 we used the Sangmon200 model from \cite{richter_isotopic_2022}, shown in 
-Figure \ref{fig:xe100_core}, to serve as an Xe-100-like 
-core model. The model itself can be found on GitHub \cite{richter_zoerichterphlox_2022}.
+Figure \ref{fig:xe100_core}, to serve as a 
+core model representative of the Xe-100. The model itself can be 
+found in the Phlox repository on GitHub, with this work using 
+the archived version on Zenodo \cite{richter_zoerichterphlox_2022}.
 The Sangamon200 model is a \gls{TRISO}-fueled, pebble-bed, \gls{HTGR}-style 
 reactor core model initially created to characterize the isotopic 
 compositions and reactor physics of a 200 MWth pebble-bed \gls{HTGR}. 
+
+\begin{table}
+    \centering
+    \caption{X-energy Xe-100 design parameters \cite{mulder_neutronics_2020}.}
+    \label{tab:xe-100}
+    \begin{tabular}{c c}
+        \hline
+        Parameter & Value \\
+        \hline 
+        Thermal power & 200 MWth\\
+        Electric power & 80 MWe\\
+        Burnup & 168 MWd/kgHM \\
+        Number of passes & 6 \\
+        Pebble residence time & 1320 EFPD\\
+        Fuel enrichment & 15.5 wt\% $^{235}$U\\
+        Number of pebbles & ~ 220,000\\
+        Fuel form & UCO\\
+        \hline
+        
+    \end{tabular}
+\end{table}
 
 \begin{figure}[ht]
     \centering 
@@ -49,7 +76,8 @@ is very similar to current published data for the X-energy Xe-100
 \cite{mulder_overview_2021}, there are two notable differences that affect 
 the reactor physics. The first difference is that the \gls{TRISO} particles 
 in the Sangamon200 are modeled as homogeneous materials instead of 
-the explicit layers. Using a homogenized \gls{TRISO} particle 
+the explicit layers, with a description of the homogenization in 
+\cite{richter_isotopic_2022}. Using a homogenized \gls{TRISO} particle 
 decreases the \keff of the core by 4.45\%, but it does not reduce the 
 thermal and fast neutron fluxes across the reactor outside of error 
 \cite{richter_isotopic_2022}. Despite 
@@ -70,11 +98,12 @@ pass. Once a pebble reaches the bottom of the core, it is removed, inspected for
 the burnup level, and placed back in the core for another pass if the pebble has 
 not reached the target burnup. Each pebble is expected to 
 go through multiple passes in the core, an average 
-of six passes per pebble, before reaching the target burnup of 185 
-MWd/kg. To account for the different burnup of 
-the pebbles in an equilibrium core, we defined 
+of six passes per pebble, before reaching the target burnup of 168 
+MWd/kgHM. To approximate the different burnup states of 
+the pebbles in an equilibrium core, we used
 six different pebble isotopic compositions to approximate the burnup
-variance in pebbles in the core. These isotopic compositions represent burnup from 
+variance in pebbles in the core. 
+These isotopic compositions represent burnup from 
 integer numbers of passes through the core.
 We determined the isotopic composition of the 
 pebbles after each pass using the methodology 
@@ -91,7 +120,7 @@ composition in this model.
 The Sangamon200 in an isothermal state at 800 K 
 \cite{richter_isotopic_2022}.
 We ran this model with 100,000 particles per cycle, 50 inactive cycles, 
-and 200 active cycles without modeling depletion. 
+and 200 active cycles at the equilibrium state previously described. 
 Our model does not capture pebble movement or the continuous 
 refueling scheme used by the Xe-100. Therefore, performing depletion 
 without modeling pebble movement 
@@ -101,7 +130,8 @@ this reactor model.
 \subsection{MMR-like model}
 The \gls{USNC} \gls{MMR} is a 15 MWth, 5 MWe, prismatic \gls{HTGR} that 
 uses \gls{TRISO} fuel in \gls{FCM} pellets inside graphite blocks 
-\cite{noauthor_usnc_2021}.
+\cite{noauthor_usnc_2021}. Table \ref{tab:mmr} lists some of the important 
+design parameters of this reactor.
 We created an \gls{MMR}-like model primarily based on information in 
 a model by Hawari and Venneri
 \cite{hawari_development_2018}, and supplemented or modified based on 
@@ -115,8 +145,27 @@ is different than what Hawari and Venneri modeled \cite{hawari_development_2018}
 because their model is designed to operate 
 for 10 years, while the \gls{MMR} is designed to operate for 20 years 
 \cite{noauthor_usnc_2021}. The model we developed achieves a burnup 
-of 81.04 MWd/kg, compared to the 82.6 MWd/kg reported by 
+of 81.04 MWd/kgHM, compared to the 82.6 MWd/kgHM reported by 
 \gls{USNC} \cite{noauthor_usnc_2021}.
+
+\begin{table}
+    \centering 
+    \caption{USNC MMR design parameters \cite{noauthor_usnc_2021}.}
+    \label{tab:mmr}
+    \begin{tabular}{c c}
+        \hline
+        Parameter & Value \\
+        \hline
+        Thermal power & 15 MWth\\
+        Electric power & 5 MWe \\
+        Bunrup & 82.6 MWd/kgHM \\
+        Fuel residence time & 20 years\\
+        Fuel enrichment & 19.75 wt\% $^{235}$U\\
+        Fuel form & UO$_2$\\
+        \hline
+        
+    \end{tabular}
+\end{table}
 
 Figure \ref{fig:mmr_core} shows radial and axial slices of the 
 \gls{MMR} model. The fuel channels have a radius of 1.15 cm, the same
@@ -141,7 +190,9 @@ Figure \ref{fig:mmr_core}. While Hawari and Venneri \cite{hawari_development_201
 define both of these reflectors in their model, they only 
 define the thickness of the beryllium-oxide reflector. Therefore we 
 assumed a graphite reflector thickness of 20 cm to provide 3-5 mean 
-free paths of material. The input files for this model can be found at 
+free paths of material. These model parameters are summarized in 
+Table \ref{tab:mmr_design}. The input files for this model can be found 
+in a Zenodo object 
 \cite{bachmann_mmr-like_2023}.
 
 \begin{figure}
@@ -164,6 +215,25 @@ free paths of material. The input files for this model can be found at
         \label{fig:mmr_core}
 \end{figure}
 
+\begin{table}
+    \centering 
+    \caption{Design parameters used in MMR-like model.}
+    \label{tab:mmr_design}
+    \begin{tabular}{c c}
+        \hline 
+        Parameter & Value \\
+        \hline
+        Fuel channel radius & 1.5 cm\\
+        Coolant channel radium & 3 cm \\
+        Control rod channel radius & 6 cm\\
+        TRISO packing fraction & 40\%\\
+        Core temperature & 800 K\\
+        Graphite reflector thickness & 20 cm\\
+        Beryllium reflector thickness & 10 cm\\
+
+    \end{tabular}
+\end{table}
+
 For the \gls{MMR}-like model, we modeled depletion of the core across the 
 expected 20 year lifetime of the \gls{MMR}. The core is not 
 meant to undergo refueling during those 20 years and the lack of 
@@ -172,18 +242,23 @@ core. We used burnup steps of 2 years, running each step with
 140 active cycles, 75 inactive cycles, and 65,000 particles per cycle. 
 
 \subsection{Temperature variations and feedbacks}
+The fuel impurities introduced by downblending may have an effect on 
+fission products and neutron precursors present, which will have 
+a direct effect on reactivity. 
 One of the metrics in this work is the reactivity temperature feedback 
 coefficients To investigate this metric we varied the fuel, coolant, 
 and moderator temperatures 
 between 700, 750, 800, 850, and 900 K to calculate the fuel, coolant, 
-moderator, and total temperature feedback coefficients. We assumed a linear 
-relationship between 
-reactivity and temperature to calculate the feedback coefficients. When varying the 
-temperatures of each component, we also varied the corresponding material 
+moderator, and total temperature feedback coefficients assuming a linear 
+relationship. When varying the 
+temperatures of each component, we varied the temperature-dependent 
+cross sections and the corresponding material 
 density. We calculated the 
-density of the UO$_2$ by using the empirical relationship between density and 
-temperature defined in \cite{fink_thermophysical_2000}, assuming they hold 
-true for the UCO fuel in the Xe-100-like model. 
+density of the UO$_2$ in the \gls{MMR}-like model by using the empirical 
+relationship between density and 
+temperature defined in \cite{fink_thermophysical_2000}. We assumed this 
+relationship to hold true for the temperature-dependent density changes 
+in the UCO in the Xe-100-like model. 
 We calculated the 
 graphite density by linearly extrapolating from the data available in 
 \cite{mceligot_thermal_nodate}. We calculated the density of the helium 
@@ -197,7 +272,7 @@ We used three different \gls{HALEU} compositions for this work: pure
 \gls{HALEU}, \gls{HALEU} derived from the spent \gls{EBR} fuel inventory, 
 and \gls{HALEU} derived from the Y-12 \gls{HEU} 
 inventory. The pure fuel composition assumes that all uranium present is 
-either $^{235}$U or $^{238}$U, and at the correct enrichment level for each 
+either $^{235}$U or $^{238}$U, and at the desired enrichment level for each 
 reactor. The \gls{EBR} 
 composition is based on the average uranium isotopic composition from 
 downblending spent fuel from \gls{EBR}, published by \gls{INL} 
@@ -216,6 +291,40 @@ same weight fraction defined in the publications, and the $^{238}$U was
 defined to fill the remainder of the fuel. Therefore, all three fuel compositions for each 
 reactor have the same $^{235}$U weight fractions, have non-$^{238}$U weight
 fractions that match the published values, and have varying $^{238}$U 
-weight fractions for each reactor design. Each of the two 
-downblended \gls{HEU} compositions meet the standards for 
+weight fractions for each reactor design. Table \ref{tab:u_comps} 
+provides the composition used for each reactor model and each fuel source 
+in this work. Each of the two 
+downblended \gls{HEU} compositions meet the ASTM C1462-21 standard for 
 uranium enriched to less than 20\% \cite{noauthor_standard_2021}.
+
+\begin{table}[h]
+    \centering 
+    \caption{Atom fraction of uranium isotopes in each \gls{HALEU}
+    composition. Uranium fractions are provided, without the oxygen 
+    and/or carbon fractions defined. Therefore, the totals in each 
+    column for a reactor model do not sum to one.}
+    \label{tab:u_comps}
+    \begin{tabular}{c c c c}
+            \hline
+            Isotope & Pure & \gls{EBR} & Y-12 \\
+            \hline
+            & \multicolumn{3}{c}{Xe-100-like reactor} \\
+            $^{232}$U & 0 & 2.40 $\times 10^{-10}$ & 7.27 $\times 10^{-10}$ \\
+            $^{233}$U & 0 & 1.78 $\times 10^{-8}$ & 0 \\
+            $^{234}$U & 0 & 6.12 $\times 10^{-4}$ & 9.36 $\times 10^{-4}$\\
+            $^{235}$U & 5.56 $\times 10^{-2}$ & 5.56 $\times 10^{-2}$ & 5.56 $\times 10^{-2}$\\
+            $^{236}$U & 0 & 2.07 $\times 10^{-3}$ & 1.64 $\times 10^{-3}$ \\
+            $^{237}$U & 0 & 2.14 $\times 10^{-14}$ & 0 \\
+            $^{238}$U & 2.99 $\times 10^{-1}$ & 2.97 $\times 10^{-1}$ & 2.97 $\times 10^{-1}$ \\
+            \hline 
+            & \multicolumn{3}{c}{MMR-like reactor} \\
+            $^{232}$U & 0 & 2.25 $\times 10^{-10}$ & 6.82 $\times 10^{-10}$ \\
+            $^{233}$U & 0 & 1.67 $\times 10^{-8}$ & 0 \\
+            $^{234}$U & 0 & 5.73 $\times 10^{-4}$ & 8.766 $\times 10^{-4}$ \\
+            $^{235}$U & 6.66 $\times 10^{-2}$ & 6.67 $\times 10^{-2}$ & 6.67 $\times 10^{-2}$ \\
+            $^{236}$U & 0 & 1.93 $\times 10^{-3}$ & 1.54 $\times 10^{-3}$ \\
+            $^{237}$U & 0 & 2.00 $\times 10^{-3}$ & 0 \\
+            $^{238}$U & 2.67 $\times 10^{-1}$ & 2.64 $\times 10^{-1}$ & 2.64 $\times 10^{-1}$ \\
+            \hline
+    \end{tabular}
+\end{table}

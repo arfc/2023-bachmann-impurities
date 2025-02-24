@@ -1,11 +1,9 @@
 \section{Conclusions}
-To adapt to the sudden need for \gls{HALEU}, the \gls{DOE} is 
-considering downblending some stockpiles of \gls{HEU} to produce 
-fuel for reactors. However, the presence of other uranium isotopes 
-in the fuel can introduce effects on the reactor performance that are 
-not typically seen in fuel produced from enriching natural 
-uranium. To investigate if these effects can significantly impact 
-reactor performance, we simulated the reactor physics of 
+To In this work we looked at the effects of using 
+\gls{HALEU} downblended from \gls{HEU} inventories on select 
+advanced reactor models to investigate if these 
+effects can significantly impact 
+reactor performance. We simulated the reactor physics of 
 an Xe-100-like reactor and an \gls{MMR}-like reactor using 
 three different \gls{HALEU} compositions. The \gls{HALEU} 
 compositions were based on pure \gls{HALEU} (only $^{235}$U and 
@@ -37,16 +35,20 @@ the different \gls{HALEU} compositions are all within error
 of each other at each burnup step, suggesting that the fuel 
 composition does not significantly impact this metric for this 
 reactor design. The impure fuels lead to larger fluxes in the 
-fast energy range, compared with the pure fuel, and the differences 
-in the radial flux is dependent on proximity to fuel pin 
-and coolant channels in the core. Most of the reactivity feedback 
+fast energy range, compared with the pure fuel. The differences 
+in the radial flux are dependent on proximity to fuel pin 
+and coolant channels in the core, with the differences being 
+larger near a fuel pin. Most of the reactivity feedback 
 coefficients from the different fuel compositions are within 
-error of each other. The one exception is the coolant feedback 
-coefficient, but the smaller absolute value of this coefficient 
+error of each other. The coolant feedback 
+coefficient is not within error at all three burnup steps, 
+but the smaller absolute value of this coefficient 
 compared with the others means that it has a smaller effect on 
-the temperature-dependent reactivity changes in the core. 
+the temperature-dependent reactivity changes in the core, 
+thus the overall temperature reactivity coefficients remain 
+within error. 
 
-Each of the results presented in this work 
+The results presented in this work 
 suggest that these three different \gls{HALEU} compositions 
 do not have a significant effect on the performance of these 
 two reactor designs, and would not prevent them from operating in 
@@ -55,18 +57,16 @@ a safe state.
 
 
 \subsection{Future Work}
-The work presented here is an initial start to understanding the impacts 
-of using downblended \gls{HEU} in reactors. To more completely understand 
-the effects of using these fuel compositions, one would need to 
-update the models to more accurately capture each reactor design. This 
-includes updating the reactor geometries, using non-homogeneous fuel materials, 
-temperature variations across the core, and update the material compositions 
+The work presented here provides a quantitative baseline to 
+gauge the impacts 
+of using downblended \gls{HEU} in reactors. However, 
+one my find that higher fidelity models reveal further insights into 
+these effects. Improving the model fidelity may 
+include updating the reactor geometries, using non-homogeneous fuel materials, 
+modeling temperature distributions across the core, and update the material compositions 
 to include any 
 burnable absorbers or other neutron poisons that would be 
-used during operation to control reactivity. Incorporating 
-any of these details would increase the fidelity of the reactor models
-and provide more information about how the different 
-\gls{HALEU} compositions might affect reactor operation. 
+used during operation to control reactivity. 
 
 Additionally, the Xe-100-like model assumes an equilibrium state. 
 However, downblended \gls{HEU} may be used to create fuel for start up 
@@ -79,8 +79,10 @@ enrich natural uranium to produce \gls{HALEU}.
 Finally, neither of the companies designing these reactors have 
 announced intentions to use downblended \gls{HEU}, but Oklo has announced 
 intentions of using the downblended \gls{EBR} fuel for their Aurora reactor 
-design \cite{inl_media_relations_inl_2020}. Therefore, a more practical investigation 
-would 
-be to apply this methodology to that reactor design, especially 
-since it has some notable design differences to the reactors considered 
-here, namely that it is a fast spectrum reactor. 
+design \cite{inl_media_relations_inl_2020}. Therefore, a more impactful 
+expansion of this work would 
+be to apply this methodology to that reactor design. The Aurora 
+reactor has some notable design differences to the reactors considered 
+here, namely that it is a fast spectrum reactor. This analysis would 
+reveal key insights into the interaction between \gls{HALEU} fuel and 
+spectral effects of a reactor core. 
