@@ -319,7 +319,8 @@ less than 1.86 eV for the thermal energy group. This work applies a
 definition of greater than 0.625 eV and less then 0.625 eV for fast 
 and thermal neutrons, respectively. 
 The other difference comes from the tally
-definitions in the inputs. 
+definitions in the inputs, with this work integrating over 
+non-binned dimensions. 
 
 \subsubsection{Temperature reactivity feedback coefficient comparison}
 Table \ref{tab:coeff_xe100} reports the reactivity feedback 
@@ -506,8 +507,7 @@ across the middle of the core in the y-direction, which means the flux
 is taken across the plane with three coolant channels in Figure 
 \ref{fig:mmr_radial}. The axial 
 flux is taken along the z-axis, with the 
-x- and y-directions collapsed. As a result, the axial flux includes 
-radially averaged behavior. 
+x- and y-directions integrated.
 
 The radial flux at \gls{BOL} (Figures \ref{fig:mmr_thermal_radial_bol} and 
 \ref{fig:mmr_fast_radial_bol}) show that the thermal flux peaks in the 
@@ -519,7 +519,7 @@ fluxes between the fuel compositions is in the areas of the core close
 to the fuel pellets, where the thermal flux troughs and the fast flux 
 peaks. 
 The fast flux along this axis is larger than the thermal flux, which is 
-consistent with Figure \ref{fig:mmr_energy_spectrum} Like the neutron 
+consistent with Figure \ref{fig:mmr_energy_spectrum}. Like the neutron 
 flux in the Sangamon200 model, the 
 impure fuels result in similar variations from the flux when 
 using the pure fuel at \gls{BOL}.
