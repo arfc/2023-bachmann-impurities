@@ -1,18 +1,18 @@
-\documentclass[review]{elsarticle}
+\documentclass[review]{nseJournal}
 
-\usepackage{multirow}
+%\usepackage{multirow}
 \usepackage{lineno}
 \usepackage{xspace}
-\usepackage{threeparttable}
+%\usepackage{threeparttable}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \modulolinenumbers[5]
 
 %% Journal name here
-\journal{Nuclear Technology}
+%\journal{Nuclear Technology}
 
 %% `Elsevier LaTeX' style
-\bibliographystyle{elsarticle-num}
+%\bibliographystyle{elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% packages and definitions (optional)
@@ -21,7 +21,7 @@
 \usepackage{microtype} % improves typography for PDF
 \usepackage{hhline}
 \usepackage{amsmath}
-\usepackage{caption}
+%\usepackage{caption}
 \usepackage{subcaption}
 
 \usepackage{booktabs}
@@ -46,17 +46,17 @@
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 % hyperref %
-\usepackage[hidelinks]{hyperref}
+%\usepackage[hidelinks]{hyperref}
 % after hyperref %
-\usepackage{cleveref}
-\usepackage{datatool}
+%\usepackage{cleveref}
+%\usepackage{datatool}
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
 
 \makeglossaries
 
 \begin{document}
-\begin{frontmatter}
+%\begin{frontmatter}
 \title{Effects of uranium impurities in downblended HEU on  
 HTGR performance}
 
@@ -66,15 +66,16 @@ HTGR performance}
 \input{authors}
 
 % Institutes of the authors
-\input{institutions}
+%\input{institutions}
+\addKeyword{HALEU}
+\addKeyword{advanced reactors}
+\addKeyword{HTGR}
+\addKeyword{reactor physics}
 
-\begin{keyword}
-HALEU \sep advanced reactors \sep reactor physics \sep HEU
-\end{keyword}
-
+\titlePage
 \input{abstract}
-\end{frontmatter}
-\glsresetall
+%\end{frontmatter}
+%\glsresetall
 
 %% Shows line numbers
 \linenumbers
@@ -85,6 +86,11 @@ HALEU \sep advanced reactors \sep reactor physics \sep HEU
 \input{conclusion}
 \input{acks}
 
+\section*{Disclosure Statement}
+The authors report there are no competing interests 
+to declare. 
+
+\bibliographystyle{ans_js}
 \bibliography{bibliography}
 
 % Prof. Huff discourages appendices in journal articles.
