@@ -1,20 +1,26 @@
 \section{Conclusions}
-To In this work we looked at the effects of using 
+This work looks at the effects of using 
 \gls{HALEU} downblended from \gls{HEU} inventories on select 
 advanced reactor models to investigate if these 
 effects can significantly impact 
-reactor performance. We simulated the reactor physics of 
-an Xe-100-like reactor and an \gls{MMR}-like reactor using 
-three different \gls{HALEU} compositions. The \gls{HALEU} 
+reactor performance. Reactor physics simulations of 
+an Xe-100-like reactor (the Sangamon200) and an 
+\gls{MMR}-like reactor using 
+three different \gls{HALEU} compositions identified if the 
+fuel composition would significantly impact reactor performance. 
+The \gls{HALEU} 
 compositions were based on pure \gls{HALEU} (only $^{235}$U and 
 $^{238}$U), downblended \gls{HEU} from \gls{EBR} stockpiles, 
 and downblended \gls{HEU} from the Y-12 National Security Complex. 
-We compared the performance of the different fuel compositions
-based on the \keff, \betaEff, energy- and spatially-dependent 
+The reactor performance metrics in this work included
+the effective neutron multiplication factor (\keff), 
+effective delayed neutron fraction (\betaEff), energy- and 
+spatially-dependent 
 neutron flux, and the fuel, moderator, coolant, and total reactivity 
-temperature feedback coefficients. 
+temperature feedback coefficients ($\alpha_F$, $\alpha_M$,
+$\alpha_C$, $\alpha_T$). 
 
-In the Xe-100-like model, the impure fuel compositions resulted 
+In the Sangamon200 model, the impure fuel compositions resulted 
 in higher \keff values, which suggests that additional neutron 
 poisons may be needed during operation to control the reactivity 
 in the core. The \betaEff values when using the impure fuel are 
@@ -59,30 +65,20 @@ a safe state.
 \subsection{Future Work}
 The work presented here provides a quantitative baseline to 
 gauge the impacts 
-of using downblended \gls{HEU} in reactors. However, 
-one my find that higher fidelity models reveal further insights into 
+of using downblended \gls{HEU} in advanced reactors. However, 
+one may find that higher fidelity models reveal further insights into 
 these effects. Improving the model fidelity may 
-include updating the reactor geometries, using non-homogeneous fuel materials, 
+include updating the reactor geometries, using non-homogeneous fuel 
+pebbles, 
 modeling temperature distributions across the core, and update the material compositions 
 to include any 
 burnable absorbers or other neutron poisons that would be 
 used during operation to control reactivity. 
 
-Additionally, the Xe-100-like model assumes an equilibrium state. 
+Additionally, the Sangamon200 model assumes an equilibrium state. 
 However, downblended \gls{HEU} may be used to create fuel for start up 
 cores. Therefore, analysis of these compositions in the Xe-100 
 design in a start up core configuration would be more beneficial to 
 understanding potential limitations of these fuel compositions 
 to initially fuel reactors while developing infrastructure to 
 enrich natural uranium to produce \gls{HALEU}. 
-
-Finally, neither of the companies designing these reactors have 
-announced intentions to use downblended \gls{HEU}, but Oklo has announced 
-intentions of using the downblended \gls{EBR} fuel for their Aurora reactor 
-design \cite{inl_media_relations_inl_2020}. Therefore, a more impactful 
-expansion of this work would 
-be to apply this methodology to that reactor design. The Aurora 
-reactor has some notable design differences to the reactors considered 
-here, namely that it is a fast spectrum reactor. This analysis would 
-reveal key insights into the interaction between \gls{HALEU} fuel and 
-spectral effects of a reactor core. 
