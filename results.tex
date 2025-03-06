@@ -9,7 +9,7 @@ $\alpha_M$, $\alpha_T$). The
 Neutron energy binning is based on the  pre-defined SCALE-238 
 group energy structure in 
 Serpent for the energy-dependent flux ($\phi$) and the pre-defined 
-default two group energy structure to separate the 
+two group energy structure to separate the 
 spatially-dependent flux into fast and thermal energy groups. The delineation between fast 
 and thermal neutrons with this group structure is 0.625 eV.
 A linear function fit to the
@@ -18,9 +18,9 @@ reactivity feedback coefficients, $\alpha$, with error
 propagated.
 
 For the Sangamon200 reactor, these metrics are only compared in an 
-equilibrium state. For the \gls{MMR}-like reactor these metrics 
-are compared at \gls{BOL} (0 MWd/kgHM burnup), \gls{MOL} (40.52 MWd/kgHM burnup), 
-and \gls{EOL} (81.04 MWd/kgHM burnup). Each metric provides  
+equilibrium state. For the \gls*{MMR}-like reactor these metrics 
+are compared at \gls*{BOL} (0 MWd/kgHM burnup), \gls*{MOL} (40.52 MWd/kgHM burnup), 
+and \gls*{EOL} (81.04 MWd/kgHM burnup). Each metric provides  
 insight into the performance of 
 the reactor, such as the materials degradation rate, amount of burnable 
 poisons required, control rod worth, and the cycle time. 
@@ -29,11 +29,12 @@ poisons required, control rod worth, and the cycle time.
 
 \subsubsection{Effective neutron multiplication factor comparison}
 Table \ref{tab:xe100_keff} reports the \keff value when using the 
-three different \gls{HALEU} compositions in the Sangamon200 model. 
+three different \gls*{HALEU} compositions in the Sangamon200 model. 
 The impure fuels result in a \keff 1353-1423 pcm 
 greater than the \keff from the pure fuel, and all three fuel compositions 
 result in a slightly super-critical \keff. The variation in 
-\keff exceeds the uncertainty for this design. 
+\keff exceeds the uncertainty for this design when fueled with 
+the pure fuel. 
 
 \begin{table}[h!]
         \centering 
@@ -45,7 +46,7 @@ result in a slightly super-critical \keff. The variation in
                 Fuel composition & \keff \\
                 \hline 
                 Pure & 1.06663 $\pm$ 0.00016\\
-                \gls{EBR} & 1.08086 $\pm$ 0.00016\\
+                \gls*{EBR} & 1.08086 $\pm$ 0.00016\\
                 Y-12 & 1.08016 $\pm$ 0.00014\\
                 \hline                
         \end{tabular}
@@ -71,6 +72,10 @@ the pebbles modeled are at different burnup steps. Many of the
 pebbles are already partially burned and the uranium impurities in the fuel 
 have already undergone neutron capture reactions and have been transmuted 
 into other isotopes that are more fissile. 
+The effect of an increased \keff from the impure fuels is that more 
+control mechanisms may be required to control the chain reaction, or 
+to lower the \keff and ensure that the targeted discharge burnup and 
+cycle length can be reached. 
 
 \begin{table}
         \centering 
@@ -88,13 +93,10 @@ into other isotopes that are more fissile.
         \end{tabular}
 \end{table}
 
-The effect of an increased \keff from the impure fuels is that more 
-control mechanisms may be required to control the chain reaction, or 
-to lower the \keff and ensure that the targeted discharge burnup and 
-cycle length can be reached. 
 
 \subsubsection{Effective delayed neutron fraction comparison}
-The effective delayed neutron fraction, \betaEff, resulting from the use of each fuel type is reported in 
+The effective delayed neutron fraction, \betaEff, resulting 
+from the use of each fuel type is reported in 
 Table \ref{tab:betaeff_xe100}. The \betaEff when using the impure fuels 
 is smaller than when using the pure fuel, a difference that is 
 statistically significant. The pure fuel results in 
@@ -122,7 +124,7 @@ mechanisms from being effective.
                 Fuel type & \betaEff \\
                 \hline
                 Pure & 0.00617 $\pm$ 0.00003 \\
-                \gls{EBR} & 0.00604 $\pm$ 0.00003 \\
+                \gls*{EBR} & 0.00604 $\pm$ 0.00003 \\
                 Y-12 & 0.00598 $\pm$ 0.00020 \\
                 \hline
         \end{tabular}
@@ -135,7 +137,7 @@ the difference from the pure fuel flux (bottom). The purple
 line in both plots shows the delineation between the fast 
 and thermal energy groups in this work (0.625 eV). 
 There is a large peak in the thermal flux around 0.01 eV. The impure 
-\gls{HALEU} compositions have a smaller thermal flux peak 
+\gls*{HALEU} compositions have a smaller thermal flux peak 
 than the pure fuel, differing on the order of $10^{20}$ 
 $\frac{n}{cm^2s}$. At high energies (above 10
 MeV) the impure fuels result in a larger flux than the pure 
@@ -156,7 +158,7 @@ distance in the core before being absorbed.
         \caption{238-group flux in the Sangamon200 
         reactor model in the active region of the core (top). 
         The absolute difference from the flux from 
-        the pure \gls{HALEU} fuel (bottom). The purple lines 
+        the pure \gls*{HALEU} fuel (bottom). The purple lines 
         denote the delineation of the thermal and fast 
         energy groups used in this work.}
         \label{fig:xe100_mg_flux}
@@ -168,7 +170,7 @@ For this work, the radial tally
 was defined across the x- and y-axes and the axial detector was defined 
 across the z-direction. The flux in a detector in Serpent is integrated 
 across the volume of the core \cite{leppanen_serpent_2013}. 
-The thermal radial flux spectra from all three \gls{HALEU} compositions 
+The thermal radial flux spectra from all three \gls*{HALEU} compositions 
 (Figure \ref{fig:xe100_thermal_radial})
 show peaks at the edge of the core resulting from the graphite moderator 
 around the core. The fuel impurities cause slightly 
@@ -182,7 +184,7 @@ depression in the thermal peak observed in Figure \ref{fig:xe100_mg_flux}.
         \caption{Thermal flux (below 0.625 eV) in the Sangamon200
         reactor model in the radial direction, across the 
         x-axis (top). The absolute difference from the flux from 
-        the pure \gls{HALEU} fuel with 1$\sigma$ error shown by 
+        the pure \gls*{HALEU} fuel with 1$\sigma$ error shown by 
         the shading (bottom).}
         \label{fig:xe100_thermal_radial}
 \end{figure}
@@ -205,11 +207,13 @@ rate densities in the core. Further the even-numbered uranium isotopes
 they are more likely to absorb a neutron in a capture reaction than to fission. 
 
 Figure \ref{fig:xe100_fast_radial} shows the fast radial flux from 
-each \gls{HALEU} composition in this work. The impure fuels also result in a 
-slightly lower flux in the middle of the core, compared with the  
+each \gls*{HALEU} composition in this work. The impure fuels also result in a 
+slightly lower fast flux in the middle of the core, compared 
+with the  
 flux from the pure fuel. The differences in the fast fluxes are on similar 
 order of magnitude to the differences in the thermal fluxes (about $\pm$ 
-2-4 $\times 10^{15}$ $\frac{n}{cm^2s}$), but the fast fluxes are larger than 
+2-4 $\times 10^{15}$ $\frac{n}{cm^2s}$, see Figure 
+\ref{fig:xe100_thermal_radial}), but the fast fluxes are larger than 
 the thermal fluxes. Therefore, the impurities result in a smaller overall
 relative difference in the fast flux than they do in the thermal 
 flux. 
@@ -226,7 +230,7 @@ fuels result in a smaller flux.
         \caption{Fast flux (above 0.625 eV) in the Sangamon200 
         reactor model in the radial direction, across the 
         x-axis (top). The absolute difference from the flux from 
-        the pure \gls{HALEU} fuel with 1$\sigma$ error shown by 
+        the pure \gls*{HALEU} fuel with 1$\sigma$ error shown by 
         the shading (bottom).}
         \label{fig:xe100_fast_radial}
 \end{figure}
@@ -240,8 +244,9 @@ and the pure fuel results in a larger flux than
 the impure fuels. The two impure fuel compositions result in very 
 similar fluxes. The flux differences between the fuel 
 compositions is 
-larger in the bottom of the core, which is a result of the 
-pebble packing. 
+larger in the bottom of the core, which is a result of the
+packed distribution of pebbles at various burnup stages.  
+
 
 \begin{figure}[h!]
         \centering 
@@ -249,7 +254,7 @@ pebble packing.
         \caption{Thermal flux (below 0.625 eV) in the Sangamon200  
         reactor model in the axial direction (top). The absolute 
         difference from the flux from 
-        the pure \gls{HALEU} fuel with 1$\sigma$ error shown by 
+        the pure \gls*{HALEU} fuel with 1$\sigma$ error shown by 
         the shading (bottom). 0 cm is the midpoint of the core.}
         \label{fig:xe100_thermal_axial}
 \end{figure}
@@ -270,7 +275,7 @@ shuffling the Y-12 fuel
 pebble locations (Figure \ref{fig:xe100_pebble_shuffle}) shows that 
 the placement of pebbles from each pass affects the axial symmetry 
 of the flux. Shuffling the pebbles when using the Y-12 
-\gls{HALEU} composition still resulted in a smaller flux than the 
+\gls*{HALEU} composition still resulted in a smaller flux than the 
 pure fuel, showing that the smaller magnitude of the flux 
 is a function of the fuel composition.
 
@@ -281,7 +286,7 @@ is a function of the fuel composition.
         reactor model in the axial direction when the locations of 
         the pebbles are shuffled for the Y-12 fuel composition case
         (top). The absolute difference from the flux from 
-        the pure \gls{HALEU} fuel with 1$\sigma$ error shown by 
+        the pure \gls*{HALEU} fuel with 1$\sigma$ error shown by 
         the shading (bottom).}
         \label{fig:xe100_pebble_shuffle}
 \end{figure}
@@ -304,7 +309,7 @@ and the different compositions in partially burned fuel.
         \caption{Fast flux (above 0.625 eV) in the Sangamon200 
         reactor model in the axial direction (top). The absolute 
         difference from the flux from 
-        the pure \gls{HALEU} fuel with 1$\sigma$ error shown by 
+        the pure \gls*{HALEU} fuel with 1$\sigma$ error shown by 
         the shading (bottom).}
         \label{fig:xe100_fast_axial}
 \end{figure}
@@ -336,10 +341,10 @@ All of the coefficients are negative.
         \begin{tabular}{c c c c c}
             \hline 
             Fuel type & \multicolumn{4}{c}{Reactivity feedback coefficient (pcm/K)} \\
-            & Fuel & Coolant & Moderator & Total \\
+            & Fuel ($\alpha_F$) & Coolant ($\alpha_C$) & Moderator ($\alpha_M$) & Total ($\alpha_T$)\\
             \hline
             Pure & -3.875 $\pm$ 0.094 & -0.044 $\pm$ 0.112 & -0.071 $\pm$ 0.459 & -4.216 $\pm$ 0.502\\
-            \gls{EBR} & -3.759 $\pm$ 0.138 & -0.433 $\pm$ 0.048 & -0.708 $\pm$ 0.404 & -4.817 $\pm$ 0.438\\
+            \gls*{EBR} & -3.759 $\pm$ 0.138 & -0.433 $\pm$ 0.048 & -0.708 $\pm$ 0.404 & -4.817 $\pm$ 0.438\\
             Y-12 & -3.797 $\pm$ 0.157 & -0.351 $\pm$ 0.092 & -0.728 $\pm$ 0.469 & -4.700 $\pm$ 0.349\\
             \hline
 
@@ -348,9 +353,9 @@ All of the coefficients are negative.
 
 The fuel reactivity feedback coefficient 
 ($\alpha_F$) from the pure fuel is more 
-negative than the values from the impure fuels, with the \gls{EBR} fuel 
+negative than the values from the impure fuels, with the \gls*{EBR} fuel 
 resulting in the least negative fuel feedback coefficient. However, all of 
-the values are negative, and are within error of each other. Therefore, 
+the values are negative, and are within error of each other and 
 one cannot conclude that the fuel composition significantly affects this 
 metric. 
 
@@ -380,14 +385,14 @@ coefficients.
 \subsection{MMR-like reactor}
 Sections \ref{sec:mmr_keff}-\ref{sec:mmr_coeff} report and analyze 
 the results of the 
-\gls{EBR} and Y-12 impurities for the \gls{MMR}-like reactor model. 
+\gls*{EBR} and Y-12 impurities for the \gls*{MMR}-like reactor model. 
 The four different results are presented for three different 
-burnup steps during the reactor operation: \gls{BOL} (0 MWd/kgU),
-\gls{MOL} (40.52 MWd/kgU), and \gls{EOL} (81.04 MWd/kgU). 
+burnup steps during the reactor operation: \gls*{BOL} (0 MWd/kgU),
+\gls*{MOL} (40.52 MWd/kgU), and \gls*{EOL} (81.04 MWd/kgU). 
 
 \subsubsection{Effective neutron multiplication factor comparison}\label{sec:mmr_keff}
 Table \ref{tab:mmr_keff} reports the effective 
-neutron multiplication factor, \keff, of the \gls{MMR}-like 
+neutron multiplication factor, \keff, of the \gls*{MMR}-like 
 model at the 
 different burnup steps using each fuel composition. At each burnup step, 
 using the impure fuel compositions results in a \keff significantly 
@@ -406,16 +411,16 @@ effect on the neutron population at the beginning of life.
 \begin{table}[h!]
         \centering
         \caption{Effective neutron multiplication 
-        factor, \keff, in the \gls{MMR}-like model at select burnup 
-        steps and different \gls{HALEU} compositions.}
+        factor, \keff, in the \gls*{MMR}-like model at select burnup 
+        steps and different \gls*{HALEU} compositions.}
         \label{tab:mmr_keff}
         \begin{tabular}{l l l l}
                 \hline 
                 Fuel type & \multicolumn{3}{c}{Burnup step}\\
-                & \gls{BOL} & \gls{MOL} & \gls{EOL} \\
+                & \gls*{BOL} & \gls*{MOL} & \gls*{EOL} \\
                 \hline 
                 Pure & 1.33797 $\pm$ 0.00027 & 1.18048 $\pm$ 0.00025 & 1.05535$\pm$000024\\
-                \gls{EBR} & 1.32609 $\pm$0.00028 & 1.17148 $\pm$ 0.00027 & 1.04792 $\pm$ 0.00025 \\
+                \gls*{EBR} & 1.32609 $\pm$0.00028 & 1.17148 $\pm$ 0.00027 & 1.04792 $\pm$ 0.00025 \\
                 Y-12 & 1.32453$\pm$0.00029 & 1.17051$\pm$0.00027 & 1.04823$\pm$0.0024\\
                 \hline
                 
@@ -439,30 +444,30 @@ fuel compositions, \betaEff decreases with increasing burnup. This
 is consistent with the depletion of the $^{235}$U in the core and 
 an increase in the number of fissions happening in isotopes
 that have a lower \betaEff than $^{235}$U, such as $^{239}$Pu. 
-The \betaEff values at \gls{BOL} are all slightly larger 
+The \betaEff values at \gls*{BOL} are all slightly larger 
 than the expected 0.0064 value of $\beta$ for thermal fissions in $^{235}$U
-or \betaEff of a typical \gls{PWR}. The consistency of the 
+or \betaEff of a typical \gls*{PWR}. The consistency of the 
 \betaEff being
-larger than 0.0064 at \gls{BOL} 
+larger than 0.0064 at \gls*{BOL} 
 is a result of the smaller geometry of this core compared with a 
-\gls{PWR} core.
+\gls*{PWR} core.
 The small size of the core and higher enrichment cause an 
 decrease in the probability of non-leakage of fast neutrons to 
-dominate the decrease of the fast fission factor, compared with a \gls{PWR}. 
+dominate the decrease of the fast fission factor, compared with a \gls*{PWR}. 
 
 \begin{table}[h!]
         \centering
         \caption{Delayed neutron fraction, \betaEff,
-        value in the \gls{MMR}-like model at 
+        value in the \gls*{MMR}-like model at 
         select burnup steps.}
         \label{tab:mmr_betaeff}
         \begin{tabular}{l l l l}
                 \hline 
                 Fuel type & \multicolumn{3}{c}{Burnup step}\\
-                & \gls{BOL} & \gls{MOL} & \gls{EOL}\\
+                & \gls*{BOL} & \gls*{MOL} & \gls*{EOL}\\
                 \hline 
                 Pure & 0.00669 $\pm$ 0.00004 & 0.00586 $\pm$ 0.00004 & 0.00548 $\pm$ 0.00003\\
-                \gls{EBR} & 0.00663 $\pm$ 0.00003 & 0.00591 $\pm$ 0.00003 & 0.00542 $\pm$ 0.00003\\
+                \gls*{EBR} & 0.00663 $\pm$ 0.00003 & 0.00591 $\pm$ 0.00003 & 0.00542 $\pm$ 0.00003\\
                 Y-12 & 0.00665 $\pm$ 0.00004 &  0.00598 $\pm$ 0.00004& 0.00553 $\pm$ 0.00003\\
                 \hline 
 
@@ -491,12 +496,12 @@ in the flux are larger in the fast energy group than in the thermal energy group
         \centering
         \includegraphics[scale=0.75]{mmr_energy_spectrum.pdf}
         \caption{Top: Flux spectra for each fuel composition 
-        in the \gls{MMR}-like model at a 
+        in the \gls*{MMR}-like model at a 
         burnup of 0 MWd/kgU in the active region of the core. The 
         purple line shows the delineation between the fast and thermal 
         neutron energy groups used in other results of this work (0.625 eV).
         Bottom: Difference between the flux from the pure fuel and each 
-        of the impure fuels in each energy group.  }
+        of the impure fuels.  }
         \label{fig:mmr_energy_spectrum}
 \end{figure}
 
@@ -509,7 +514,7 @@ is taken across the plane with three coolant channels in Figure
 flux is taken along the z-axis, with the 
 x- and y-directions integrated.
 
-The radial flux at \gls{BOL} (Figures \ref{fig:mmr_thermal_radial_bol} and 
+The radial flux at \gls*{BOL} (Figures \ref{fig:mmr_thermal_radial_bol} and 
 \ref{fig:mmr_fast_radial_bol}) show that the thermal flux peaks in the 
 control rod channels and the fast flux has a trough in these regions. 
 Conversely, the thermal flux has a trough in the areas closest to the fuel 
@@ -522,25 +527,25 @@ The fast flux along this axis is larger than the thermal flux, which is
 consistent with Figure \ref{fig:mmr_energy_spectrum}. Like the neutron 
 flux in the Sangamon200 model, the 
 impure fuels result in similar variations from the flux when 
-using the pure fuel at \gls{BOL}.
+using the pure fuel at \gls*{BOL}.
 
 \begin{figure}[h!]
         \centering
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_radial_bol.pdf}
-            \caption{Thermal radial flux in the \gls{MMR}-like reactor.}
+            \caption{Thermal radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_thermal_radial_bol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_radial_bol.pdf}
-            \caption{Fast radial flux in the \gls{MMR}-like reactor.}
+            \caption{Fast radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_radial_bol}
         \end{subfigure}
         \caption{Radial flux for each energy group when using 
-        each fuel composition in the \gls{MMR}-like model at the beginning 
+        each fuel composition in the \gls*{MMR}-like model at the beginning 
         of life (0 MWd/kgHM). The thermal flux encompasses energies below 0.625 eV, and the 
         fast flux encompasses energies above 0.625 eV.}
         \label{fig:mmr_bol_radial}
@@ -550,25 +555,25 @@ using the pure fuel at \gls{BOL}.
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_axial_bol.pdf}
-            \caption{Thermal axial flux in the \gls{MMR}-like reactor. }
+            \caption{Thermal axial flux in the \gls*{MMR}-like reactor. }
             \label{fig:mmr_thermal_axial_bol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_axial_bol.pdf}
-            \caption{Fast axial flux in the \gls{MMR}-like reactor.}
+            \caption{Fast axial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_axial_bol}
         \end{subfigure}
         \hfill
         \caption{Axial flux for each energy group when using 
-        each fuel composition in the \gls{MMR}-like model at the beginning 
+        each fuel composition in the \gls*{MMR}-like model at the beginning 
         of life (0 MWd/kgHM). The thermal flux encompasses energies below 0.625 eV, and the 
         fast flux encompasses energies above 0.625 eV.}
         \label{fig:mmr_bol_axial}
    \end{figure}
 
-The axial fluxes at \gls{BOL} (Figures \ref{fig:mmr_thermal_axial_bol} and 
+The axial fluxes at \gls*{BOL} (Figures \ref{fig:mmr_thermal_axial_bol} and 
 \ref{fig:mmr_fast_axial_bol}) show the effect of the graphite moderators at 
 the top and bottom of the core. The thermal flux has a small peak in the 
 moderator while the fast flux has a small exponential decrease in the 
@@ -579,19 +584,19 @@ fluxes is 1-2 orders of magnitude smaller than the flux, but is
 still one order of magnitude larger than the error of the fluxes.
 
 Figures \ref{fig:mmr_mc_radial} and \ref{fig:mmr_mc_axial} show the 
-radial and axial fluxes, respectively, in the \gls{MMR}-like 
-reactor at \gls{MOL}. The trends at mid-cycle in the radial fluxes are 
-similar to those observed at the \gls{BOL}: the radial fluxes have the 
+radial and axial fluxes, respectively, in the \gls*{MMR}-like 
+reactor at \gls*{MOL}. The trends at mid-cycle in the radial fluxes are 
+similar to those observed at the \gls*{BOL}: the radial fluxes have the 
 greatest difference near the fuel pins in the core. In the axial fluxes 
-however, there is a difference between the flux from the \gls{EBR} 
-fuel and the other fuels. The \gls{EBR} results in a greater difference 
+however, there is a difference between the flux from the \gls*{EBR} 
+fuel and the other fuels. The \gls*{EBR} results in a greater difference 
 from the flux from the pure fuel than the Y-12 fuel, but the shape of 
-the difference is similar to what was observed at \gls{BOL}; the flux from 
-the \gls{EBR} fuel is less than the flux from the pure fuel in the bottom of 
+the difference is similar to what was observed at \gls*{BOL}; the flux from 
+the \gls*{EBR} fuel is less than the flux from the pure fuel in the bottom of 
 the core and greater at the top of the core. For the thermal axial flux, 
 the difference between the flux from the pure and Y-12 fuels decreases 
-compared with the fluxes at \gls{BOL}, but the difference between the flux 
-from pure and \gls{EBR} fuel increases compared with the flux at \gls{BOL}. 
+compared with the fluxes at \gls*{BOL}, but the difference between the flux 
+from pure and \gls*{EBR} fuel increases compared with the flux at \gls*{BOL}. 
 A similar pattern occurs in the fast axial flux.  
 
 \begin{figure}[h!]
@@ -599,18 +604,18 @@ A similar pattern occurs in the fast axial flux.
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_radial_mc.pdf}
-            \caption{Thermal radial flux in the \gls{MMR}-like reactor.}
+            \caption{Thermal radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_thermal_radial_mc}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_radial_mc.pdf}
-            \caption{Fast radial flux in the \gls{MMR}-like reactor.}
+            \caption{Fast radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_radial_mc}
         \end{subfigure}
         \caption{Radial flux for each energy group when using 
-        each fuel composition in the \gls{MMR}-like model at middle of 
+        each fuel composition in the \gls*{MMR}-like model at middle of 
         the operation cycle (41.52 MWd/kgHM). The thermal flux encompasses energies below 
         0.625 eV, and the 
         fast flux encompasses energies above 0.625 eV.}
@@ -621,18 +626,18 @@ A similar pattern occurs in the fast axial flux.
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_axial_mc.pdf}
-            \caption{Thermal axial flux in the \gls{MMR}-like reactor. }
+            \caption{Thermal axial flux in the \gls*{MMR}-like reactor. }
             \label{fig:mmr_thermal_axial_mc}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_axial_mc.pdf}
-            \caption{Fast axial flux in the \gls{MMR}-like reactor.}
+            \caption{Fast axial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_axial_mc}
         \end{subfigure}
         \caption{Axial flux for each energy group when using 
-        each fuel composition in the \gls{MMR}-like model at middle of 
+        each fuel composition in the \gls*{MMR}-like model at middle of 
         the operation cycle (40.52 MWd/kgHM). The thermal flux encompasses energies below 
         0.625 eV, and the 
         fast flux encompasses energies above 0.625 eV.}
@@ -641,37 +646,37 @@ A similar pattern occurs in the fast axial flux.
 
 Finally, Figures \ref{fig:mmr_eol_radial} and \ref{fig:mmr_eol_axial}
 show the radial and axial fluxes, respectively, in the 
-\gls{MMR}-like model at \gls{EOL}. The radial fluxes continue to show 
+\gls*{MMR}-like model at \gls*{EOL}. The radial fluxes continue to show 
 the same trend of the largest differences between the fluxes occurring near
 the fuel pins. The axial fluxes (Figures \ref{fig:mmr_thermal_axial_eol} and 
 \ref{fig:mmr_fast_axial_eol}) show that the impure fuels result in 
 a larger flux towards the 
 bottom of the core and a smaller flux towards the top of the core than the flux 
 from the pure fuel, opposite
-to what was observed in the \gls{BOL} and \gls{MOL} fluxes. The thermal 
-and fast axial fluxes are higher at the \gls{EOL} than at the other 
-two burnup steps. The difference between the flux from \gls{EBR} fuel 
-and the pure fuel decreases from the difference at \gls{MOL}, but the 
+to what was observed in the \gls*{BOL} and \gls*{MOL} fluxes. The thermal 
+and fast axial fluxes are higher at the \gls*{EOL} than at the other 
+two burnup steps. The difference between the flux from \gls*{EBR} fuel 
+and the pure fuel decreases from the difference at \gls*{MOL}, but the 
 difference between the fluxes from the pure and Y-12 fuel 
-increases compared with the difference at \gls{MOL}. 
+increases compared with the difference at \gls*{MOL}. 
    
 \begin{figure}[h!]
         \centering
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_radial_eol.pdf}
-            \caption{Thermal radial flux in the \gls{MMR}-like reactor.}
+            \caption{Thermal radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_thermal_radial_eol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_radial_eol.pdf}
-            \caption{Fast radial flux in the \gls{MMR}-like reactor.}
+            \caption{Fast radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_radial_eol}
         \end{subfigure}
         \caption{Radial flux for each energy group when using 
-        each fuel composition in the \gls{MMR}-like model at the end 
+        each fuel composition in the \gls*{MMR}-like model at the end 
         of life (81.04 MWd/kgHM). The thermal flux encompasses energies below 
         0.625 eV, and the 
         fast flux encompasses energies above 0.625 eV.}
@@ -682,18 +687,18 @@ increases compared with the difference at \gls{MOL}.
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_axial_eol.pdf}
-            \caption{Thermal axial flux in the \gls{MMR}-like reactor. }
+            \caption{Thermal axial flux in the \gls*{MMR}-like reactor. }
             \label{fig:mmr_thermal_axial_eol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
             \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_axial_eol.pdf}
-            \caption{Fast axial flux in the \gls{MMR}-like reactor.}
+            \caption{Fast axial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_axial_eol}
         \end{subfigure}
         \caption{Axial flux for each energy group when using 
-        each fuel composition in the \gls{MMR}-like model at the end 
+        each fuel composition in the \gls*{MMR}-like model at the end 
         of life (81.04 MWd/kgHM). The thermal flux encompasses energies below 
         0.625 eV, and the 
         fast flux encompasses energies above 0.625 eV.}
@@ -706,7 +711,7 @@ Finally, the reactivity feedback coefficients of different materials
 at each burnup step are reported in Table \ref{tab:coeff_mmr}. The 
 fuel reactivity feedback coefficients become more negative with 
 burnup, because fuel with higher burnups contain relatively more 
-$^{238}$U and $^{239}$Pu The 
+$^{238}$U and $^{239}$Pu. The 
 additional resonances of the $^{238}$U and $^{239}$Pu means that the 
 Doppler broadening effect has a more pronounced impact on the reactivity 
 of the core. At each of the burnup steps, the different fuel compositions 
@@ -718,32 +723,32 @@ the fuel reactivity coefficients in this design.
 \begin{table}[h!]
         \centering 
         \caption{Reactivity feedback coefficients (pcm/K) for each material 
-        \gls{BOL}, \gls{MOL}, and \gls{EOL} burnups in the \gls{MMR}-like 
+        \gls*{BOL}, \gls*{MOL}, and \gls*{EOL} burnups in the \gls*{MMR}-like 
         reactor model.}
         \label{tab:coeff_mmr}
         \begin{tabular}{c c c c}
                 \hline 
                 & \multicolumn{3}{c}{Burnup step} \\
-                Fuel & \gls{BOL} & \gls{MOL} & \gls{EOL} \\
+                Fuel & \gls*{BOL} & \gls*{MOL} & \gls*{EOL} \\
                 \hline 
                 \multicolumn{4}{c}{Fuel reactivity feedback, $\alpha_F$}\\
                 Pure & -3.314 $\pm$ 0.059 & -3.889 $\pm$ 0.088 & -4.536 $\pm$0.264\\
-                \gls{EBR} & -3.073 $\pm$ 0.109 & -3.720 $\pm$ 0.147 & -4.699 $\pm$ 0.151\\
+                \gls*{EBR} & -3.073 $\pm$ 0.109 & -3.720 $\pm$ 0.147 & -4.699 $\pm$ 0.151\\
                 Y-12 & -3.233 $\pm$ 0.107 & -3.704 $\pm$ 0.133 & -4.168 $\pm$ 0.100\\
-                \hline 
+                %\hline 
                 \multicolumn{4}{c}{Coolant reactivity feedback, $\alpha_C$}\\
                 Pure & -0.211 $\pm$ 0.063 & 0.021 $\pm$ 0.169 & 0.052 $\pm$ 0.234\\
-                \gls{EBR} & 0.007 $\pm$ 0.051 & -0.165 $\pm$ 0.183 & 0.005 $\pm$ 0.085\\
+                \gls*{EBR} & 0.007 $\pm$ 0.051 & -0.165 $\pm$ 0.183 & 0.005 $\pm$ 0.085\\
                 Y-12 & -0.221 $\pm$ 0.068 & 0.197 $\pm$ 0.145 & -0.015 $\pm$ 0.158\\
-                \hline 
+                %\hline 
                 \multicolumn{4}{c}{Moderator reactivity feedback, $\alpha_M$}\\
                 Pure & -0.815 $\pm$ 0.062 & -1.298 $\pm$ 0.155 & -2.590 $\pm$ 0.323\\
-                \gls{EBR} &-0.934 $\pm$ 0.171 & -1.723 $\pm$ 0.268 & -2.375 $\pm$ 0.313\\
+                \gls*{EBR} &-0.934 $\pm$ 0.171 & -1.723 $\pm$ 0.268 & -2.375 $\pm$ 0.313\\
                 Y-12 & -0.950 $\pm$ 0.138 & -1.333 $\pm$ 0.206 & -2.432 $\pm$ 0.190\\
-                \hline 
-                \multicolumn{4}{c}{Total reactivity feedback, , $\alpha_F$}\\
+                %\hline 
+                \multicolumn{4}{c}{Total reactivity feedback, $\alpha_F$}\\
                 Pure & -4.142 $\pm$ 0.297 & -5.015 $\pm$ 0.215 & -6.865 $\pm$ 0.300\\
-                \gls{EBR} & -4.191 $\pm$ 0.097 & -5.284 $\pm$ 0.286 & -6.709 $\pm$ 0.329\\
+                \gls*{EBR} & -4.191 $\pm$ 0.097 & -5.284 $\pm$ 0.286 & -6.709 $\pm$ 0.329\\
                 Y-12 & -4.037 $\pm$ 0.322 & -5.410 $\pm$ 0.268 & -6.689 $\pm$ 0.232\\
                 \hline 
                 
@@ -759,7 +764,7 @@ reactivity feedback coefficient is not as dependent on the burnup of the
 fuel as the other coefficients because the density change 
 is the primary temperature-dependent property of the helium coolant 
 instead of broadening of cross section resonances. 
-At the \gls{BOL}, the \gls{EBR} fuel results in a statistically 
+At the \gls*{BOL}, the \gls*{EBR} fuel results in a statistically 
 significant impact on the 
 coolant feedback coefficient, which shows that the fuel composition has some 
 impact on this parameter. However, the coolant reactivity feedback 
@@ -771,9 +776,9 @@ The moderator feedback coefficient is negative for each of the fuel
 compositions at each burnup step, indicating that this core is 
 undermoderated. This feedback coefficient also becomes more 
 negative with burnup, because the flux in the core increases with 
-burnup. At the \gls{BOL} and 
-\gls{MOL} steps with the pure fuel, the moderator 
-feedback coefficient has the smallest magnitude, but at \gls{EOL} with the 
+burnup. At the \gls*{BOL} and 
+\gls*{MOL} steps with the pure fuel, the moderator 
+feedback coefficient has the smallest magnitude, but at \gls*{EOL} with the 
 pure fuel the coefficient has the greatest magnitude. At each of the burnup steps the moderator 
 feedback coefficient from each of the fuels are within error of each 
 other. This agreement within error suggests that the isotope impurities 
