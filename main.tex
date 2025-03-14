@@ -1,17 +1,18 @@
-\documentclass[review]{elsarticle}
+\documentclass[review]{nseJournal}
 
-\usepackage{multirow}
+%\usepackage{multirow}
 \usepackage{lineno}
 \usepackage{xspace}
-\usepackage{threeparttable}
-\usepackage{subfig}
+%\usepackage{threeparttable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \modulolinenumbers[5]
 
 %% Journal name here
-\journal{FIXME: The Journal Name Goes Here}
+%\journal{Nuclear Technology}
 
 %% `Elsevier LaTeX' style
-\bibliographystyle{elsarticle-num}
+%\bibliographystyle{elsarticle-num}
 %%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% packages and definitions (optional)
@@ -20,7 +21,8 @@
 \usepackage{microtype} % improves typography for PDF
 \usepackage{hhline}
 \usepackage{amsmath}
-\usepackage{subfig}
+%\usepackage{caption}
+\usepackage{subcaption}
 
 \usepackage{booktabs}
 \usepackage{threeparttable, tablefootnote}
@@ -30,6 +32,8 @@
 %% Special typesetting for Cyclus
 \newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
 \newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
+\newcommand{\keff}{$k_{eff}$\xspace}
+\newcommand{\betaEff}{$\beta_{eff}$\xspace}
 \graphicspath{{images/}}
 
 % tikz %
@@ -42,18 +46,19 @@
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 % hyperref %
-\usepackage[hidelinks]{hyperref}
+%\usepackage[hidelinks]{hyperref}
 % after hyperref %
-\usepackage{cleveref}
-\usepackage{datatool}
-\usepackage[acronym,toc]{glossaries}
+%\usepackage{cleveref}
+%\usepackage{datatool}
+\usepackage[acronym,shortcuts]{glossaries}
 \include{acros}
 
 \makeglossaries
 
 \begin{document}
-\begin{frontmatter}
-\title{FIXME: The Title Goes Here}
+%\begin{frontmatter}
+\title{Effects of uranium impurities in downblended HEU on  
+HTGR performance}
 
 %\date{}                     % uncomment if you don't need date to appear
 
@@ -61,20 +66,16 @@
 \input{authors}
 
 % Institutes of the authors
-\input{institutions}
+%\input{institutions}
+\addKeyword{HALEU}
+\addKeyword{advanced reactors}
+\addKeyword{HTGR}
+\addKeyword{reactor physics}
 
-\begin{keyword}
-FIXME \sep
-key words \sep
-go here \sep
-like: \sep 
-simulation \sep
-spent nuclear fuel 
-\end{keyword}
-
+\titlePage
 \input{abstract}
-\end{frontmatter}
-\glsresetall
+%\end{frontmatter}
+%\glsresetall
 
 %% Shows line numbers
 \linenumbers
@@ -85,6 +86,11 @@ spent nuclear fuel
 \input{conclusion}
 \input{acks}
 
+\section*{Disclosure Statement}
+The authors report there are no competing interests 
+to declare. 
+
+\bibliographystyle{ans_js}
 \bibliography{bibliography}
 
 % Prof. Huff discourages appendices in journal articles.
