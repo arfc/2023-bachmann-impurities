@@ -279,19 +279,19 @@ these relationships, assuming they still hold true for the
 different material. 
 Graphite density changes were linearly extrapolated from the 
 data available in \cite{mceligot_thermal_2016}. 
-Interpolations of the data available in \cite{petersen_properties_1970}
-(Table \ref{tab:helium_density}), 
-assuming the 3 MPa coolant pressure in the \gls*{MMR}-like model 
-by \cite{noauthor_usnc_2021} and the 6 MPa inlet pressure in the 
-Sangamon200 model \cite{mulder_overview_2021} yielded the helium 
-density changes. 
+Data from \cite{petersen_properties_1970} (Table 
+\ref{tab:helium_density}) was used to account for the density 
+variations in the helium coolant as a function of temperature. 
+The \gls*{MMR}-like model assumes an inlet pressure of 3 MPa 
+\cite{noauthor_usnc_2021}, which required linear interpolations 
+between the 2 and 4 MPa data. The Sangamon200 model assumes 
+and inlet pressure of 6 MPa \cite{mulder_overview_2021}.
 
 \begin{table}
     \centering 
     \caption{Densities of helium at various temperatures and 
     pressures \cite{petersen_properties_1970}, used in the 
-    determination of the coolant reactivity feedback 
-    coefficients.}
+    determination of $\alpha_C$ and $\alpha_T$ calculations.}
     \label{tab:helium_density}
     \begin{tabular}{c c c c}
         \hline
