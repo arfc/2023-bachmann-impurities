@@ -95,7 +95,8 @@
 
 
 \usepackage[acronym,toc]{glossaries}
-\include{acros}
+%\include{acros}
+\usepackage{hyperref}
 
 \makeglossaries
 
@@ -154,26 +155,78 @@ paper.
 \begin{questions}
 
         %---------------------------------------------------------------------
-        \question The color scheme in figures 4 and 7 make it difficult to
-        distinguish each individual components in the figures.
+        \question Biggest observation is that the magnitude of the fluxes for total, radial, and axial seem high and inconsistent between the radial and axial shapes.  Some of the conclusions about the coolant and moderator temperature coefficients could use some more rationale tied to the Serpent output results for reaction rates in the regions or flux per unit lethargy plots (with perhaps some more methods explanation for the geometric expansion in addition to the simple cross section changes for just cross section temperature effects)
 
         \begin{solution}
-        	Thank you for your valuable input. We changed the color scheme
-        	to ensure that the colors representing each component are more
-        	distinct and easier to tell apart.
+        	
 
         \end{solution}
 
-        %---------------------------------------------------------------------
-        \question Review comment 2
-        \begin{solution}
-        	Changes for review comment 2
-
-        \end{solution}
-
-
-        %---------------------------------------------------------------------
+        
 \end{questions}
+
+\section*{Reviewer 2}
+\begin{questions}
+        \question Abstract, as written, does not have any actual results. It can be put together without the rest of the paper. Consider including some major results in the abstract, not just final claims. 
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question Conclusions consist of fairly detailed discussions. It is recommended to include some quantitative metrics to further demonstrate points authors are making. The last paragraph of the conclusions needs support by a quantitative metric to support authors claim of no significant effect. Overall, each conclusions claim needs stronger connection to the results of the paper. 
+
+        \begin{solution}
+                
+        \end{solution}
+
+
+        \question Pebble Bed Reactor Model (Section II.A). While shortcomings of the base model have been briefly discussed, there is no discussion how those shortcomings relate to the purposes of the work presented in this paper. The overall selected modeling approaches as described in Section II.A appear to be overly simplistic and require reactor physics justification of their fidelity sufficiency to meet the purpose of this paper and validity of the conclusions. Today a wide variety of publications can be found that offer a much more detailed representation of the pebble bed reactor physics. Use of the model described in Section II.A poses a concern of smearing the results and not having enough fidelity to support conclusions and the analysis. Authors are commended to review models as the one presented in the paper by \href{https://urldefense.us/v3/__https://www.sciencedirect.com/science/article/abs/pii/S0306454922000457__;!!G_uCfscf7eWS!c9NaLaoofYY-XPmTBw8MFmRZJk8bV9tzrOHBDcuYwXMxwNnUNBHLODrR0ukV3eKPyXt9BKTQxfYGpaR5$}{Mulyana and Chirayath}. The selected reactor physics metyrics need that level of fidelity in
+performance models to capture the details as this study is looking into. If used model is sufficient, that sufficiency must be proven and provided in the paper.
+
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question The MMR model of Section IIB appears to have the needed fidelity. The fidelity of the model with respect to the performance metrics needs to be discussed as no such discussion is provided. This reviewer is concerned about the noted 2 years burnup step for the 20 years lifetime. This is a rather large step that needs justification. With such a large step,  it is expected that the depletion model does not capture proper reactor physics of the core during operation. The fuel composition and effects cannot be correct with such time steps. 
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question What makes pebble bed and prismatic models and the manner they used comparable to be used in the same study? Authors need to offer a discussion of what made this paper a single study drawing conclusions for both types of HTREs and hence for all HTRs by association. 
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question It would greatly help supporting validity of this work, if authors took the time to evaluate reactor physics effects of compositions at the fuel lattice level. At that level, pebble bed and prismatic reactors exabit common neutronics and results would be very conclusive. 
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question Authors picked integral and integral differential reactor physics characteristics as metrics for the present study. A discussion of these metrics and their mathematical nature on the results and their sensitivity to composition should be provided. The nature of the selected metrics reduces the ability to resolve differences and makes evaluations less sensitive to composition effects. This suggests to readers that conclusions of the paper are due to metrics and model limitations and not representative of the actual reactor physics and fuel effects. If that is not the case, authors need to include demonstrations proving the case. The infinite lattice studies and use of reaction rates are customary tools for that. 
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question In a study like the one in this paper, it is customary to include a sensitivity analysis of the reactor configurations with respect to input parameters of interest for the selected metrics. This study is not included but is highly recommended.
+
+        \begin{solution}
+                
+        \end{solution}
+
+        \question The paper represents essentially a very direct approach - (1) simplified models, (2) a few compositions selected, (3) integral differential metrics for the analysis, (4) results of the limited analysis space. The paper needs to be expanded to prove the validity and relevance of the results. As provided, results appear to be artifacts of the metrics and the modeling approach limitations.
+
+        \begin{solution}
+                
+        \end{solution}
+\end{questions}
+
+
+
 \bibliographystyle{unsrt}
 \bibliography{revise}
 \end{document}
