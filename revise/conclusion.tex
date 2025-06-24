@@ -1,7 +1,7 @@
 \section{Conclusions}
-This work looks at the effects of using 
+This work provides a high-level analysis of the effects of using 
 \gls*{HALEU} downblended from \gls*{HEU} inventories on select 
-advanced reactor models to investigate if these 
+\gls*{HTGR} models to investigate if these 
 effects can significantly impact 
 reactor performance. Three different \gls*{HALEU} 
 compositions were used in reactor physics simulations of 
@@ -31,7 +31,10 @@ thermal neutron flux across the active region of the core. There is
 is also an asymmetry in the axial fluxes that is a result of the 
 distribution of pebbles at different passes. Finally, the impure fuels 
 lead to reactivity feedback coefficients that are of a greater magnitude 
-or are within error of the values from the pure fuel. 
+or are within error of the values from the pure fuel. However, 
+the low fidelity of the Sangamon200 model, including the homogenization
+of the \gls*{TRISO} pebbles may smear some of the results, 
+especially given that the metrics used here are integral effects.  
 
 In the \gls*{MMR}-like model, the impure fuels result in smaller 
 \keff values at each burnup step, but do not prevent the reactor 
@@ -57,21 +60,34 @@ within error.
 The results presented in this work 
 suggest that these three different \gls*{HALEU} compositions 
 do not have a significant effect on the performance of these 
-two reactor designs, and would not prevent them from operating in 
-a safe state. 
+two reactor designs, and would not necessarily prevent them from operating in 
+a safe state. For example, the total reactivity feedback coefficients 
+are negative for all results reported. Additionally, one would 
+expect the \gls*{MMR} model to still reach the designed discharge 
+burnup and cycle length because the \keff value is still above 1 
+at the \gls*{EOL} burnup step, even if the \keff is lower when 
+using the impure fuels. 
 
 
 
 \subsection{Future Work}
 The work presented here provides a quantitative baseline to 
 gauge the impacts 
-of using downblended \gls*{HEU} in advanced reactors. However, 
+of using downblended \gls*{HEU} in advanced reactors. This baseline analysis 
+can be further improved by performing sensitivity analysis on some of the 
+reactor design parameters, such as variations in the fuel isotopics and pebble 
+placement in the Sangamon200 model. This analysis would better inform on how
+much the fuel composition change contributed to the changes in the metrics 
+observed here. 
+
+Additionally, 
 one may find that higher fidelity models reveal further insights into 
 these effects. Improving the model fidelity may 
 include updating the reactor geometries, using non-homogeneous fuel 
 pebbles, 
-modeling temperature distributions across the core, and update the material compositions 
-to include any 
+modeling temperature distributions across the core, using smaller 
+burnup step sizes, and updating the material 
+compositions to include any 
 burnable absorbers or other neutron poisons that would be 
 used during operation to control reactivity. 
 

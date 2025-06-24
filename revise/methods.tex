@@ -79,7 +79,10 @@ the explicit layers, with a description of the homogenization in
 \cite{richter_isotopic_2022}. Using a homogenized \gls*{TRISO} particle 
 decreases the \keff of the core by 4.45\%, but it does not reduce the 
 thermal and fast neutron fluxes across the reactor outside of error 
-\cite{richter_isotopic_2022}. Despite 
+\cite{richter_isotopic_2022}. One would also expect the 
+homogenization of the pebbles to hide some of the effects of fuel 
+composition that would be present in a non-homogenized pebble model. 
+Despite 
 the effect on \keff of this modeling decision, the 
 homogenized model of the \gls*{TRISO} pebbles was used to be 
 consistent with the 
@@ -195,7 +198,9 @@ assumed a graphite reflector thickness of 20 cm to provide 3-5 mean
 free paths of material. These model parameters are summarized in 
 Table \ref{tab:mmr_design}. The input files for this model can be found 
 in a Zenodo archive 
-\cite{bachmann_mmr-like_2023}.
+\cite{bachmann_mmr-like_2023}. Given all of this information, the \gls*{MMR} 
+model has a higher fidelity than the Sangamon200 model, and therefore is 
+likely to provide more accurate results in this work. 
 
 \begin{figure}
         \begin{subfigure}{0.48\textwidth}
@@ -244,7 +249,11 @@ expected 20 year lifetime of the \gls*{MMR}. The core is not
 meant to undergo refueling during those 20 years and the lack of 
 fuel movement and replacement in this model aligns with the operational 
 core. The burnup steps are 2 years, running each step with 
-140 active cycles, 75 inactive cycles, and 65,000 particles per cycle. 
+140 active cycles, 75 inactive cycles, and 65,000 particles per cycle. These 
+are relatively large burnup steps to model the core depletion, 
+especially in the beginning of the core operation. However, this 
+burnup size was selected to be conscious of the model run time, 
+as this work is intended to provide high-level analysis. 
 
 \subsection{Temperature variations and feedbacks}
 The fuel impurities introduced by downblending may have an effect on 

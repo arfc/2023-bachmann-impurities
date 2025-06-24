@@ -148,7 +148,9 @@
 \section*{Review General Response}
 We would like to thank the reviewers for their detailed assessment of this
 paper. Your comments have resulted in changes which certainly improved the
-paper.
+paper. In addition to changes to the manuscript to address the reviewer's
+comments, we have made minor revisions to improve the clarity and grammar of the 
+paper. 
 
 
 \section*{Reviewer 1}
@@ -158,13 +160,23 @@ paper.
         \question Biggest observation is that the magnitude of the fluxes for total, radial, and axial seem high and inconsistent between the radial and axial shapes. 
 
         \begin{solution}
-        	
+        Thank you for the comment. There is consistency between the two models in 
+        that the total flux is the largest, followed by the axial, then the 
+        radial. The axial direction is larger for both models, which makes one 
+        expect this flux to be lower, as the flux is spread across more space 
+        than in the radial direction. But that is not the case in these 
+        results. The thermal peak of the energy-dependent flux does not 
+        match the peaks of the radial and axial fluxes because the energy-dependent 
+        flux is not spread out across the space of the reactor model. 
+
+        This is giving me some pause on if the results are correct. 
 
         \end{solution}
 
         \question Some of the conclusions about the coolant and moderator temperature coefficients could use some more rationale tied to the Serpent output results for reaction rates in the regions or flux per unit lethargy plots (with perhaps some more methods explanation for the geometric expansion in addition to the simple cross section changes for just cross section temperature effects).
         \begin{solution}
-                
+        Thank you for the comment. The energy-dependent flux plots (Figures 3
+        and 9) are already plotted per unit lethargy. 
         \end{solution}
         
 \end{questions}
@@ -181,21 +193,37 @@ paper.
         \question Conclusions consist of fairly detailed discussions. It is recommended to include some quantitative metrics to further demonstrate points authors are making. The last paragraph of the conclusions needs support by a quantitative metric to support authors claim of no significant effect. Overall, each conclusions claim needs stronger connection to the results of the paper. 
 
         \begin{solution}
+        Thank you for the comment. We have added additional text to the Conclusions
+        (Section IV) to better illustrate and support the conclusions drawn. 
                 
         \end{solution}
 
 
-        \question Pebble Bed Reactor Model (Section II.A). While shortcomings of the base model have been briefly discussed, there is no discussion how those shortcomings relate to the purposes of the work presented in this paper. The overall selected modeling approaches as described in Section II.A appear to be overly simplistic and require reactor physics justification of their fidelity sufficiency to meet the purpose of this paper and validity of the conclusions. Today a wide variety of publications can be found that offer a much more detailed representation of the pebble bed reactor physics. Use of the model described in Section II.A poses a concern of smearing the results and not having enough fidelity to support conclusions and the analysis. Authors are commended to review models as the one presented in the paper by \href{https://urldefense.us/v3/__https://www.sciencedirect.com/science/article/abs/pii/S0306454922000457__;!!G_uCfscf7eWS!c9NaLaoofYY-XPmTBw8MFmRZJk8bV9tzrOHBDcuYwXMxwNnUNBHLODrR0ukV3eKPyXt9BKTQxfYGpaR5$}{Mulyana and Chirayath}. The selected reactor physics metyrics need that level of fidelity in
-performance models to capture the details as this study is looking into. If used model is sufficient, that sufficiency must be proven and provided in the paper.
+        \question Pebble Bed Reactor Model (Section II.A). While shortcomings of the base model have been briefly discussed, there is no discussion how those shortcomings relate to the purposes of the work presented in this paper. The overall selected modeling approaches as described in Section II.A appear to be overly simplistic and require reactor physics justification of their fidelity sufficiency to meet the purpose of this paper and validity of the conclusions. Today a wide variety of publications can be found that offer a much more detailed representation of the pebble bed reactor physics. Use of the model described in Section II.A poses a concern of smearing the results and not having enough fidelity to support conclusions and the analysis. Authors are recommended to review models as the one presented in the paper by \href{https://urldefense.us/v3/__https://www.sciencedirect.com/science/article/abs/pii/S0306454922000457__;!!G_uCfscf7eWS!c9NaLaoofYY-XPmTBw8MFmRZJk8bV9tzrOHBDcuYwXMxwNnUNBHLODrR0ukV3eKPyXt9BKTQxfYGpaR5$}{Mulyana and Chirayath}. The selected reactor physics metrics need that level of fidelity in
+        performance models to capture the details as this study is looking into. If used model is sufficient, that sufficiency must be proven and provided in the paper.
 
 
         \begin{solution}
+        Thank you for the comment and the suggested citation for a more detailed 
+        pebble bed model. We are unable to change the reactor core model this 
+        manuscript is based upon, but we do understand you concern about better 
+        addressing the fidelity of the model we use. Therefore, we have added 
+        text to Sections II.A and the Conclusions 
+        to better address how the fidelity of the model 
+        may affect some of the results of the manuscript. We also added text to 
+        the Introduction and Conclusions to better articulate that this study 
+        is meant to be high-level and not a detailed, comprehensive study, which 
+        means that a lower-fidelity model is more appropriate. 
                 
         \end{solution}
 
         \question The MMR model of Section IIB appears to have the needed fidelity. The fidelity of the model with respect to the performance metrics needs to be discussed as no such discussion is provided. This reviewer is concerned about the noted 2 years burnup step for the 20 years lifetime. This is a rather large step that needs justification. With such a large step,  it is expected that the depletion model does not capture proper reactor physics of the core during operation. The fuel composition and effects cannot be correct with such time steps. 
 
         \begin{solution}
+        Thank you for the comment. We have added text to Section II.B to 
+        comment on the fidelity of the MMR model and the burnup step size used. 
+        We also added text to the Future Work (Section IV.A) to including smaller 
+        burnup step sizes as a way to improve model fidelity. 
                 
         \end{solution}
 
@@ -205,7 +233,7 @@ performance models to capture the details as this study is looking into. If used
                 
         \end{solution}
 
-        \question It would greatly help supporting validity of this work, if authors took the time to evaluate reactor physics effects of compositions at the fuel lattice level. At that level, pebble bed and prismatic reactors exabit common neutronics and results would be very conclusive. 
+        \question It would greatly help supporting validity of this work, if authors took the time to evaluate reactor physics effects of compositions at the fuel lattice level. At that level, pebble bed and prismatic reactors exhibit common neutronics and results would be very conclusive. 
 
         \begin{solution}
                 
@@ -220,6 +248,12 @@ performance models to capture the details as this study is looking into. If used
         \question In a study like the one in this paper, it is customary to include a sensitivity analysis of the reactor configurations with respect to input parameters of interest for the selected metrics. This study is not included but is highly recommended.
 
         \begin{solution}
+        Thank you for the comment. We agree that adding sensitivity analysis would 
+        add value to the manuscript. However, give the current constraints on time 
+        and the length of the manuscript, we are not able to perform this 
+        analysis at this time. We have added this as an idea for future work in the 
+        conclusions section to address that sensitivity analysis would further 
+        inform the conclusions made in this manuscript. 
                 
         \end{solution}
 
