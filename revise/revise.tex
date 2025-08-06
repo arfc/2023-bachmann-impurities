@@ -166,7 +166,29 @@ paper.
 	radial, and axial seem high and inconsistent between the radial and axial
 	shapes.  
         \begin{solution}
-                
+                Thank you for the comment. In the second paragraph of Section III.A.3
+                we describe how the Serpent detectors integrate over any dimension without 
+                a specified binning structure. This means that the axial detector 
+                would integrate over the x and y directions and the radial detector 
+                would integrate over the y and z directions. 
+
+                Your comment led us to review the detector definitions, we noticed 
+                that the radial detector definition had binning in the x and y direction, 
+                and therefore was only integrating over the z axis. This error was 
+                leading to radial fluxes smaller than the axial fluxes because a 
+                smaller amount of space was integrated over. 
+
+                To alleviate this mistake we re-ran the simulations with only 
+                one detector in the input file, with spatial discretization 
+                in the x, y, and z directions. In post-processing we then only 
+                plotted the flux in one direction, not integrating over any other 
+                direction. With this adjustment to the detector definition and 
+                our post processing the magnitudes of the fluxes are smaller -- 
+                10$^{14}$ instead of 10$^{16}$-10$^{18}$ for the Sangamon200 
+                core model. 
+
+                With the re-running of the models, we updated all of the other 
+                results so that all results are consistent. 
                 
         \end{solution}
 
