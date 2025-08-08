@@ -170,11 +170,16 @@ paper.
                 we describe how the Serpent detectors integrate over any dimension without 
                 a specified binning structure. This means that the axial detector 
                 would integrate over the x and y directions and the radial detector 
-                would integrate over the y and z directions. 
+                would integrate over the y and z directions. The flex spectrum 
+                figures (Figures 3 and 9) are integrated across the entire volume 
+                of the core, which means that their magnitude should be larger 
+                than the reported axial and radial fluxes. 
 
-                Your comment led us to review the detector definitions, we noticed 
+                Your comment led us to review the detector definitions, and we noticed 
                 that the radial detector definition had binning in the x and y direction, 
-                and therefore was only integrating over the z axis. This error was 
+                and therefore was only integrating over the z axis, as opposed to 
+                binning over the x direction and integrating over the y and z 
+                directions. This error was 
                 leading to radial fluxes smaller than the axial fluxes because a 
                 smaller amount of space was integrated over. 
 
