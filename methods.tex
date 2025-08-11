@@ -79,12 +79,23 @@ the explicit layers, with a description of the homogenization in
 \cite{richter_isotopic_2022}. Using a homogenized \gls*{TRISO} particle 
 decreases the \keff of the core by 4.45\%, but it does not reduce the 
 thermal and fast neutron fluxes across the reactor outside of error 
-\cite{richter_isotopic_2022}. Despite 
-the effect on \keff of this modeling decision, the 
-homogenized model of the \gls*{TRISO} pebbles was used to be 
-consistent with the 
-published results of the Sangamon200 \cite{richter_isotopic_2022} and 
-to be conscious of computational expense. 
+\cite{richter_isotopic_2022}. Additionally, homogenizing the pebbles 
+is expected to lower the strength of the Doppler broadening effects, 
+which will lower the magnitude (i.e., make less negative) the reactivity 
+coefficients. Finally, the homogenization will increase the flux 
+in the core, because these is less self-shielding in the pebbles. 
+The magnitude of effects from homogenizing the pebbles may 
+vary some with changing fuel compositions, but the effects 
+are expected to be the same for each of the compositions 
+in this work. Additionally, the reactor physics effects 
+from the changing compositions are expected to be larger 
+in magnitude than the effect from the pebble homogenization, 
+given the the heavy metal content of the pebbles 
+is constant for each composition. 
+Therefore, the pebble homogenization is a reasonable 
+assumption to balance meeting the goals of this work and 
+the computational expense of running Serpent. 
+
 The second 
 notable difference is the reactor vessel shape. The Sangamon200 is a simple 
 cylinder, while the Xe-100 is a cylinder with a cone at the bottom to funnel 
