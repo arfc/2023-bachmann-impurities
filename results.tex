@@ -797,52 +797,6 @@ increases compared with the difference at \gls*{MOL}.
 Finally, the reactivity feedback coefficients of different materials 
 at each burnup step are reported in Table \ref{tab:coeff_mmr}. 
 
-At \gls*{BOL}, the $\alpha_F$ values from the \gls*{EBR} and Y-12 compositions 
-differ from the pure fuel $\alpha_F$ by 0.222 $\pm$ 0.152 pcm/K and 
-0.104 $\pm$ 0.142 pcm/K, respectively. At \gls*{MOL}, the $\alpha_F$ 
-values from the \gls*{EBR} and Y-12 compositions 
-differ from the pure fuel $\alpha_F$ by 0.193 $\pm$ 0.097 pcm/K and 
-0.218 $\pm$ 0.190 pcm/K, respectively. At \gls*{EOL}, the $\alpha_F$ 
-values from the \gls*{EBR} and Y-12 compositions 
-differ from the pure fuel $\alpha_F$ by -0.222 $\pm$ 0.337 pcm/K and 
--0.214 $\pm$ 0.426 pcm/K, respectively. 
-
-At \gls*{BOL}, the $\alpha_C$ values from the \gls*{EBR} and Y-12 compositions 
-differ from the pure fuel $\alpha_C$ by -0.053 $\pm$ 0.181 pcm/K and 
--0.129 $\pm$ 0.279 pcm/K, respectively. At \gls*{MOL}, the $\alpha_C$ 
-values from the \gls*{EBR} and Y-12 compositions 
-differ from the pure fuel $\alpha_C$ by -0.229 $\pm$ 0.156 pcm/K and 
--0.368 $\pm$ 0.187 pcm/K, respectively. At \gls*{EOL}, the $\alpha_C$ 
-values from the \gls*{EBR} and Y-12 compositions 
-differ from the pure fuel $\alpha_C$ by -0.260 $\pm$ 0.300 pcm/K and 
--0.115 $\pm$ 0.386 pcm/K, respectively. 
-
-
-moderator bol ebr2 0.09379678354744103 +/- 0.23408368118074913
-moderator bol y12 -0.029828883765731007 +/- 0.2446671114733458
-moderator mc ebr2 0.08390565843074005 +/- 0.21093785056554348
-moderator mc y12 -0.09220866865143762 +/- 0.2769792731899644
-moderator eol ebr2 -0.26505660787852303 +/- 0.2908211807894387
-moderator eol y12 -0.18265512250491112 +/- 0.4337679485810288
-total bol ebr2 -0.098286000709777 +/- 0.2907611014333433
-total bol y12 -0.11575778967235273 +/- 0.2843607435510391
-total mc ebr2 -0.1369912396832662 +/- 0.3815542574285986
-total mc y12 -0.17094860283541458 +/- 0.3747467527197692
-total eol ebr2 0.0478366828886454 +/- 0.5080422269045737
-total eol y12 0.20220162467903613 +/- 0.6237724257749373
-
-The 
-fuel reactivity feedback coefficients become more negative with 
-burnup, because fuel with higher burnups contain relatively more 
-$^{238}$U and $^{239}$Pu. The 
-additional resonances of the $^{238}$U and $^{239}$Pu means that the 
-Doppler broadening effect has a more pronounced impact on the reactivity 
-of the core. At each of the burnup steps, the different fuel compositions 
-result in different fuel reactivity coefficients, but each of the values 
-are within error of each other. The values being within error suggests 
-that the isotope impurities do not have a significant effect on 
-the fuel reactivity coefficients in this design. 
-
 \begin{table}[h!]
         \centering 
         \caption{Reactivity feedback coefficients (pcm/K) for each material 
@@ -879,42 +833,73 @@ the fuel reactivity coefficients in this design.
         \end{tabular}
 \end{table}
 
-The coolant reactivity feedback coefficients have the smallest absolute 
-value of any of the coefficients considered in this work, which 
-indicates that the helium coolant has the smallest effect on the reactivity 
-of the core as the temperature changes. Additionally, the coolant 
-reactivity feedback coefficient is not as dependent on the burnup of the 
-fuel as the other coefficients because the density change 
-is the primary temperature-dependent property of the helium coolant 
-instead of broadening of cross section resonances. 
-At the \gls*{BOL}, the \gls*{EBR} fuel results in a statistically 
-significant impact on the 
-coolant feedback coefficient, which shows that the fuel composition has some 
-impact on this parameter. However, the coolant reactivity feedback 
-coefficient is small compared to the other feedback coefficients so this 
-change is unlikely to cause significant changes in the operation of the 
-core as a whole. 
+At \gls*{BOL}, the $\alpha_F$ values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_F$ by 0.222 $\pm$ 0.152 pcm/K and 
+0.104 $\pm$ 0.142 pcm/K, respectively. At \gls*{MOL}, the $\alpha_F$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_F$ by 0.193 $\pm$ 0.097 pcm/K and 
+0.218 $\pm$ 0.190 pcm/K, respectively. The impure fuels 
+results in less negative $\alpha_F$ values than the pure fuel
+at \gls*{BOL} and \gls*{MOL} that are outside the range of 
+error. The displacement of $^{238}$U by the other isotopes 
+in the impure fuels decreases the Doppler broadening effects 
+of the fuel, given that $^{238}$U has more resonances than 
+the other uranium isotopes. At \gls*{EOL}, the $\alpha_F$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_F$ by -0.222 $\pm$ 0.337 
+pcm/K and -0.214 $\pm$ 0.426 pcm/K, respectively. The 
+impure fuels lead to more negative $\alpha_F$ values than 
+the pure fuel, but the differences are within error. 
 
-The moderator feedback coefficient is negative for each of the fuel 
-compositions at each burnup step, indicating that this core is 
-undermoderated. This feedback coefficient also becomes more 
-negative with burnup, because the flux in the core increases with 
-burnup. At the \gls*{BOL} and 
-\gls*{MOL} steps with the pure fuel, the moderator 
-feedback coefficient has the smallest magnitude, but at \gls*{EOL} with the 
-pure fuel the coefficient has the greatest magnitude. At each of the burnup steps the moderator 
-feedback coefficient from each of the fuels are within error of each 
-other. This agreement within error suggests that the isotope impurities 
-do not have a significant effect on this reactor operation parameter. 
+At \gls*{BOL}, the $\alpha_C$ values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_C$ by -0.053 $\pm$ 0.181 pcm/K and 
+-0.129 $\pm$ 0.279 pcm/K, respectively. At \gls*{MOL}, the $\alpha_C$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_C$ by -0.229 $\pm$ 0.156 pcm/K and 
+-0.368 $\pm$ 0.187 pcm/K, respectively. At \gls*{EOL}, the $\alpha_C$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_C$ by -0.260 $\pm$ 0.300 pcm/K and 
+-0.115 $\pm$ 0.386 pcm/K, respectively. At each of the burnup 
+steps the impure fuels lead to more negative $\alpha_C$ values 
+than the pure fuel, although some of the differences are 
+within error. These results suggest that the impure fuels 
+will lead to no significant change on this reactor 
+performance metric or will assist in meeting safety 
+requirements. 
 
-Finally, the total reactivity feedback coefficients are also all negative 
-for each fuel composition at each burnup step, and they increase in 
-magnitude with increasing burnup. Based on the values of the feedback 
-coefficients for each individual material, the total feedback coefficient 
-is mostly driven by the fuel feedback coefficient at each burnup step. 
-The different fuel compositions result in total reactivity feedback 
-coefficients that are within error of each other. Therefore, the fuel 
-composition does not significantly affect this reactor parameter either. 
-At each burnup step, the fuel and total reactivity feedback coefficients are 
-negative for each fuel composition and the values from each fuel composition 
-are within error of each other. 
+At \gls*{BOL}, the $\alpha_M$ values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_M$ by 0.094 $\pm$ 0.234 pcm/K and 
+-0.030 $\pm$ 0.245 pcm/K, respectively. At \gls*{MOL}, the $\alpha_M$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_M$ by 0.084 $\pm$ 0.211 pcm/K and 
+-0.092 $\pm$ 0.277 pcm/K, respectively. For these two burnup 
+steps the \gls*{EBR} fuel leads to a less negative $\alpha_M$ value than the pure fuel, and the Y-12 composition leads 
+to more negative $\alpha_M$ values. However, the differences are within 
+error. At \gls*{EOL}, the $\alpha_M$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_M$ by -0.265 $\pm$ 0.291 pcm/K and 
+-0.183 $\pm$ 0.434 pcm/K, respectively. Both impure fuel 
+compositions lead to more negative $\alpha_M$ values than the 
+pure fuel, but the differences are still within error. 
+Because all of the differences are within error, these fuel 
+compositions do not lead to significant changes in this 
+reactor performance metric. 
+
+
+At \gls*{BOL}, the $\alpha_T$ values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_T$ by -0.098 $\pm$ 0.291 pcm/K and 
+-0.116 $\pm$ 0.284 pcm/K, respectively. At \gls*{MOL}, the $\alpha_T$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_T$ by -0.137 $\pm$ 0.382 pcm/K and 
+-0.171 $\pm$ 0.375 pcm/K, respectively. At \gls*{EOL}, the $\alpha_T$ 
+values from the \gls*{EBR} and Y-12 compositions 
+differ from the pure fuel $\alpha_T$ by 0.048 $\pm$ 0.508 pcm/K and 
+0.202 $\pm$ 0.623 pcm/K, respectively. Similar to the 
+$\alpha_M$ values, the impure fuels lead to more 
+negative values at the \gls*{BOL} and \gls*{MOL} burnup steps 
+and less negative values at the \gls*{EOL} burnup step. 
+Also similar, all of the differences are within error, 
+suggesting that these fuel compositions do not lead to 
+significant changes in the $\alpha_T$ value for this reactor
+design. 
+
