@@ -130,7 +130,7 @@ mechanisms from being effective.
         \end{tabular}
 \end{table}
 
-\subsubsection{Neutron flux comparison}
+\subsubsection{Neutron flux comparison} \label{sec:xe100_flux}
 Figure \ref{fig:xe100_mg_flux} shows the neutron flux integrated 
 across the volume of the core as a function of energy (top) and 
 the difference from the pure fuel flux (bottom). The purple 
@@ -167,9 +167,11 @@ distance in the core before being absorbed.
 Figures \ref{fig:xe100_thermal_radial}-\ref{fig:xe100_fast_axial} show 
 thermal and fast fluxes in the reactor core axially and radially. 
 One detector was defined for these spatial fluxes, with binning
-in the x-, y-, and z-axes and the plotted flux is across a slice 
-of the x- or z-axis. Therefore, these figures have no spatial 
-integration. 
+in the x-, y-, and z-axes. Serpent integrates the flux over the individual 
+bin sizes, but the input files specific to divide that integrated flux by the 
+volume of the bins which yields a non-integrated flux. Therefore, the plotted 
+flux is in units of n/cm$^2$/s across a slice of the x- or z-axis and 
+these figures do not capture any spatial integration. 
 The thermal radial flux spectra from all three \gls*{HALEU} compositions 
 (Figure \ref{fig:xe100_thermal_radial})
 show peaks at the edge of the core resulting from the graphite moderator 
@@ -510,7 +512,9 @@ the neutron flux in the thermal and fast energy ranges in the radial and axial
 direction at each of the three burnup steps. The radial fluxes are taken 
 across the middle of the core in the y-direction, which means the flux 
 is taken across the plane with three coolant channels in Figure 
-\ref{fig:mmr_radial} and are not integrated across the x- or z-axes. 
+\ref{fig:mmr_radial} and the flux shown in these figures 
+is not integrated across the x- or z-axes, as discussed in Section 
+\ref{sec:xe100_flux}. 
 The axial flux is taken along the z-axis, and the x- and y-directions are 
 not integrated.
 
