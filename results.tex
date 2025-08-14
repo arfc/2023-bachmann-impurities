@@ -166,11 +166,10 @@ distance in the core before being absorbed.
 
 Figures \ref{fig:xe100_thermal_radial}-\ref{fig:xe100_fast_axial} show 
 thermal and fast fluxes in the reactor core axially and radially. 
-One detector was defined for these spatial fluxes, with binning
-in the x-, y-, and z-axes. Serpent integrates the flux over the individual 
-bin sizes, but the input files specific to divide that integrated flux by the 
-volume of the bins which yields a non-integrated flux. Therefore, the plotted 
-flux is in units of n/cm$^2$/s across a slice of the x- or z-axis and 
+One detector was defined for these spatial fluxes, with uniform binning
+in the x-, y-, and z-axes.  Initially, the results are integrated over the bin volume, and so the flux
+presented here has been normalized by that same volume. 
+Therefore, the plotted flux is in units of n/cm$^2$/s across a slice of the x- or z-axis and 
 these figures do not capture any spatial integration. 
 The thermal radial flux spectra from all three \gls*{HALEU} compositions 
 (Figure \ref{fig:xe100_thermal_radial})
