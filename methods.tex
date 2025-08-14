@@ -252,8 +252,32 @@ across the
 expected 20 year lifetime of the \gls*{MMR}. The core is not 
 meant to undergo refueling during those 20 years and the lack of 
 fuel movement and replacement in this model aligns with the operational 
-core. The burnup steps are 2 years, running each step with 
+core. The burnup steps vary with operation time, based on the 
+recommendations from \cite{walter_adaptive_2016}, to best capture the 
+important changes in fuel composition as a function of burnup balanced 
+with computational resource needs. Table 
+\ref{tab:bu_sizes} reports the burnup step sizes for the operating time 
+of 20 years. Each burnup step is run with 
 140 active cycles, 75 inactive cycles, and 65,000 particles per cycle. 
+
+\begin{table}
+    \centering 
+    \caption{Burnup step size as a function of operation time for the 
+    MMR-like model.}
+    \label{tab:bu_sizes}
+    \begin{tabular}{c c}
+        \hline
+        Operation time (days) & Step size (days) \\
+        \hline 
+        0-5 & 1 \\
+        5-40 & 5 \\
+        40-100 & 10 \\
+        100-400 & 25 \\
+        400-730 & 110 \\
+        730-7300 & 730 \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Temperature variations and feedbacks}
 The fuel impurities introduced by downblending may have an effect on 
