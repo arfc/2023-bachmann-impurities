@@ -168,11 +168,10 @@ distance in the core before being absorbed.
 
 Figures \ref{fig:xe100_thermal_radial}-\ref{fig:xe100_fast_axial} show 
 thermal and fast fluxes in the reactor core axially and radially. 
-One detector was defined for these spatial fluxes, with binning
-in the x-, y-, and z-axes. Serpent integrates the flux over the individual 
-bin sizes, but the input files specific to divide that integrated flux by the 
-volume of the bins which yields a non-integrated flux. Therefore, the plotted 
-flux is in units of $\frac{n}{cm^2s}$ across a slice of the x- or z-axis and 
+One detector was defined for these spatial fluxes, with uniform binning
+in the x-, y-, and z-axes.  Initially, the results are integrated over the bin volume, and so the flux
+presented here has been normalized by that same volume. 
+Therefore, the plotted flux is in units of n/cm$^2$/s across a slice of the x- or z-axis and 
 these figures do not capture any spatial integration. 
 The thermal radial flux spectra from all three \gls*{HALEU} compositions 
 (Figure \ref{fig:xe100_thermal_radial})
@@ -275,18 +274,16 @@ pass number when using the Y-12 fuel confirmed the effect of
 pebble distribution on the flux: fresh pebbles switched with 
 the most 
 burnt, single pass pebbles switched with pebbles that have gone 
-through all but one passes, etc. The thermal axial flux when 
-shuffling the Y-12 fuel  
-pebble locations (Figure \ref{fig:xe100_pebble_shuffle}) shows that 
-the placement of pebbles from each pass affects the axial symmetry 
-of the flux. Shuffling the pebbles when using the Y-12 
-\gls*{HALEU} composition still resulted in a smaller flux than the 
-pure fuel, showing that the smaller magnitude of the flux 
-is a function of the fuel composition.
+through all but one pass, etc. Figure \ref{fig:xe100_pebble_shuffle} 
+shows the axial flux in the center of the core (i.e., not integrated 
+across the x- or y-directions) using the initial pebble placements and 
+the shuffled placement with the Y12 fuel composition. The pebble shuffling 
+leads to local changes in the flux by up to 3.24 $\times 10^{13}$ n/cm$^2$/s. 
+
 
 \begin{figure}[h!]
         \centering 
-        \includegraphics[scale=0.65]{xe100_shuffled_thermal_axial.pdf}
+        \includegraphics[scale=0.65]{xe100_y12_shuffle.pdf}
         \caption{Thermal flux (below 0.625 eV) in the Sangamon200 
         reactor model in the axial direction when the locations of 
         the pebbles are shuffled for the Y-12 fuel composition case
@@ -548,9 +545,9 @@ the neutron flux in the thermal and fast energy ranges in the radial and axial
 direction at each of the three burnup steps. The radial fluxes are taken 
 across the middle of the core in the y-direction, which means the flux 
 is taken across the plane with three coolant channels in Figure 
-\ref{fig:mmr_radial}. The flux shown in these figures 
-is not integrated across any axis, as discussed in Section 
-\ref{sec:xe100_flux}.
+\ref{fig:mmr_radial}. The axial flux is taken along the z-axis. 
+Neither the radial flux nor the axial flux are integrated across the 
+other two axes, as discussed in Section \ref{sec:xe100_flux}.
 
 The radial flux at \gls*{BOL} (Figures \ref{fig:mmr_thermal_radial_bol} and 
 \ref{fig:mmr_fast_radial_bol}) show that the thermal flux peaks in the 
