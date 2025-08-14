@@ -269,9 +269,17 @@ limitations.
         having enough fidelity to support conclusions and the analysis. Authors are
         commended to review models as the one presented in the paper by Mulyana and
         Chirayath\cite{mulyana_impact_2022}.
-        The selected reactor physics metyrics need that level of fidelity in
+        The selected reactor physics metrics need that level of fidelity in
         performance models to capture the details as this study is looking into. If used model is sufficient, that sufficiency must be proven and provided in the paper.
         \begin{solution}
+                Thank you for the comment and the suggested reading. We have added
+                text to Section II.A to more thoroughly discuss the effects of 
+                the pebble homogenization on the results of this study. A more 
+                detailed analysis using heterogeneous pebbles would increase 
+                the fidelity of the results but was outside the scope of this work. 
+                We have expanded the discussion in Section IV.A on how using 
+                a heterogeneous pebble model would affect the results and why 
+                that future work is of value. 
         \end{solution}
          
 
@@ -285,6 +293,20 @@ limitations.
         operation. The fuel composition and effects cannot be correct with such time
         steps. 
         \begin{solution}
+                Thank you for the comment. We updated the 
+                burnup step sizes for the MMR depletion 
+                to start at 1 day time steps, then increase
+                to 5 day steps at 5 days, 10 day steps at 40 days,  
+                25 day steps at 100 days,
+                110 day steps at 400 days, and then
+                to 2 year time steps at 730 days (730 days). 
+                These burnup step sizes are based on recommendations from 
+                \cite{walter_adaptive_2016}. These step sizes create a finer 
+                mesh at the beginning of reactor operation to better 
+                capture the core composition changes. 
+
+                We have updated the text in Section II.B to reflect the changes 
+                in the burnup step sizes. 
         \end{solution} 
 
 
