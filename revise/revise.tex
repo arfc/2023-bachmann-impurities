@@ -164,14 +164,50 @@ paper.
         %---------------------------------------------------------------------
 	\question Biggest observation is that the magnitude of the fluxes for total,
 	radial, and axial seem high and inconsistent between the radial and axial
-	shapes.  Some of the conclusions about the coolant and moderator temperature
+	shapes.  
+        \begin{solution}
+                Thank you for the comment. In the second paragraph of Section III.A.3
+                we describe how the Serpent detectors integrate over any dimension without 
+                a specified binning structure. This means that the axial detector 
+                would integrate over the x and y directions and the radial detector 
+                would integrate over the y and z directions. The flux spectrum 
+                figures (Figures 3 and 9) are integrated across the entire volume 
+                of the core, which means that their magnitude should be larger 
+                than the reported axial and radial fluxes. 
+
+                Your comment led us to review the detector definitions, and we noticed 
+                that the radial detector definition had binning in the x and y direction, 
+                and therefore was only integrating over the z axis, as opposed to 
+                binning over the x direction and integrating over the y and z 
+                directions. This error was 
+                leading to radial fluxes smaller than the axial fluxes because a 
+                smaller amount of space was integrated over. 
+
+                To alleviate this mistake we re-ran the simulations with only 
+                one detector in the input file, with spatial discretization 
+                in the x, y, and z directions, and divided flux tallies by bin volume. In post-processing we then only 
+                plotted the flux in one direction, not integrating over any other 
+                direction. With this adjustment to the detector definition and 
+                our post processing the magnitudes of the axial and radial 
+                fluxes are smaller -- 
+                10$^{14}$ instead of 10$^{16}$-10$^{18}$ for the Sangamon200 
+                core model and 10$^{13}$ instead of 10$^{15}$-10$^{18}$ for the 
+                MMR-like model. 
+
+                With the re-running of the models, we updated all of the other 
+                results so that all results are consistent. 
+                
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Some of the conclusions about the coolant and moderator temperature
 	coefficients could use some more rationale tied to the Serpent output results
 	for reaction rates in the regions or flux per unit lethargy plots (with perhaps
 	some more methods explanation for the geometric expansion in addition to the
 	simple cross section changes for just cross section temperature effects)
 	 \begin{solution}
 	 \end{solution}
-	\end{questions} 
+\end{questions} 
 
 
 \section*{Reviewer 2}

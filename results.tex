@@ -45,9 +45,9 @@ the pure fuel.
                 \hline
                 Fuel composition & \keff \\
                 \hline 
-                Pure & 1.06663 $\pm$ 0.00016\\
-                \gls*{EBR} & 1.08086 $\pm$ 0.00016\\
-                Y-12 & 1.08016 $\pm$ 0.00014\\
+                Pure & 1.07349 $\pm$ 0.00032\\
+                \gls*{EBR} & 1.08831 $\pm$ 0.00034\\
+                Y-12 & 1.08766 $\pm$ 0.00035\\
                 \hline                
         \end{tabular}
 \end{table}
@@ -86,9 +86,9 @@ cycle length can be reached.
                 \hline 
                 Fuel composition & $\eta$ \\
                 \hline 
-                Pure & 1.712\\ 
-                EBR-II & 1.737 \\
-                Y-12 & 1.735\\
+                Pure & 1.71511 $\pm$ 0.00042\\ 
+                EBR-II & 1.73991 $\pm$ 0.00034 \\
+                Y-12 & 1.74009 $\pm$ 0.00038\\
                 \hline                 
         \end{tabular}
 \end{table}
@@ -123,16 +123,16 @@ mechanisms from being effective.
                 \hline
                 Fuel type & \betaEff \\
                 \hline
-                Pure & 0.00617 $\pm$ 0.00003 \\
-                \gls*{EBR} & 0.00604 $\pm$ 0.00003 \\
-                Y-12 & 0.00598 $\pm$ 0.00020 \\
+                Pure & 0.00613 $\pm$ 0.00006 \\
+                \gls*{EBR} & 0.00601 $\pm$ 0.00005 \\
+                Y-12 & 0.00596 $\pm$ 0.00005 \\
                 \hline
         \end{tabular}
 \end{table}
 
-\subsubsection{Neutron flux comparison}
-Figure \ref{fig:xe100_mg_flux} shows the neutron flux in the 
-active region of the core as a function of energy (top) and 
+\subsubsection{Neutron flux comparison} \label{sec:xe100_flux}
+Figure \ref{fig:xe100_mg_flux} shows the neutron flux integrated 
+across the volume of the core as a function of energy (top) and 
 the difference from the pure fuel flux (bottom). The purple 
 line in both plots shows the delineation between the fast 
 and thermal energy groups in this work (0.625 eV). 
@@ -166,10 +166,11 @@ distance in the core before being absorbed.
 
 Figures \ref{fig:xe100_thermal_radial}-\ref{fig:xe100_fast_axial} show 
 thermal and fast fluxes in the reactor core axially and radially. 
-For this work, the radial tally 
-was defined across the x- and y-axes and the axial detector was defined 
-across the z-direction. The flux in a detector in Serpent is integrated 
-across the volume of the core \cite{leppanen_serpent_2013}. 
+One detector was defined for these spatial fluxes, with uniform binning
+in the x-, y-, and z-axes.  Initially, the results are integrated over the bin volume, and so the flux
+presented here has been normalized by that same volume. 
+Therefore, the plotted flux is in units of n/cm$^2$/s across a slice of the x- or z-axis and 
+these figures do not capture any spatial integration. 
 The thermal radial flux spectra from all three \gls*{HALEU} compositions 
 (Figure \ref{fig:xe100_thermal_radial})
 show peaks at the edge of the core resulting from the graphite moderator 
@@ -343,9 +344,9 @@ All of the coefficients are negative.
             Fuel type & \multicolumn{4}{c}{Reactivity feedback coefficient (pcm/K)} \\
             & Fuel ($\alpha_F$) & Coolant ($\alpha_C$) & Moderator ($\alpha_M$) & Total ($\alpha_T$)\\
             \hline
-            Pure & -3.875 $\pm$ 0.094 & -0.044 $\pm$ 0.112 & -0.071 $\pm$ 0.459 & -4.216 $\pm$ 0.502\\
-            \gls*{EBR} & -3.759 $\pm$ 0.138 & -0.433 $\pm$ 0.048 & -0.708 $\pm$ 0.404 & -4.817 $\pm$ 0.438\\
-            Y-12 & -3.797 $\pm$ 0.157 & -0.351 $\pm$ 0.092 & -0.728 $\pm$ 0.469 & -4.700 $\pm$ 0.349\\
+            Pure & -3.837 $\pm$ 0.078 & -0.394 $\pm$ 0.221 & -0.696 $\pm$ 0.206 & -4.205 $\pm$ 0.488\\
+            \gls*{EBR} & -3.787 $\pm$ 0.141 & -0.416 $\pm$ 0.213 & -1.105 $\pm$ 0.460 & -4.823 $\pm$ 0.359\\
+            Y-12 & -4.002 $\pm$ 0.169 & -0.213 $\pm$ 0.180 & -1.185 $\pm$ 0.348 & -5.255 $\pm$ 0.369\\
             \hline
 
         \end{tabular}
@@ -419,9 +420,9 @@ effect on the neutron population at the beginning of life.
                 Fuel type & \multicolumn{3}{c}{Burnup step}\\
                 & \gls*{BOL} & \gls*{MOL} & \gls*{EOL} \\
                 \hline 
-                Pure & 1.33797 $\pm$ 0.00027 & 1.18048 $\pm$ 0.00025 & 1.05535$\pm$000024\\
-                \gls*{EBR} & 1.32609 $\pm$0.00028 & 1.17148 $\pm$ 0.00027 & 1.04792 $\pm$ 0.00025 \\
-                Y-12 & 1.32453$\pm$0.00029 & 1.17051$\pm$0.00027 & 1.04823$\pm$0.0024\\
+                Pure & 1.34062 $\pm$ 0.00027 & 1.18257 $\pm$ 0.00025 & 1.05744 $\pm$ 0.00023\\
+                \gls*{EBR} & 1.32868 $\pm$ 0.00029 & 1.17323 $\pm$ 0.00026 & 1.04981 $\pm$ 0.00028 \\
+                Y-12 & 1.32769 $\pm$ 0.00029 & 1.17238 $\pm$ 0.00025 & 1.04833 $\pm$ 0.00026\\
                 \hline
                 
         \end{tabular}
@@ -466,9 +467,9 @@ dominate the decrease of the fast fission factor, compared with a \gls*{PWR}.
                 Fuel type & \multicolumn{3}{c}{Burnup step}\\
                 & \gls*{BOL} & \gls*{MOL} & \gls*{EOL}\\
                 \hline 
-                Pure & 0.00669 $\pm$ 0.00004 & 0.00586 $\pm$ 0.00004 & 0.00548 $\pm$ 0.00003\\
-                \gls*{EBR} & 0.00663 $\pm$ 0.00003 & 0.00591 $\pm$ 0.00003 & 0.00542 $\pm$ 0.00003\\
-                Y-12 & 0.00665 $\pm$ 0.00004 &  0.00598 $\pm$ 0.00004& 0.00553 $\pm$ 0.00003\\
+                Pure & 0.00668 $\pm$ 0.00004 & 0.00583 $\pm$ 0.00003 & 0.00536 $\pm$ 0.00004\\
+                \gls*{EBR} & 0.00667 $\pm$ 0.00004 & 0.00595 $\pm$ 0.00004 & 0.00552 $\pm$ 0.00003\\
+                Y-12 & 0.00675 $\pm$ 0.00004 &  0.00588 $\pm$ 0.00003 & 0.00548 $\pm$ 0.00003\\
                 \hline 
 
         \end{tabular}
@@ -481,8 +482,8 @@ fuel impurities do not lead to any significant changes in the
 \betaEff. 
 
 \subsubsection{Neutron flux comparison}
-Figure \ref{fig:mmr_energy_spectrum} shows the flux in the active 
-region of the core as a function of energy (top) and the difference between 
+Figure \ref{fig:mmr_energy_spectrum} shows the flux integrated across the 
+core at \gls*{BOL} as a function of energy (top) and the difference between 
 the flux from the pure fuel and each of the impure fuels (bottom). 
 This figure shows that the difference between 
 the fluxes is small compared with the magnitude of the flux (two orders 
@@ -494,7 +495,7 @@ in the flux are larger in the fast energy group than in the thermal energy group
 
 \begin{figure}[h!]
         \centering
-        \includegraphics[scale=0.75]{mmr_energy_spectrum.pdf}
+        \includegraphics[scale=0.75]{mmr_flux_mg_bol.pdf}
         \caption{Top: Flux spectra for each fuel composition 
         in the \gls*{MMR}-like model at a 
         burnup of 0 MWd/kgU in the active region of the core. The 
@@ -510,9 +511,9 @@ the neutron flux in the thermal and fast energy ranges in the radial and axial
 direction at each of the three burnup steps. The radial fluxes are taken 
 across the middle of the core in the y-direction, which means the flux 
 is taken across the plane with three coolant channels in Figure 
-\ref{fig:mmr_radial}. The axial 
-flux is taken along the z-axis, with the 
-x- and y-directions integrated.
+\ref{fig:mmr_radial}. The axial flux is taken along the z-axis. 
+Neither the radial flux nor the axial flux are integrated across the 
+other two axes, as discussed in Section \ref{sec:xe100_flux}.
 
 The radial flux at \gls*{BOL} (Figures \ref{fig:mmr_thermal_radial_bol} and 
 \ref{fig:mmr_fast_radial_bol}) show that the thermal flux peaks in the 
@@ -533,14 +534,14 @@ using the pure fuel at \gls*{BOL}.
         \centering
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_radial_bol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_thermal_radial_bol.pdf}
             \caption{Thermal radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_thermal_radial_bol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_radial_bol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_fast_radial_bol.pdf}
             \caption{Fast radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_radial_bol}
         \end{subfigure}
@@ -554,14 +555,14 @@ using the pure fuel at \gls*{BOL}.
 \begin{figure}[h!]      
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_axial_bol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_thermal_axial_bol.pdf}
             \caption{Thermal axial flux in the \gls*{MMR}-like reactor. }
             \label{fig:mmr_thermal_axial_bol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_axial_bol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_fast_axial_bol.pdf}
             \caption{Fast axial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_axial_bol}
         \end{subfigure}
@@ -603,14 +604,14 @@ A similar pattern occurs in the fast axial flux.
         \centering
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_radial_mc.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_thermal_radial_mc.pdf}
             \caption{Thermal radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_thermal_radial_mc}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_radial_mc.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_fast_radial_mc.pdf}
             \caption{Fast radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_radial_mc}
         \end{subfigure}
@@ -625,14 +626,14 @@ A similar pattern occurs in the fast axial flux.
 \begin{figure}[h!]          
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_axial_mc.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_thermal_axial_mc.pdf}
             \caption{Thermal axial flux in the \gls*{MMR}-like reactor. }
             \label{fig:mmr_thermal_axial_mc}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_axial_mc.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_fast_axial_mc.pdf}
             \caption{Fast axial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_axial_mc}
         \end{subfigure}
@@ -664,14 +665,14 @@ increases compared with the difference at \gls*{MOL}.
         \centering
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_radial_eol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_thermal_radial_eol.pdf}
             \caption{Thermal radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_thermal_radial_eol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_radial_eol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_fast_radial_eol.pdf}
             \caption{Fast radial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_radial_eol}
         \end{subfigure}
@@ -686,14 +687,14 @@ increases compared with the difference at \gls*{MOL}.
    \begin{figure}
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_thermal_axial_eol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_thermal_axial_eol.pdf}
             \caption{Thermal axial flux in the \gls*{MMR}-like reactor. }
             \label{fig:mmr_thermal_axial_eol}
         \end{subfigure}
         \hfill
         \begin{subfigure}{0.85\textwidth}
             \centering
-            \includegraphics[width=\textwidth,trim=0 25 0 30,clip]{mmr_fast_axial_eol.pdf}
+            \includegraphics[width=\textwidth,trim=0 15 0 30,clip]{mmr_fast_axial_eol.pdf}
             \caption{Fast axial flux in the \gls*{MMR}-like reactor.}
             \label{fig:mmr_fast_axial_eol}
         \end{subfigure}
@@ -732,24 +733,24 @@ the fuel reactivity coefficients in this design.
                 Fuel & \gls*{BOL} & \gls*{MOL} & \gls*{EOL} \\
                 \hline 
                 \multicolumn{4}{c}{Fuel reactivity feedback, $\alpha_F$}\\
-                Pure & -3.314 $\pm$ 0.059 & -3.889 $\pm$ 0.088 & -4.536 $\pm$0.264\\
-                \gls*{EBR} & -3.073 $\pm$ 0.109 & -3.720 $\pm$ 0.147 & -4.699 $\pm$ 0.151\\
-                Y-12 & -3.233 $\pm$ 0.107 & -3.704 $\pm$ 0.133 & -4.168 $\pm$ 0.100\\
+                Pure & -3.316 $\pm$ 0.120 & -3.921 $\pm$ 0.088 & -4.565 $\pm$ 0.294\\
+                \gls*{EBR} & -2.941 $\pm$ 0.094 & -3.729 $\pm$ 0.040 & -4.787 $\pm$ 0.164\\
+                Y-12 & -3.060 $\pm$ 0.077 & -3.703 $\pm$ 0.168 & -4.779 $\pm$ 0.310\\
                 %\hline 
                 \multicolumn{4}{c}{Coolant reactivity feedback, $\alpha_C$}\\
-                Pure & -0.211 $\pm$ 0.063 & 0.021 $\pm$ 0.169 & 0.052 $\pm$ 0.234\\
-                \gls*{EBR} & 0.007 $\pm$ 0.051 & -0.165 $\pm$ 0.183 & 0.005 $\pm$ 0.085\\
-                Y-12 & -0.221 $\pm$ 0.068 & 0.197 $\pm$ 0.145 & -0.015 $\pm$ 0.158\\
+                Pure & 0.047 $\pm$ 0.162 & 0.200 $\pm$ 0.086 & 0.066 $\pm$ 0.190\\
+                \gls*{EBR} & -0.007 $\pm$ 0.081 & -0.029 $\pm$ 0.131 & -0.194 $\pm$ 0.229\\
+                Y-12 & -0.083 $\pm$ 0.227 & -0.167 $\pm$ 0.166 & -0.049 $\pm$ 0.336\\
                 %\hline 
                 \multicolumn{4}{c}{Moderator reactivity feedback, $\alpha_M$}\\
-                Pure & -0.815 $\pm$ 0.062 & -1.298 $\pm$ 0.155 & -2.590 $\pm$ 0.323\\
-                \gls*{EBR} &-0.934 $\pm$ 0.171 & -1.723 $\pm$ 0.268 & -2.375 $\pm$ 0.313\\
-                Y-12 & -0.950 $\pm$ 0.138 & -1.333 $\pm$ 0.206 & -2.432 $\pm$ 0.190\\
+                Pure & -1.021 $\pm$ 0.155 & -1.621 $\pm$ 0.172 & -2.186 $\pm$ 0.182\\
+                \gls*{EBR} & -0.928 $\pm$ 0.176 & -1.537 $\pm$ 0.122 & -2.451 $\pm$ 0.267\\
+                Y-12 & -1.052 $\pm$ 0.190 & -1.713 $\pm$ 0.217 & -2.369 $\pm$ 0.394\\
                 %\hline 
                 \multicolumn{4}{c}{Total reactivity feedback, $\alpha_F$}\\
-                Pure & -4.142 $\pm$ 0.297 & -5.015 $\pm$ 0.215 & -6.865 $\pm$ 0.300\\
-                \gls*{EBR} & -4.191 $\pm$ 0.097 & -5.284 $\pm$ 0.286 & -6.709 $\pm$ 0.329\\
-                Y-12 & -4.037 $\pm$ 0.322 & -5.410 $\pm$ 0.268 & -6.689 $\pm$ 0.232\\
+                Pure & -3.974 $\pm$ 0.205 & -5.264 $\pm$ 0.247 & -7.020 $\pm$ 0.309\\
+                \gls*{EBR} & -4.072 $\pm$ 0.206 & -5.401 $\pm$ 0.291 & -6.972 $\pm$ 0.403\\
+                Y-12 & -4.090 $\pm$ 0.197 & -5.434$\pm$ 0.282 & -6.818 $\pm$ 0.542\\
                 \hline 
                 
                 
