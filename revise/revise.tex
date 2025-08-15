@@ -95,8 +95,7 @@
 
 
 \usepackage[acronym,toc]{glossaries}
-%\include{acros}
-\usepackage{hyperref}
+\include{../acros}
 
 \makeglossaries
 
@@ -179,14 +178,63 @@ paper.
         \end{solution}
 
         %---------------------------------------------------------------------
-	\question Some of the conclusions about the coolant and moderator temperature
+	\question Biggest observation is that the magnitude of the fluxes for total,
+	radial, and axial seem high and inconsistent between the radial and axial
+	shapes.  
+        \begin{solution}
+                Thank you for the comment. In the second paragraph of Section III.A.3
+                we describe how the Serpent detectors integrate over any dimension without 
+                a specified binning structure. This means that the axial detector 
+                would integrate over the x and y directions and the radial detector 
+                would integrate over the y and z directions. The flux spectrum 
+                figures (Figures 3 and 9) are integrated across the entire volume 
+                of the core, which means that their magnitude should be larger 
+                than the reported axial and radial fluxes. 
+
+                Your comment led us to review the detector definitions, and we noticed 
+                that the radial detector definition had binning in the x and y direction, 
+                and therefore was only integrating over the z axis, as opposed to 
+                binning over the x direction and integrating over the y and z 
+                directions. This error was 
+                leading to radial fluxes smaller than the axial fluxes because a 
+                smaller amount of space was integrated over. 
+
+                To alleviate this mistake we re-ran the simulations with only 
+                one detector in the input file, with spatial discretization 
+                in the x, y, and z directions, and divided flux tallies by bin volume. In post-processing we then only 
+                plotted the flux in one direction, not integrating over any other 
+                direction. With this adjustment to the detector definition and 
+                our post processing the magnitudes of the axial and radial 
+                fluxes are smaller -- 
+                10$^{14}$ instead of 10$^{16}$-10$^{18}$ for the Sangamon200 
+                core model and 10$^{13}$ instead of 10$^{15}$-10$^{18}$ for the 
+                MMR-like model. 
+
+                With the re-running of the models, we updated all of the other 
+                results so that all results are consistent. 
+                
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Some of the conclusions about the coolant and moderator temperature
 	coefficients could use some more rationale tied to the Serpent output results
 	for reaction rates in the regions or flux per unit lethargy plots (with perhaps
 	some more methods explanation for the geometric expansion in addition to the
 	simple cross section changes for just cross section temperature effects)
 	 \begin{solution}
+                Thank you for the comment. With the updated 
+                results, the changes in the reactivity 
+                feedback coefficients are mostly 
+                insignificant (i.e., within error). 
+                Therefore, it is difficult to draw any 
+                meaningful conclusions from those results, 
+                and we have updated the text in Sections 
+                III.A.4 and III.B.4 and the conclusions 
+                (Section IV) to reflect these updated 
+                results. 
+
 	 \end{solution}
-	\end{questions} 
+\end{questions} 
 
 
 \section*{Reviewer 2}
@@ -204,8 +252,9 @@ limitations.
         %---------------------------------------------------------------------
 	\question Abstract, as written, does not have any actual results. It can be put together without the rest of the paper. Consider including some major results in the abstract, not just final claims. 
 	 \begin{solution}
-                Thank you for your comment. We have added some concrete results to the 
-                abstract. 
+                Thank you for the comment. We have added text to the abstract 
+                to discuss some of the results in more concrete detail that 
+                support some of the conclusions in the abstract. 
 	 \end{solution}
 
 
@@ -216,9 +265,10 @@ limitations.
 	metric to support authors claim of no significant effect. Overall, each
 	conclusions claim needs stronger connection to the results of the paper. 
 	 \begin{solution}
-                Thank you for the comment. We have added additional text to the 
-                Conclusions (Section IV) to better illustrate and support the 
-                conclusions drawn. 
+                Thank you for the comment. We have revised the language throughout 
+                the Results section (Section III) and conclusions (Section IV) 
+                to include more quantitative statements to provide more support 
+                for the conclusions drawn in this paper. 
 	 \end{solution}
  
 
@@ -235,19 +285,17 @@ limitations.
         having enough fidelity to support conclusions and the analysis. Authors are
         commended to review models as the one presented in the paper by Mulyana and
         Chirayath\cite{mulyana_impact_2022}.
-        The selected reactor physics metyrics need that level of fidelity in
+        The selected reactor physics metrics need that level of fidelity in
         performance models to capture the details as this study is looking into. If used model is sufficient, that sufficiency must be proven and provided in the paper.
         \begin{solution}
-                Thank you for the comment and the suggested citation for a more detailed 
-                pebble bed model. We are unable to change the reactor core model this 
-                manuscript is based upon, but we do understand you concern about better 
-                addressing the fidelity of the model we use. Therefore, we have added 
-                text to Sections II.A and the Conclusions 
-                to better address how the fidelity of the model 
-                may affect some of the results of the manuscript. We also added text to 
-                the Introduction and Conclusions to better articulate that this study 
-                is meant to be high-level and not a detailed, comprehensive study, which 
-                means that a lower-fidelity model is more appropriate. 
+                Thank you for the comment and the suggested reading. We have added
+                text to Section II.A to more thoroughly discuss the effects of 
+                the pebble homogenization on the results of this study. A more 
+                detailed analysis using heterogeneous pebbles would increase 
+                the fidelity of the results but was outside the scope of this work. 
+                We have expanded the discussion in Section IV.A on how using 
+                a heterogeneous pebble model would affect the results and why 
+                that future work is of value. 
         \end{solution}
          
 
@@ -261,6 +309,20 @@ limitations.
         operation. The fuel composition and effects cannot be correct with such time
         steps. 
         \begin{solution}
+                Thank you for the comment. We updated the 
+                burnup step sizes for the MMR depletion 
+                to start at 1 day time steps, then increase
+                to 5 day steps at 5 days, 10 day steps at 40 days,  
+                25 day steps at 100 days,
+                110 day steps at 400 days, and then
+                to 2 year time steps at 730 days (730 days). 
+                These burnup step sizes are based on recommendations from 
+                \cite{walter_adaptive_2016}. These step sizes create a finer 
+                mesh at the beginning of reactor operation to better 
+                capture the core composition changes. 
+
+                We have updated the text in Section II.B to reflect the changes 
+                in the burnup step sizes. 
         \end{solution} 
 
 
@@ -270,6 +332,24 @@ limitations.
         what made this paper a single study drawing conclusions for both types of HTREs
         and hence for all HTRs by association. 
         \begin{solution}
+                Thank you for the comment. The purpose of 
+                this paper is not to compare the two designs, 
+                but rather provide a discussion on the 
+                effects of the fuel composition in these two 
+                designs that have some similar 
+                characteristics. By providing this analysis 
+                of both designs, we can provide more value in 
+                one paper. 
+                
+                We have edited the text in the introduction 
+                (Section I)
+                to make it more clear to a reader that this 
+                paper is not a comparison between the two  
+                designs. We have also removed some of the 
+                comparisons between the results of each 
+                design in the Results section (Section III)
+        
+        
         \end{solution} 
          
         %---------------------------------------------------------------------
@@ -292,6 +372,15 @@ limitations.
         include demonstrations proving the case. The infinite lattice studies and use
         of reaction rates are customary tools for that. 
         \begin{solution}
+                Thank you for the comment. To help address
+                this concern, we have added in more 
+                quantitative results to the discussions of 
+                Section III. The added information can help 
+                to support the conclusions that are made 
+                in the manuscript and can help identify when 
+                the changes in the metrics may be a result 
+                of modeling decisions and when they may be 
+                a result of the fuel composition changes. 
         \end{solution} 
          
         %---------------------------------------------------------------------
@@ -300,6 +389,20 @@ limitations.
         parameters of interest for the selected metrics. This study is not included but
         is highly recommended.
         \begin{solution}
+                Thank you for your comment. This 
+                manuscript presents a sensitivity analysis, 
+                discussing the sensitivity of reactor 
+                physics parameters to the uranium isotopic 
+                composition in the fuel. Albeit, it is a 
+                coarse sensitivity study given that we only 
+                used three different isotopic compositions. 
+                We recognize the value in
+                sensitivity analysis and therefore have 
+                added text to the Conclusions (Section IV)
+                to discuss performing a sensitivity 
+                analysis with a finer grid space of fuel 
+                compositions as recommended future work.
+
         \end{solution} 
 \end{questions}
 \bibliographystyle{unsrt}

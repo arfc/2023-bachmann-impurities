@@ -79,12 +79,21 @@ the explicit layers, with a description of the homogenization in
 \cite{richter_isotopic_2022}. Using a homogenized \gls*{TRISO} particle 
 decreases the \keff of the core by 4.45\%, but it does not reduce the 
 thermal and fast neutron fluxes across the reactor outside of error 
-\cite{richter_isotopic_2022}. Despite 
-the effect on \keff of this modeling decision, the 
-homogenized model of the \gls*{TRISO} pebbles was used to be 
-consistent with the 
-published results of the Sangamon200 \cite{richter_isotopic_2022} and 
-to be conscious of computational expense. 
+\cite{richter_isotopic_2022}. Additionally, homogenizing the pebbles 
+is expected to lower the strength of the Doppler broadening effects, 
+which will lower the magnitude (i.e., make less negative) the reactivity feedback
+coefficients. Finally, the homogenization will increase the flux 
+in the core, because self-shielding in the pebbles is negligible. 
+The magnitude of effects from homogenizing the pebbles may 
+vary some with changing fuel compositions, but the effects 
+are expected to remain relatively constant across the compositions 
+in this work.  Given that the heavy metal content of the pebbles remains constant
+across the three compositions in this work, the reactor physics effects 
+from changing the compositions are expected to be larger in magnitude 
+than the effects from pebble homogenization.
+Therefore, it is reasonable to assume homogenized pebbles in order to 
+balance the goals of this work with available computational resources.
+
 The second 
 notable difference is the reactor vessel shape. The Sangamon200 is a simple 
 cylinder, while the Xe-100 is a cylinder with a cone at the bottom to funnel 
@@ -243,8 +252,32 @@ across the
 expected 20 year lifetime of the \gls*{MMR}. The core is not 
 meant to undergo refueling during those 20 years and the lack of 
 fuel movement and replacement in this model aligns with the operational 
-core. The burnup steps are 2 years, running each step with 
+core. The burnup steps vary with operation time, based on the 
+recommendations from \cite{walter_adaptive_2016}, to best capture the 
+important changes in fuel composition as a function of burnup balanced 
+with computational resource needs. Table 
+\ref{tab:bu_sizes} reports the burnup step sizes for the operating time 
+of 20 years. Each burnup step is run with 
 140 active cycles, 75 inactive cycles, and 65,000 particles per cycle. 
+
+\begin{table}
+    \centering 
+    \caption{Burnup step size as a function of operation time for the 
+    MMR-like model.}
+    \label{tab:bu_sizes}
+    \begin{tabular}{c c}
+        \hline
+        Operation time (days) & Step size (days) \\
+        \hline 
+        0-5 & 1 \\
+        5-40 & 5 \\
+        40-100 & 10 \\
+        100-400 & 25 \\
+        400-730 & 110 \\
+        730-7300 & 730 \\
+        \hline
+    \end{tabular}
+\end{table}
 
 \subsection{Temperature variations and feedbacks}
 The fuel impurities introduced by downblending may have an effect on 
