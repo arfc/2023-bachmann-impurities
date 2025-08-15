@@ -29,7 +29,9 @@ reactivity control mechanisms may not be as effective when using
 the impure fuels. The impure fuels resulted in a depression in the 
 thermal neutron flux across the active region of the core.  Finally, the impure fuels 
 lead to reactivity feedback coefficients that are of a greater magnitude 
-or are within error of the values from the pure fuel. 
+or are within error of the values from the pure fuel.
+Therefore, the effects of the impure fuel compositions 
+may also affect reactor operation parameters. 
 
 In the \gls*{MMR}-like model, the impure fuels result in smaller 
 \keff values at each burnup step, but do not prevent the reactor 
@@ -44,7 +46,7 @@ be more impactful. The impure fuels lead to larger fluxes in the
 fast energy range, compared with the pure fuel. The differences 
 in the radial flux are dependent on proximity to fuel pin 
 and coolant channels in the core, with the differences being 
-larger near a fuel pin. 
+larger near a coolant channel. 
 Most of the reactivity feedback 
 coefficients from the different fuel compositions are within 
 error of each other, especially at the \gls*{EOL} burnup 
@@ -52,8 +54,8 @@ step.
 
 The results presented in this work 
 suggest that these three different \gls*{HALEU} compositions 
-do not have a significant effect on many of the performance metrics of these 
-two reactor designs, and would not prevent them from operating in 
+can have a significant effect on many of the performance metrics of these 
+two reactor designs, but would not necessarily prevent them from operating in 
 a safe state. The largest changes from the different fuel 
 compositions were observed in the spatially-dependent fluxes, 
 which could affect material degradation in the reactor. 
@@ -62,13 +64,14 @@ which could affect material degradation in the reactor.
 \subsection{Future Work}
 The work presented here provides a quantitative baseline to 
 gauge the impacts 
-of using downblended \gls*{HEU} in advanced reactors. This 
+of using downblended \gls*{HEU} in two \gls*{HTGR} designs. 
+This 
 work compared the reactor physics parameters when using 
 three different uranium isotopic compositions. While the 
 results here provide valuable insights, a more comprehensive 
 sensitivity analysis could extend these findings. Such 
 a study could use more fuel compositions in the reactor 
-models, by either modifying the three compositions used 
+models by either modifying the three compositions used 
 in this work (e.g., applying 5-10\% variations in each 
 uranium isotope) or apply a systematic grid of uranium 
 compositions. These finer detail sensitivity studies 
@@ -79,19 +82,21 @@ Additionally,
 one may find that higher fidelity models reveal further insights into 
 these effects. Improving the model fidelity may 
 include updating the reactor geometries, using 
-fuel pebbles with explicitly defined fuel kernels and at least one representative outer \gls*{TRISO} layer (i.e., a heterogeneous pebble model), 
-modeling temperature distributions across the core, and updating 
-the material compositions 
-to include any 
+fuel pebbles with explicitly defined fuel kernels and at 
+least one representative outer \gls*{TRISO} layer (i.e., a 
+heterogeneous pebble model), 
+modeling temperature distributions across the core, and 
+updating the material compositions to include any 
 burnable absorbers or other neutron poisons that would be 
 used during operation to control reactivity. Notably, 
 analysis of a heterogeneous \gls*{TRISO} pebble 
 can provide more insight into the magnitude of the effect 
-of pebble homogenization on the results. 
+of pebble homogenization on the results in this work. 
 
 Finally, the Sangamon200 model assumes an equilibrium state. 
 However, downblended \gls*{HEU} may be used to create fuel for start up 
-cores. Therefore, analysis of these compositions in the Xe-100 
+cores. Therefore, analysis of these compositions in an 
+Xe-100-like 
 design in a start up core configuration would be more beneficial to 
 understanding potential limitations of these fuel compositions 
 to initially fuel reactors while developing infrastructure to 
