@@ -5,10 +5,10 @@ neutron fraction (\betaEff), energy- and spatially dependent
 neutron flux ($\phi$), as well as the fuel, coolant, moderator, and total reactivity 
 temperature feedback coefficients ($\alpha_F$, $\alpha_C$, 
 $\alpha_M$, $\alpha_T$). The
-\keff, \betaEff, and neutron flux were calculated with Serpent. 
-Neutron energy binning is based on the  pre-defined SCALE-238 
+\keff, \betaEff, and neutron flux were calculated by Serpent. 
+Neutron energy binning is based on the pre-defined SCALE-238 
 group energy structure in 
-Serpent for the energy-dependent flux ($\phi$) and the pre-defined 
+Serpent for the energy-dependent flux and the pre-defined 
 two group energy structure to separate the 
 spatially-dependent flux into fast and thermal energy groups. The delineation between fast 
 and thermal neutrons with this group structure is 0.625 eV.
@@ -17,8 +17,9 @@ data (reactivity vs. material temperature) yielded the
 reactivity feedback coefficients, $\alpha$, with error 
 propagated.
 
-For the Sangamon200 reactor, these metrics are only compared in an 
-equilibrium state. For the \gls*{MMR}-like reactor these metrics 
+For the Sangamon200 reactor, these metrics are only compared for each fuel composition in an 
+equilibrium state with pebbles at burnup levels to represent 
+different numbers of passes. For the \gls*{MMR}-like reactor these metrics 
 are compared at \gls*{BOL} (0 MWd/kgHM burnup), \gls*{MOL} (40.52 MWd/kgHM burnup), 
 and \gls*{EOL} (81.04 MWd/kgHM burnup). Each metric provides  
 insight into the performance of 
@@ -52,7 +53,7 @@ greater than the \keff from the pure fuel.
 \end{table}
 
 The uranium isotopes mostly present in 
-each of the fuel compositions (weight fraction of at least 1$\times 10^{-3}$)
+each of the fuel compositions (atom fraction of at least 1$\times 10^{-3}$)
 are $^{234}$U, $^{235}$U, $^{236}$U, and $^{238}$U (see 
 Table \ref{tab:u_comps}). The $^{235}$U weight 
 fraction is the same in each fuel composition, so the impurities are 
@@ -61,17 +62,20 @@ thermal
 total fission cross sections than $^{238}$U, so their displacement of the
 $^{238}$U in the fuel increases the neutron multiplication of the reactor. 
 This is supported by the impure fuels leading to an increase of 
-0.0248-0.02498
-in the thermal fission factor, $\eta$ (Table \ref{tab:xe100_eta}). This 
-increase signifies a greater ratio in the number of neutrons
-born from fission to the number absorbed in the fuel in the impure 
-fuel compositions. The change in $\eta$ is relevant because it is fuel specific, 
+0.0248-0.0250
+in the thermal fission factor, $\eta$ (Table \ref{tab:xe100_eta}), which 
+signifies a greater ratio of the number of neutrons
+born from fission to the number absorbed in the fuel for the impure 
+fuels. The change in $\eta$ is relevant because it is fuel specific, 
 but alone it does not define \keff.
 Part of the increase in \keff when using the impure fuels is because 
 the pebbles modeled are at different burnup steps. Many of the 
 pebbles are already partially burned and the uranium impurities in the fuel 
 have already undergone neutron capture reactions and have been transmuted 
-into other isotopes that are more fissile. 
+into other isotopes that are more fissile. For example, 
+the partially burned, impure fuel pebbles may have more 
+$^{235}$U than the partially burned, pure fuel pebbles 
+because of the transmutation of $^{234}$U into $^{235}$U. 
 The effect of an increased \keff from the impure fuels is that more 
 control mechanisms may be required to control the chain reaction, or 
 to lower the \keff and ensure that the targeted discharge burnup and 
@@ -99,23 +103,21 @@ The effective delayed neutron fraction, \betaEff, resulting
 from the use of each fuel type is reported in 
 Table \ref{tab:betaeff_xe100}. The \betaEff when using the 
 \gls*{EBR} and Y-12 fuels is 0.00011 $\pm$ 0.00008 and 
-0.00016 $\pm$ 0.0008,respectively, smaller than when using 
-the pure fuel, a difference that is 
-statistically significant. The pure fuel results in 
-a larger \betaEff than the impure fuels because the other uranium isotopes 
-present in the impure fuels breed into fissile material that has 
-a smaller \betaEff than $^{235}$U. The different compositions for 
-each pass captures 
-this breeding of fissile material with lower \betaEff values. The 
-additional fissile material is not 
+0.00016 $\pm$ 0.0008, respectively, smaller than when using 
+the pure fuel. The pure fuel results in 
+a larger \betaEff than the impure fuels because the other 
+uranium isotopes present in the impure fuels breed into 
+fissile material that has a smaller \betaEff than $^{235}$U. 
+The different compositions for each pass captures 
+this breeding of fissile material with lower \betaEff values. 
+The additional fissile material is not 
 present in the pure fuel because it is the material that is bred in from 
 the uranium impurities. The smaller \betaEff indicates 
 that control mechanisms in the reactor will be less effective 
-because a larger fraction of the neutron population will be prompt 
-neutrons, and there is a smaller time scale on which the neutron 
-population can be impacted. However, the decrease in \betaEff is 
-very small and unlikely to prevent operator actions and control 
-mechanisms from being effective. 
+because a larger fraction of the neutron population will be prompt neutrons, and there is a smaller time scale on which 
+the neutron population can be impacted. However, the decrease 
+in \betaEff is very small and unlikely to prevent operator 
+actions and control mechanisms from being effective. 
 
 \begin{table}[h!]
         \centering 
@@ -140,14 +142,10 @@ line in both plots shows the delineation between the fast
 and thermal energy groups in this work (0.625 eV). 
 There is a large peak in the thermal flux around 0.01 eV. The impure 
 \gls*{HALEU} compositions have a smaller thermal flux peak 
-than the pure fuel, differing by about 1.5 $\times 10^{20}$ 
+than the pure fuel at this energy, differing by 8.26 $\times 10^{11}$ 
 $\frac{n}{cm^2s}$. At high energies (above 10
-MeV) the impure fuels result in a flux up to 2.37$\times 10^{16}$ 
-$\frac{n}{cm^2s}$ larger flux than the pure fuel. 
-The total area under the curve in the fast region of Figure 
-\ref{fig:xe100_mg_flux} is greater than the area under the curve 
-in the thermal region of that figure, indicating that more neutrons 
-are in the fast energy range.
+MeV) the impure fuels result in a flux up to 1.7 $\times 10^{7}$ 
+$\frac{n}{cm^2s}$ larger flux than the pure fuel.
 The smaller thermal flux with the impure fuels is in contrast to the larger 
 \keff from the impure fuels. This difference in trend of the \keff and 
 the neutron flux suggests that the impurities in the fuel lead to 
@@ -169,21 +167,22 @@ distance in the core before being absorbed.
 Figures \ref{fig:xe100_thermal_radial}-\ref{fig:xe100_fast_axial} show 
 thermal and fast fluxes in the reactor core axially and radially. 
 One detector was defined for these spatial fluxes, with uniform binning
-in the x-, y-, and z-axes.  Initially, the results are integrated over the bin volume, and so the flux
-presented here has been normalized by that same volume. 
-Therefore, the plotted flux is in units of n/cm$^2$/s across a slice of the x- or z-axis and 
+in the x-, y-, and z-axes.  Initially, Serpent 
+integrates the results over the bin volume, and so the flux
+presented here has been normalized by that same volume to 
+remove the bin integration. 
+Therefore, the plotted flux is in units of $\frac{n}{cm^2s}$ across a slice of the x- or z-axis and 
 these figures do not capture any spatial integration. 
+
 The thermal radial flux spectra from all three \gls*{HALEU} compositions 
 (Figure \ref{fig:xe100_thermal_radial})
 show peaks at the edge of the core resulting from the graphite moderator 
 around the core. The flux from the impure fuels is similar to the flux from 
-the pure fuel, differing between -3.89 $\times 10^{13}$- 2.47 
+the pure fuel, differing between -3.89 $\times 10^{13}$ to 2.47 
 $\times 10^{13}$ $\frac{n}{cm^2s}$ and -2.66$\times 10^{13}$ 
-- 1.40$\times 10^{13}$ 
+to 1.40$\times 10^{13}$ 
 $\frac{n}{cm^2s}$ for the \gls*{EBR} and Y-12 fuels, respectively. The error of the pure fuel flux ranges 
-from 0 - 1.05 $\times 10^{13}$ $\frac{n}{cm^2s}$, which 
-means that the differences in the flux from the impure fuels 
-are sometimes larger than the error. 
+from 0 to 1.05 $\times 10^{13}$ $\frac{n}{cm^2s}$.
 
 
 \begin{figure}[h!]
@@ -201,31 +200,56 @@ $^{238}$U has the largest difference between the total and
 fission cross sections of the uranium isotopes considered for this model. 
 By replacing the $^{238}$U with other isotopes the flux should 
 increase from the larger fission to total event ratio because the other isotopes 
-are more likely to have fission reactions and produce neutrons.
-This core is not 
-comprised of exclusively fresh fuel, and 
-the use of burned pebbles in this model affects the flux. The 
-fission yield curves are different for each fissile isotope. If some 
+are more likely to have fission reactions and produce neutrons. If some 
 of the fissions are occurring from reactions in $^{233}$U (present 
 in the \gls*{EBR} fuel, see Table \ref{tab:u_comps}) compared with 
 $^{235}$U, then the distribution of fission products present in the partially 
 burned pebbles will be different which affects the neutron reaction 
-rate densities in the core. Further the even-numbered uranium isotopes 
+rate densities in the core. Further, the even-numbered uranium isotopes 
 (e.g., $^{234}$U) have relatively small fission cross sections; 
 they are more likely to absorb a neutron in a capture reaction than to fission. 
 
+To highlight the effects of the partially-burned pebbles 
+on the neutron flux, we shuffled the pebble placements 
+in the core. The fresh pebbles were switched with the most 
+burnt, etc. Figure \ref{fig:xe100_pebble_shuffle}
+shows the thermal radial flux with the Y-12 fuel composition 
+in the initial pebble placements and in the shuffled 
+configuration. The two fluxes differ by up to 2.40 
+$\times 10^{13}$ $\frac{n}{cm^2s}$, highlighting the 
+of the effect of the random pebble packing 
+arrangement on the neutron flux.
+The difference from shuffling the pebbles is smaller 
+than the differences caused by the different fuel 
+compositions. By using the same pebble configuration 
+with each fuel composition, the changes in the neutron 
+flux can be attributed to the composition change, as 
+opposed to pebble configuration changes. 
+
+\begin{figure}[h!]
+        \centering 
+        \includegraphics[scale=0.65]{xe100_y12_shuffle.pdf}
+        \caption{Thermal flux (below 0.625 eV) in the Sangamon200 
+        reactor model in the radial direction when the locations of 
+        the pebbles are shuffled for the Y-12 fuel composition case
+        (top). The absolute difference between the 
+        two fluxes (bottom).}
+        \label{fig:xe100_pebble_shuffle}
+\end{figure}
+
+
 Figure \ref{fig:xe100_fast_radial} shows the fast radial flux from 
-each \gls*{HALEU} composition in this work. The impure fuels result in 
-similar a similar flux to the pure fuel flus, differing by 
--5.58 $\times 10^{13}$ - 3.69 $\times 10^{13}$ $\frac{n}
+each \gls*{HALEU} composition in this work. The impure fuels result in fluxes that differ from the pure fuel flux by 
+-5.58 $\times 10^{13}$ to 3.69 $\times 10^{13}$ $\frac{n}
 {cm^2s}$ and 
--4.58 $\times 10^{13}$ - 3.95 $\times 10^{13}$ $\frac{n}
+-4.58 $\times 10^{13}$ to 3.95 $\times 10^{13}$ $\frac{n}
 {cm^2s}$ for the 
 \gls*{EBR} and Y-12 fuel compositions, respectively. The 
-error of the pure fuel flux ranges from 0 - 1.73 $\times
-10^{13}$ $\frac{n}{cm^2s}$, which means that many of the 
-differences in the flux from the impure fuels are 
-significant. 
+error of the pure fuel flux ranges from 0 to 1.73 $\times
+10^{13}$ $\frac{n}{cm^2s}$. The larger differences in the 
+fast radial flux, compared with the thermal radial flux, 
+can be attributed to the increased \keff from the impure fuels
+leading to changes in the number of neutrons at fast energies.
 
 \begin{figure}[h!]
         \centering 
@@ -239,18 +263,17 @@ significant.
 \end{figure}
 
 
-The thermal axial flux (Figure \ref{fig:xe100_thermal_axial}) has
+The thermal axial flux (Figure \ref{fig:xe100_thermal_axial}) 
+has
 similar features to the thermal radial flux and the multi-group flux. 
 There is an increase to about 0.65 $\times 10^{14}$ $\frac{n}{cm^2s}$ in  
-the top top and bottom of the model because of the graphite reflectors.
-The \gls*{EBR} and Y-12 fuels result in thermal axial fluxes differ 
-between -3.41 $\times 10^{13}$ - 2.76 $\times 10^{13}$ and 
--2.29 $\times 10^{13}$ - 1.61 $\times 10^{13}$ $\frac{n}{cm^2s}$, respectively, 
+the top and bottom of the model because of the graphite reflectors.
+The \gls*{EBR} and Y-12 fuels result in thermal axial fluxes 
+that differ 
+between -3.41 $\times 10^{13}$ to 2.76 $\times 10^{13}$ and 
+-2.29 $\times 10^{13}$ to 1.61 $\times 10^{13}$ $\frac{n}{cm^2s}$, respectively, 
 from the flux from the pure fuel. The error of the pure fuel flux 
-is on the order of 0.05 - 1.05 $\times 10^{13}$ $\frac{n}{cm^2s}$, 
-which means that some of the differences between the fluxes are 
-within modeling error. 
-
+is on the order of 0.05 to 1.05 $\times 10^{13}$ $\frac{n}{cm^2s}$. 
 
 \begin{figure}[h!]
         \centering 
@@ -263,43 +286,12 @@ within modeling error.
         \label{fig:xe100_thermal_axial}
 \end{figure}
 
-The 
-pebbles are all evenly distributed through the core, and there are an equal 
-number of pebbles for each integer pass number. However, the pebbles of 
-each pass number are not evenly distributed across the core, as the 
-packing algorithm randomly placed the pebbles and does not guarantee 
-uniformity. 
-Shuffling the locations of the pebbles at each 
-pass number when using the Y-12 fuel confirmed the effect of 
-pebble distribution on the flux: fresh pebbles switched with 
-the most 
-burnt, single pass pebbles switched with pebbles that have gone 
-through all but one pass, etc. Figure \ref{fig:xe100_pebble_shuffle} 
-shows the axial flux in the center of the core (i.e., not integrated 
-across the x- or y-directions) using the initial pebble placements and 
-the shuffled placement with the Y12 fuel composition. The pebble shuffling 
-leads to local changes in the flux by up to 3.24 $\times 10^{13}$ n/cm$^2$/s. 
-
-
-\begin{figure}[h!]
-        \centering 
-        \includegraphics[scale=0.65]{xe100_y12_shuffle.pdf}
-        \caption{Thermal flux (below 0.625 eV) in the Sangamon200 
-        reactor model in the axial direction when the locations of 
-        the pebbles are shuffled for the Y-12 fuel composition case
-        (top). The absolute difference from the flux from 
-        the pure \gls*{HALEU} fuel with 1$\sigma$ error shown by 
-        the shading (bottom).}
-        \label{fig:xe100_pebble_shuffle}
-\end{figure}
-
 The fast axial flux (Figure \ref{fig:xe100_fast_axial}) from the \gls*{EBR} 
 and Y-12 fuel compositions differ from the flux through the pure fuel by 
--4.67 $\times 10^{13}$ - 4.19 $\times 10^{13}$ $\frac{n}{cm^2s}$ and
--3.98 $\times 10^{13}$ - 3.66 $\times 10^{13}$ $\frac{n}{cm^2s}$, respectively. 
-The error in the flux through the pure fuel varies between 0 - 1.62 $\times
-10^{13}$ $\frac{n}{cm^2s}$. Therefore, some of the differences in the 
-fast axial flux from the impure fuels is significant. 
+-4.67 $\times 10^{13}$ to 4.19 $\times 10^{13}$ $\frac{n}{cm^2s}$ and
+-3.98 $\times 10^{13}$ to 3.66 $\times 10^{13}$ $\frac{n}{cm^2s}$, respectively. 
+The error in the flux through the pure fuel varies between 0 to 1.62 $\times
+10^{13}$ $\frac{n}{cm^2s}$.  
 
 \begin{figure}[h!]
         \centering 
@@ -326,8 +318,7 @@ this work applies a boundary of 0.625 eV between the thermal and fast energy gro
 The energy bins defined by Mulder and Boyes includes more energies in the thermal 
 range and fewer energies in the fast range than this work, which can explain 
 why the thermal flux they report is larger than the one in this work and the 
-fast flux they report is smaller than the one in this work. 
-
+fast flux they report is smaller than the one in this work.
 
 \subsubsection{Temperature reactivity feedback coefficient comparison}
 Table \ref{tab:coeff_xe100} reports the reactivity feedback 
@@ -372,7 +363,7 @@ $\alpha_T$ from the Y-12 fuel.
 
 The changes in the reactivity feedback coefficients in the impure fuels 
 are either within error of the coefficient with the pure fuels, are 
-more negative than the coefficient with the pure, or both. Based on these 
+more negative than the coefficient with the pure fuel, or both. Based on these 
 results, one can conclude that these fuel compositions will not prevent 
 large changes in these reactor performance metrics, or prevent the reactor 
 from operating in an unsafe condition (e.g., a positive $\alpha_T$ value). 
@@ -409,7 +400,8 @@ At \gls*{MOL} the
 \keff with the \gls*{EBR} and Y-12 fuels are 763 $\pm$ 37 pcm and 
 911 $\pm$ 35 pcm, respectively, smaller than the \keff from the pure fuel. Each 
 of these differences are significant (i.e., larger than the error), and the 
-impure fuels results in smaller \keff values. 
+impure fuels results in smaller \keff values at each 
+burnup step. 
 
 The difference in \keff 
 from the different fuel compositions decreases with burnup because of 
@@ -445,11 +437,11 @@ The effect of of the impurities on the \keff in this reactor
 model are significant; the differences exceed the error on the values. However, 
 at the last burnup step the \keff is still above 1, so the 
 effect of the impurities 
-is not great enough to cause the reactor to reach a subcritical state 
-during its operation. The super-critical \keff throughout the duration 
-of the burn cycle suggests that the lifetime of the reactor will not be 
-affected by the impurities in the fuel, but burnable poison uses may need 
-to be adjusted to account for the differences in the \keff.
+is not large enough to cause the reactor to reach a subcritical state 
+during its operation and prevent reaching the designed 
+lifetime. However, burnable poison uses may need 
+to be adjusted to account for the differences in the \keff 
+with each fuel composition.
 
 \subsubsection{Effective delayed neutron fraction comparison}
 Table \ref{tab:mmr_betaeff} reports the effective delayed 
@@ -460,7 +452,7 @@ the \betaEff from the pure fuel by -0.00001 $\pm$ 0.00005 and 0.00007
 $\pm$ 0.00005, respectively. At \gls*{MOL} the 
 \betaEff values from the \gls*{EBR} and Y-12 fuel compositions differ from 
 the \betaEff from the pure fuel by 0.00012 $\pm$ 0.00005 and 0.00005 
-$\pm$ 0.00005, respectively. At \gls*{BOL} the 
+$\pm$ 0.00005, respectively. At \gls*{EOL} the 
 \betaEff values from the \gls*{EBR} and Y-12 fuel compositions differ from 
 the \betaEff from the pure fuel by 0.00016 $\pm$ 0.00005 and 0.00012 
 $\pm$ 0.00005, respectively. 
@@ -491,10 +483,8 @@ the pure fuels.
         \end{tabular}
 \end{table}
 
-
-
 For all three 
-fuel compositions, \betaEff decreases with increasing burnup. This 
+fuel compositions, \betaEff decreases with increasing burnup. This trend
 is consistent with the depletion of the $^{235}$U in the core and 
 an increase in the number of fissions happening in isotopes
 that have a lower \betaEff than $^{235}$U, such as $^{239}$Pu. 
@@ -514,13 +504,14 @@ Figure \ref{fig:mmr_energy_spectrum} shows the flux integrated across the
 core at \gls*{BOL} as a function of energy (top) and the difference between 
 the flux from the pure fuel and each of the impure fuels (bottom). The differences 
 in the bottom plot of Figure \ref{fig:mmr_energy_spectrum} range from 
--0.643 $\times 10^{17}$ - 2.07 $\times 10^{17}$ $\frac{n}{cm^2s}$ for the 
-\gls*{EBR} fuel and they range from -0.672 $\times 10^{17}$ - 2.31 
-$\times 10^{17}$ $\frac{n}{cm^2s}$ for the Y-12 fuel. These differences are 
+-0.270 $\times 10^{10}$ to 0.868 $\times 10^{10}$ $\frac{n}{cm^2s}$ for the 
+\gls*{EBR} fuel and they range from -0.282 $\times 10^{17}$ to 0.967 
+$\times 10^{10}$ $\frac{n}{cm^2s}$ for the Y-12 fuel. These differences are 
 two orders of magnitude smaller than the fluxes, but the error in the pure 
-fuel flux is 0 - 0.344 $\times 10^{16}$ $\frac{n}{cm^2s}$. Therefore, the 
-differences in the flux are significant. Generally, the impure fuels result in 
-larger fluxes, noted by the peak in the thermal range and the flux in the fast energy 
+fuel flux is 0 to 0.144 $\times 10^{10}$ $\frac{n}{cm^2s}$. 
+
+Generally, the impure fuels result in 
+larger fluxes, noted by the peak in the thermal range and the difference in the fast energy 
 range in the bottom plot of Figure \ref{fig:mmr_energy_spectrum}. Combined 
 with the smaller \keff values when using the impure fuels (see Table 
 \ref{tab:mmr_keff}) and the similar or larger \betaEff values with the impure fuels 
@@ -532,7 +523,7 @@ the impure fuels, but they are not necessarily born from fission.
         \includegraphics[scale=0.75]{mmr_flux_mg_bol.pdf}
         \caption{Top: Flux spectra for each fuel composition 
         in the \gls*{MMR}-like model at a 
-        burnup of 0 MWd/kgU in the active region of the core. The 
+        burnup of 0 MWd/kgU integrated over the volume of the core. The 
         purple line shows the delineation between the fast and thermal 
         neutron energy groups used in other results of this work (0.625 eV).
         Bottom: Difference between the flux from the pure fuel and each 
@@ -546,9 +537,15 @@ direction at each of the three burnup steps. The radial fluxes are taken
 across the middle of the core in the y-direction, which means the flux 
 is taken across the plane with three coolant channels in Figure 
 <<<<<<< HEAD
+<<<<<<< HEAD
 \ref{fig:mmr_radial}. The flux shown in these figures 
 is not integrated across any axis, as discussed in Section 
 \ref{sec:xe100_flux}.
+=======
+\ref{fig:mmr_radial}. The axial flux is taken along the z-axis. 
+Neither the radial flux nor the axial flux are integrated across the 
+other two axes, as discussed in Section \ref{sec:xe100_flux}.
+>>>>>>> master
 =======
 \ref{fig:mmr_radial}. The axial flux is taken along the z-axis. 
 Neither the radial flux nor the axial flux are integrated across the 
@@ -583,18 +580,26 @@ channels and the fast flux has a peak in these areas.
         \label{fig:mmr_bol_radial}
 \end{figure}
 
-For the thermal flux at \gls*{BOL} (Figures \ref{fig:mmr_bol_radial}), the flux with the \gls*{EBR} and Y-12 compositions differ from 
-the flux with the pure fuel by -3.80 $\times 10^{12}$ - 3.17 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -6.34 $\times 10^{12}$ - 3.308 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges from 0-2.12 $\times 10^{12}$ 
-$\frac{n}{cm^2s}$. For the fast flux at \gls*{BOL}, the flux with the \gls*{EBR} and Y-12 
+For the thermal radial flux at \gls*{BOL} (Figure \ref{fig:mmr_thermal_radial_bol}), the flux with the \gls*{EBR} and Y-12 compositions differ from 
+the flux with the pure fuel by -3.80 $\times 10^{12}$ to 3.17 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -6.34 $\times 10^{12}$ to 3.308 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges from 0
+to 2.12 $\times 10^{12}$ 
+$\frac{n}{cm^2s}$. For the fast radial flux at \gls*{BOL}
+(Figure \ref{fig:mmr_fast_radial_bol}), the flux with the \gls*{EBR} and Y-12 
 compositions differ from 
-the flux with the pure fuel by -5.33 $\times 10^{12}$ - 6.94 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -4.40 $\times 10^{12}$ - 11.2 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges between 0 - 2.88 $\times
-10^{12}$ $\frac{n}{cm^2s}$. Many of the differences in the flux are greater than 
-the error, making them significant. Some of the most significant differences in the 
-flux happen in the middle of the coolant channels: 
+the flux with the pure fuel by -5.33 $\times 10^{12}$ to 6.94 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -4.40 $\times 10^{12}$ to 11.2 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges between 0 to 2.88 $\times
+10^{12}$ $\frac{n}{cm^2s}$. 
+
+Some of the most significant differences in the 
+flux happen in the middle of the coolant channels. The 
+increase in the fast flux and the decrease in the thermal 
+flux in the coolant channels indicates that the neutrons are 
+not being slowed down as much before they enter the coolant 
+channels. This can have an impact on the material degradation 
+rates around the coolant channels. 
 
 \begin{figure}[h!]      
         \begin{subfigure}{0.85\textwidth}
@@ -621,48 +626,46 @@ flux happen in the middle of the coolant channels:
 
 The axial fluxes at \gls*{BOL} are shown in Figures \ref{fig:mmr_thermal_axial_bol} and 
 \ref{fig:mmr_fast_axial_bol}. For the thermal flux at \gls*{BOL} the flux with the \gls*{EBR} and Y-12 compositions differ from 
-the flux with the pure fuel by -6.53 $\times 10^{12}$ - 5.01 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -6.05 $\times 10^{12}$ - 6.33 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges from 0.14 - 2.49 $\times 10^{12}$ 
+the flux with the pure fuel by -6.53 $\times 10^{12}$ to 5.01 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -6.05 $\times 10^{12}$ to 6.33 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges from 0.14 to 2.49 $\times 10^{12}$ 
 $\frac{n}{cm^2s}$. For the fast flux at \gls*{BOL}, the flux with the \gls*{EBR} and Y-12 
 compositions differ from 
-the flux with the pure fuel by -6.22 $\times 10^{12}$ - 7.02 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -8.25 $\times 10^{12}$ - 7.45 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges between 0.152 - 3.05 $\times
+the flux with the pure fuel by -6.22 $\times 10^{12}$ to 7.02 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -8.25 $\times 10^{12}$ to 7.45 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges between 0.152 to 3.05 $\times
 10^{12}$ $\frac{n}{cm^2s}$.
 
 Figures \ref{fig:mmr_mc_radial} and \ref{fig:mmr_mc_axial} show the 
 radial and axial fluxes, respectively, in the \gls*{MMR}-like 
 reactor at \gls*{MOL}. 
-
-For the thermal radial flux, the flux with the \gls*{EBR} and Y-12 compositions differ from 
-the flux with the pure fuel by -4.64 $\times 10^{12}$ - 7.10 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -4.42 $\times 10^{12}$ - 5.18 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+For the thermal radial flux at \gls*{MOL}, the flux with the \gls*{EBR} and Y-12 compositions differ from 
+the flux with the pure fuel by -4.64 $\times 10^{12}$ to 7.10 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -4.42 $\times 10^{12}$ to 5.18 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
 respectively. The error in the pure fuel flux ranges from 0 - 2.46 $\times 10^{12}$ 
-$\frac{n}{cm^2s}$. For the fast flux at \gls*{BOL}, the flux with the \gls*{EBR} and Y-12 
+$\frac{n}{cm^2s}$. For the fast flux at \gls*{MOL}, the flux with the \gls*{EBR} and Y-12 
 compositions differ from 
-the flux with the pure fuel by -4.57 $\times 10^{12}$ - 4.89 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -7.61 $\times 10^{12}$ - 4.37 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges between 0 - 3.77 $\times
+the flux with the pure fuel by -4.57 $\times 10^{12}$ to 4.89 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -7.61 $\times 10^{12}$ to 4.37 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges between 0 to 3.77 $\times
 10^{12}$ $\frac{n}{cm^2s}$.
 
-
-For the thermal axial flux, the flux with the \gls*{EBR} and Y-12 compositions differ from 
-the flux with the pure fuel by -6.41 $\times 10^{12}$ - 6.21 
+For the thermal axial flux at \gls*{MOL}, the flux with the \gls*{EBR} and Y-12 compositions differ from 
+the flux with the pure fuel by -6.41 $\times 10^{12}$ to 6.21 
 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -5.23 $\times 10^{12}$ - 8.23 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+$\frac{n}{cm^2s}$ and -5.23 $\times 10^{12}$ to 8.23 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
 respectively. The error in the pure fuel flux ranges from 0.23 - 2.56 $\times 10^{12}$ 
-$\frac{n}{cm^2s}$. For the fast flux at \gls*{BOL}, the flux with the \gls*{EBR} and Y-12 
+$\frac{n}{cm^2s}$. For the fast flux at \gls*{MOL}, the flux with the \gls*{EBR} and Y-12 
 compositions differ from 
-the flux with the pure fuel by -12.26 $\times 10^{12}$ - 9.02 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -8.52 $\times 10^{12}$ - 7.83 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges between 0.085 - 3.47 $\times
+the flux with the pure fuel by -12.26 $\times 10^{12}$ to 9.02 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -8.52 $\times 10^{12}$ to 7.83 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges between 0.085 to 3.47 $\times
 10^{12}$ $\frac{n}{cm^2s}$.
 
 
 The trends at \gls*{MOL} in the radial fluxes are 
 similar to those observed at the \gls*{BOL}: the radial fluxes have the 
-greatest difference near the fuel pins in the core. In the axial fluxes 
+greatest difference near the coolant channels in the core. In the axial fluxes 
 however, there is a difference between the flux from the \gls*{EBR} 
 fuel and the other fuels. The \gls*{EBR} results in a greater difference 
 from the flux from the pure fuel than the Y-12 fuel, but the shape of 
@@ -722,30 +725,28 @@ A similar pattern occurs in the fast axial flux.
 Finally, Figures \ref{fig:mmr_eol_radial} and \ref{fig:mmr_eol_axial}
 show the radial and axial fluxes, respectively, in the 
 \gls*{MMR}-like model at \gls*{EOL}. 
-For the thermal radial flux, the flux with the \gls*{EBR} and Y-12 compositions differ from 
-the flux with the pure fuel by -6.99 $\times 10^{12}$ - 4.27 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -4.87 $\times 10^{12}$ - 4.42 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges from 0 - 2.74 $\times 10^{12}$ 
-$\frac{n}{cm^2s}$. For the fast flux at \gls*{BOL}, the flux with the \gls*{EBR} and Y-12 
+For the thermal radial flux at \gls*{EOL}, the flux with the \gls*{EBR} and Y-12 compositions differ from 
+the flux with the pure fuel by -6.99 $\times 10^{12}$ to 4.27 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -4.87 $\times 10^{12}$ to 4.42 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges from 0 
+to 2.74 $\times 10^{12}$ 
+$\frac{n}{cm^2s}$. For the fast flux at \gls*{EOL}, the flux with the \gls*{EBR} and Y-12 
 compositions differ from 
-the flux with the pure fuel by -8.94 $\times 10^{12}$ - 9.63 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -9.46 $\times 10^{12}$ - 6.01 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges between 0 - 3.77 $\times
-10^{12}$ $\frac{n}{cm^2s}$.
+the flux with the pure fuel by -8.94 $\times 10^{12}$ to 9.63 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -9.46 $\times 10^{12}$ to 6.01 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges between 0 to 3.77 $\times
+10^{12}$ $\frac{n}{cm^2s}$. 
 
-
-For the thermal axial flux, the flux with the \gls*{EBR} and Y-12 compositions differ from 
-the flux with the pure fuel by -8.89 $\times 10^{12}$ - 11.3 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -6.85 $\times 10^{12}$ - 6.29 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges from 0.188 - 2.90 $\times 10^{12}$ 
-$\frac{n}{cm^2s}$. For the fast flux at \gls*{BOL}, the flux with the \gls*{EBR} and Y-12 
+For the thermal axial flux at \gls*{EOL}, the flux with the \gls*{EBR} and Y-12 compositions differ from 
+the flux with the pure fuel by -8.89 $\times 10^{12}$ to 11.3 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -6.85 $\times 10^{12}$ to 6.29 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges from 0.188 to 2.90 $\times 10^{12}$ 
+$\frac{n}{cm^2s}$. For the fast flux at \gls*{EOL}, the flux with the \gls*{EBR} and Y-12 
 compositions differ from 
-the flux with the pure fuel by -8.82 $\times 10^{12}$ - 10.6 $\times 10^{12}$
-$\frac{n}{cm^2s}$ and -11.5 $\times 10^{12}$ - 15.2 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
-respectively. The error in the pure fuel flux ranges between 0.228 - 4.17 $\times
+the flux with the pure fuel by -8.82 $\times 10^{12}$ to 10.6 $\times 10^{12}$
+$\frac{n}{cm^2s}$ and -11.5 $\times 10^{12}$ to 15.2 $\times 10^{12}$ $\frac{n}{cm^2s}$, 
+respectively. The error in the pure fuel flux ranges between 0.228 to 4.17 $\times
 10^{12}$ $\frac{n}{cm^2s}$.
-
-
 
 The radial fluxes continue to show 
 the same trend of the largest differences between the fluxes occurring near
@@ -809,7 +810,7 @@ increases compared with the difference at \gls*{MOL}.
 
 \subsubsection{Reactivity feedback coefficient comparison} \label{sec:mmr_coeff}
 Finally, the reactivity feedback coefficients of different materials 
-at each burnup step are reported in Table \ref{tab:coeff_mmr}. 
+at each burnup step for the \gls{MMR}-like model are reported in Table \ref{tab:coeff_mmr}. 
 
 \begin{table}[h!]
         \centering 
@@ -858,7 +859,10 @@ at \gls*{BOL} and \gls*{MOL} that are outside the range of
 error. The displacement of $^{238}$U by the other isotopes 
 in the impure fuels decreases the Doppler broadening effects 
 of the fuel, given that $^{238}$U has more resonances than 
-the other uranium isotopes. At \gls*{EOL}, the $\alpha_F$ 
+the other uranium isotopes. This effect on the $\alpha_F$ 
+for these burnup steps must be accounted for to ensure 
+safe operation. 
+At \gls*{EOL}, the $\alpha_F$ 
 values from the \gls*{EBR} and Y-12 compositions 
 differ from the pure fuel $\alpha_F$ by -0.222 $\pm$ 0.337 
 pcm/K and -0.214 $\pm$ 0.426 pcm/K, respectively. The 
@@ -908,11 +912,13 @@ differ from the pure fuel $\alpha_T$ by -0.137 $\pm$ 0.382 pcm/K and
 -0.171 $\pm$ 0.375 pcm/K, respectively. At \gls*{EOL}, the $\alpha_T$ 
 values from the \gls*{EBR} and Y-12 compositions 
 differ from the pure fuel $\alpha_T$ by 0.048 $\pm$ 0.508 pcm/K and 
-0.202 $\pm$ 0.623 pcm/K, respectively. Similar to the 
-$\alpha_M$ values, the impure fuels lead to more 
+0.202 $\pm$ 0.623 pcm/K, respectively. Opposite to the 
+$\alpha_F$ values, the impure fuels lead to more 
 negative values at the \gls*{BOL} and \gls*{MOL} burnup steps 
-and less negative values at the \gls*{EOL} burnup step. 
-Also similar, all of the differences are within error, 
+and less negative values at the \gls*{EOL} burnup step.
+This change in pattern indicates a weak contribution of 
+the fuel to $\alpha_T$ value.  
+All of the differences are within error, 
 suggesting that these fuel compositions do not lead to 
 significant changes in the $\alpha_T$ value for this reactor
 design. 
